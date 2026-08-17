@@ -18,7 +18,7 @@ C'est une **webmap** au sens de la plateforme websig : elle suit le système de 
 
 | Sujet | Question |
 |---|---|
-| Données de l'Ordre | OCR du tableau scanné, ou fichier source demandé directement à l'Ordre ? Bloque la vraie carte. |
+| Données de l'Ordre | Le Tableau OGEC 2026 (`HPSC0177.pdf`, scan reçu le 17 août 2026) est dans le dépôt, avec un brouillon OCR transcrit à la main dans [`data/ocr-draft/`](data/ocr-draft/README.md) (242 entrées, non vérifié, non publiable). Reste à trancher : ce scan fait-il office de fichier source, ou en demande-t-on un directement à l'Ordre ? Bloque toujours la vraie carte tant que la réponse n'est pas actée. |
 | Mise à jour des données | Fichier transmis périodiquement, ou interface d'administration ? La seconde impose une authentification et un backend — bascule le projet en niveau 2. |
 | Design | Gislain fournit un design dédié à ce projet (pas encore livré au 10 août 2026). |
 

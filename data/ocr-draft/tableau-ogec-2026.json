@@ -1,0 +1,2195 @@
+{
+  "source": "HPSC0177.pdf — Tableau OGEC 2026, Ordre National des Géomètres du Cameroun",
+  "statut": "BROUILLON NON VALIDÉ — transcription visuelle manuelle, non vérifiée, non publiable. Voir data/ocr-draft/README.md.",
+  "date_transcription": "2026-08-17",
+  "listes": {
+    "geometres_autorises": [
+      {
+        "numero": "1",
+        "nom": "NOUNAMO F. Gustave",
+        "numero_agrement": "A011",
+        "cabinet": "Nounamo",
+        "adresse": "Bandjoun",
+        "contact": "676 40 95 82",
+        "email": "nounamofotso@yahoo.fr"
+      },
+      {
+        "numero": "2",
+        "nom": "NLEND Albert",
+        "numero_agrement": "A033",
+        "cabinet": "Soprafair",
+        "adresse": "B.P. 6200 Yaoundé",
+        "contact": "677 57 52 84",
+        "email": "soprafair@yahoo.fr"
+      },
+      {
+        "numero": "3",
+        "nom": "EVENGUE ELLA JOSEPH",
+        "numero_agrement": "A035",
+        "cabinet": "Cabinet EVENGUE",
+        "adresse": "Yaoundé",
+        "contact": "677 63 29 53",
+        "email": "josephevengueella@gmail.com"
+      },
+      {
+        "numero": "4",
+        "nom": "KOUAWA Norbert",
+        "numero_agrement": "A037",
+        "cabinet": "Kouawa map Cameroun",
+        "adresse": "B.P. 11114 Yaoundé",
+        "contact": "677 56 02 40",
+        "email": "Kouamap88@yahoo.fr"
+      },
+      {
+        "numero": "5",
+        "nom": "Cab.NJOMGANG Henri (Nchottou M Ahmed ai)",
+        "numero_agrement": "A038",
+        "cabinet": "Geo Design Biz Sarl",
+        "adresse": "B.P. 5642 Yaoundé",
+        "contact": "670699195",
+        "email": "henrinjomgang@yahoo.fr"
+      },
+      {
+        "numero": "6",
+        "nom": "JUOMPAN-YAKAM Bertrand",
+        "numero_agrement": "A041",
+        "cabinet": "SGDS",
+        "adresse": "B.P. 5907 Yaoundé",
+        "contact": "699 91 02 85/+33611312662",
+        "email": "b.juompan@sgds.fr"
+      },
+      {
+        "numero": "7",
+        "nom": "YAMBOU Elie",
+        "numero_agrement": "A042",
+        "cabinet": "Yambou",
+        "adresse": "Yaoundé",
+        "contact": "699 61 01 41",
+        "email": "yambouelie@yahoo.fr"
+      },
+      {
+        "numero": "8",
+        "nom": "Cab.WEYEPE Samuel (Ze Ruben ai)",
+        "numero_agrement": "A045",
+        "cabinet": "CERTTOC",
+        "adresse": "BP 13298 Yaoundé",
+        "contact": "699993265",
+        "email": "weyepecerttocing@yahoo.fr"
+      },
+      {
+        "numero": "9",
+        "nom": "ZE Ruben",
+        "numero_agrement": "A049",
+        "cabinet": "Ze Ruben",
+        "adresse": "BP 34560 Yaoundé",
+        "contact": "699 97 83 81",
+        "email": "zeruben.rz@gmail.com"
+      },
+      {
+        "numero": "10",
+        "nom": "NCHOTTOU M. Ahmed",
+        "numero_agrement": "A050",
+        "cabinet": "NIS Sarl",
+        "adresse": "BP 3726 Messa Yaoundé",
+        "contact": "674 74 11 61/620721192",
+        "email": "ceo@nissarl.com"
+      },
+      {
+        "numero": "11",
+        "nom": "NGOUAJIO MEZATIO Louis Ramel",
+        "numero_agrement": "A051",
+        "cabinet": "NGOMEZ ENGINEERING Sarl",
+        "adresse": "BP: 5520 Yaoundé",
+        "contact": "670142970/697862315",
+        "email": "louisramel.ngouajio@gmail.com"
+      },
+      {
+        "numero": "12",
+        "nom": "NGATCHOUA Pierre Barthélémy",
+        "numero_agrement": "A052",
+        "cabinet": "LOTIRMAX",
+        "adresse": "B.P 5316 Douala",
+        "contact": "670 94 20 30",
+        "email": "direction@lotirmax.com"
+      },
+      {
+        "numero": "13",
+        "nom": "KOUOGANG KOUAM Cyrille",
+        "numero_agrement": "A053",
+        "cabinet": "Geoterre SARL",
+        "adresse": "B.P: 25059 Douala",
+        "contact": "691 93 67 31",
+        "email": "cabinetgeoterre@gmail.com"
+      },
+      {
+        "numero": "14",
+        "nom": "Cab.ATANGANA Pierre Dieudonné (Nchottou M Ahmed Ai)",
+        "numero_agrement": "A054",
+        "cabinet": "GEOIDE SARL",
+        "adresse": "B.P. 4222 Yaoundé",
+        "contact": "693269116",
+        "email": "atanganapierre2006@yahoo.fr"
+      },
+      {
+        "numero": "15",
+        "nom": "OHANDJA ONANA Juste Prosper",
+        "numero_agrement": "A055",
+        "cabinet": "PROS ENGINEERING SARL",
+        "adresse": "B.P. 1431 Yaoundé",
+        "contact": "690 69 42 18/677 64 74 89",
+        "email": "justeohandja@gmail.com"
+      },
+      {
+        "numero": "16",
+        "nom": "TAH Georges AWAZI",
+        "numero_agrement": "A056",
+        "cabinet": "Cam Surveys Co Ltd",
+        "adresse": "Bamenda",
+        "contact": "677 26 88 41",
+        "email": "tahawazi@yahoo.com"
+      },
+      {
+        "numero": "17",
+        "nom": "KOUOH KOUOH Leonard",
+        "numero_agrement": "A057",
+        "cabinet": "GEOMAT-2000",
+        "adresse": "B.P. 1431 Yaoundé",
+        "contact": "699 38 06 91",
+        "email": "leonard_kouoh@yahoo.fr"
+      },
+      {
+        "numero": "18",
+        "nom": "MBOGNE Sylvain",
+        "numero_agrement": "A059",
+        "cabinet": "PPM TOPO",
+        "adresse": "Yaoundé",
+        "contact": "678 25 54 04",
+        "email": "mbosyl@yahoo.fr"
+      },
+      {
+        "numero": "19",
+        "nom": "Jerry Wylliam MANGELE",
+        "numero_agrement": "A061",
+        "cabinet": "CGEJM",
+        "adresse": "Bertoua",
+        "contact": "696254048",
+        "email": "cgejm2024@gmail.com"
+      },
+      {
+        "numero": "20",
+        "nom": "BOUNGO Louis Marie",
+        "numero_agrement": "A062",
+        "cabinet": "SATEC ENGINEERING SARL",
+        "adresse": "Yaoundé",
+        "contact": "677756682/696217725",
+        "email": "lmboungo@gmail.com"
+      },
+      {
+        "numero": "21",
+        "nom": "TCHOUANGMO NGANDON Armand Romual",
+        "numero_agrement": "A063",
+        "cabinet": "ART Engineering SARL",
+        "adresse": "Yaoundé",
+        "contact": "698003340",
+        "email": "atchouangmo@yahoo.fr"
+      },
+      {
+        "numero": "22",
+        "nom": "SIEWE Marc",
+        "numero_agrement": "A064",
+        "cabinet": "SIMA CORPORATION",
+        "adresse": "Douala",
+        "contact": "699 94 33 71",
+        "email": "marcsiewe@yahoo.fr"
+      },
+      {
+        "numero": "23",
+        "nom": "BEMBA LIMALEBA Mathurin Olivier",
+        "numero_agrement": "A065",
+        "cabinet": "Cabinet BEMBA TOPO",
+        "adresse": "Douala",
+        "contact": "695085966/675152253",
+        "email": "mathurinbembalimaleba@gmail.com"
+      },
+      {
+        "numero": "24",
+        "nom": "TCHANA BOPA Bertin Alain",
+        "numero_agrement": "A066",
+        "cabinet": "BTA SURVEY SARL",
+        "adresse": "Yaoundé",
+        "contact": "690050675/699097587",
+        "email": "tchanabopa@yahoo.fr"
+      },
+      {
+        "numero": "25",
+        "nom": "MBEL Célestin",
+        "numero_agrement": "A067",
+        "cabinet": "ETS SOYUZ GEO",
+        "adresse": "Bafia",
+        "contact": "659261054",
+        "email": "mbelcelestin@yahoo.com"
+      },
+      {
+        "numero": "26",
+        "nom": "NANA Bruno",
+        "numero_agrement": "A068",
+        "cabinet": "Nana Geomatics",
+        "adresse": "Douala",
+        "contact": "651594377",
+        "email": "bnana@nanageomatics.com"
+      },
+      {
+        "numero": "27",
+        "nom": "TCHOUKAH SOH Joseph",
+        "numero_agrement": "A069",
+        "cabinet": "SOH ENGINEERING",
+        "adresse": "Edea",
+        "contact": "679 44 96 71",
+        "email": "tchoukahjoseph@yahoo.fr"
+      },
+      {
+        "numero": "28",
+        "nom": "TACHEU DJOMO Arnaud",
+        "numero_agrement": "A070",
+        "cabinet": "ATGex Consulting",
+        "adresse": "Kribi",
+        "contact": "699006997/+32 465 73 21 57",
+        "email": "arnaud1490@gmail.com"
+      },
+      {
+        "numero": "29",
+        "nom": "NSIDZE KOUAGAING Ulrich Placide",
+        "numero_agrement": "A071",
+        "cabinet": "ALL4BUILD SARL",
+        "adresse": "Douala",
+        "contact": "692026376/+32 493 89 91 82",
+        "email": "nsidzed@yahoo.fr"
+      },
+      {
+        "numero": "30",
+        "nom": "FOTSA TSOPZE Muriel Rostand",
+        "numero_agrement": "A072",
+        "cabinet": "Geosurvey Engineering",
+        "adresse": "Maroua",
+        "contact": "672663895/656203226",
+        "email": "geosurvey29@gmail.com"
+      },
+      {
+        "numero": "31",
+        "nom": "TONFACK FOZEING Christian Claude",
+        "numero_agrement": "A073",
+        "cabinet": "SCP GLONAS Ltd",
+        "adresse": "Douala",
+        "contact": "693272193",
+        "email": "fozeing@gmail.com"
+      },
+      {
+        "numero": "32",
+        "nom": "KODJO BIAKETCHA Gilles Alex",
+        "numero_agrement": "A074",
+        "cabinet": "SCP GLONAS Ltd",
+        "adresse": "Douala",
+        "contact": "670 320 540",
+        "email": "gilleskodjo@yahoo.fr"
+      },
+      {
+        "numero": "33",
+        "nom": "KUEDONG Manje Phidas",
+        "numero_agrement": "A075",
+        "cabinet": "INNOVGEX Consulting",
+        "adresse": "Douala",
+        "contact": "696 138 995",
+        "email": "phidaskuedong@gmail.com"
+      },
+      {
+        "numero": "34",
+        "nom": "GNIMPIEBA ATONFACK Jacques Bertrand",
+        "numero_agrement": "A076",
+        "cabinet": "Intellect Corporation Solution",
+        "adresse": "Kribi",
+        "contact": "672 844 848",
+        "email": "gnimpiebaatonfackjb@gmail.com"
+      },
+      {
+        "numero": "35",
+        "nom": "KEMAYOU Frank Passy",
+        "numero_agrement": "A077",
+        "cabinet": "GEOMATECH",
+        "adresse": "Dibombari",
+        "contact": "699 327 466",
+        "email": "frankpassykemayou@gmail.com"
+      },
+      {
+        "numero": "36",
+        "nom": "TCHUISSE TCHOUJEN Micarel Charnel",
+        "numero_agrement": "A078",
+        "cabinet": "LIDAR ONE",
+        "adresse": "Ebolowa",
+        "contact": "698 787 902",
+        "email": "mtchuis@gmail.com"
+      },
+      {
+        "numero": "37",
+        "nom": "TOUKAP DJOMO Franck Pierre",
+        "numero_agrement": "A079",
+        "cabinet": "Geo Bati 3.0",
+        "adresse": "Dibamba",
+        "contact": "655030815",
+        "email": "pierretoukap@yahoo.fr"
+      },
+      {
+        "numero": "38",
+        "nom": "CHRYS FOTSO Venceslas",
+        "numero_agrement": "A080",
+        "cabinet": "PEEV SARL",
+        "adresse": "Kribi",
+        "contact": "696 088 990",
+        "email": "peevcm@gmail.com"
+      },
+      {
+        "numero": "39",
+        "nom": "LEMBE Dezalabert Daniel",
+        "numero_agrement": "A081",
+        "cabinet": "Cabinet LEMBE",
+        "adresse": "Douala",
+        "contact": "699 60 46 31",
+        "email": "cabinetlembe@gmail.com"
+      },
+      {
+        "numero": "40",
+        "nom": "CHENDJOU NGNIENASSI Stephane",
+        "numero_agrement": "A082",
+        "cabinet": "CHES ENGINEERING",
+        "adresse": "Douala",
+        "contact": "695 084 532",
+        "email": "chendjoustephane71@gmail.com"
+      }
+    ],
+    "geometres_experts_honoraires": [
+      {
+        "numero": "1",
+        "nom": "OMBOUDOU NDJINA Fabien",
+        "numero_agrement": "A028",
+        "adresse": "B.P. 471 Dla",
+        "contact": "677 75 20 36",
+        "email": "7.engineering@gmail.com"
+      },
+      {
+        "numero": "2",
+        "nom": "NJIKI David",
+        "numero_agrement": "A032",
+        "adresse": "B.P. 30610 Ydé",
+        "contact": "675 08 95 91",
+        "email": ""
+      },
+      {
+        "numero": "3",
+        "nom": "NGASSA KOUYNOU Joseph",
+        "numero_agrement": "A036",
+        "adresse": "B.P. 25187 Ydé",
+        "contact": "677 75 97 73",
+        "email": "Cameroon_survey@hotmail.com"
+      },
+      {
+        "numero": "4",
+        "nom": "MBOGLE Jacques",
+        "numero_agrement": "A058",
+        "adresse": "Bp 646 Edea",
+        "contact": "699 93 34 39",
+        "email": "jmbogle2007@yahoo.fr"
+      },
+      {
+        "numero": "5",
+        "nom": "KEWE Joseph",
+        "numero_agrement": "A034",
+        "adresse": "B.P. 7810 Ydé",
+        "contact": "699 91 91 86",
+        "email": "Joskewe@yahoo.fr"
+      }
+    ],
+    "geometres_experts": [
+      {
+        "numero": "1",
+        "nom": "LEMOGO OUAMBAPO Thierry Luc",
+        "matricule": "B053",
+        "lieu_service": "MAETUR",
+        "adresse": "B.P. 1248 Yaoundé",
+        "contact": "697 63 59 35",
+        "email": "lemogothierry@yahoo.fr"
+      },
+      {
+        "numero": "2",
+        "nom": "KAFACK KENFACK Serge Bertrand",
+        "matricule": "B056",
+        "lieu_service": "SDC-MINDCAF/Nyong et So'o",
+        "adresse": "Mbalmayo",
+        "contact": "674 28 94 95",
+        "email": "skafack@gmail.com"
+      },
+      {
+        "numero": "3",
+        "nom": "EVAGA EYEBE Ghislain Wilfrid",
+        "matricule": "B057",
+        "lieu_service": "Mise en disponibilité",
+        "adresse": "Yaoundé",
+        "contact": "675 057 752",
+        "email": "gwilfridevaga@gmail.com"
+      },
+      {
+        "numero": "4",
+        "nom": "DJIZO TATSAKENG Eric",
+        "matricule": "B058",
+        "lieu_service": "SDC-MINDCAF/Nyong et So'o",
+        "adresse": "Mbalmayo",
+        "contact": "677 81 82 45",
+        "email": "edjizo@yahoo.fr"
+      },
+      {
+        "numero": "5",
+        "nom": "MEKONG Martial Didier",
+        "matricule": "B059",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "675 97 88 94",
+        "email": "didier_mendy@yahoo.fr"
+      },
+      {
+        "numero": "6",
+        "nom": "PAWA FOHOM Rodrigue",
+        "matricule": "B060",
+        "lieu_service": "SRC-MINDCAF/Littoral",
+        "adresse": "Douala",
+        "contact": "670119097/699604235",
+        "email": "wapuslevirus95@gmail.com"
+      },
+      {
+        "numero": "7",
+        "nom": "NTSAM Rodrigue",
+        "matricule": "B061",
+        "lieu_service": "SDC-MINDCAF/Boumba et Ngoko",
+        "adresse": "Yokadouma",
+        "contact": "694 39 01 57",
+        "email": "ntsam5@yahoo.com"
+      },
+      {
+        "numero": "8",
+        "nom": "TCHUWANG TCHAKOUTIO Arsène",
+        "matricule": "B062",
+        "lieu_service": "SDC-MINDCAF/Wouri",
+        "adresse": "Douala",
+        "contact": "675 43 35 19",
+        "email": "arsenezz@yahoo.com"
+      },
+      {
+        "numero": "9",
+        "nom": "MOUSSENI Guy Anderson",
+        "matricule": "B063",
+        "lieu_service": "DAG/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "674 34 82 80",
+        "email": "mousgander@yahoo.fr"
+      },
+      {
+        "numero": "10",
+        "nom": "MEFFO BOGNING Irene Epse LEUTOU",
+        "matricule": "B064",
+        "lieu_service": "SDC-MINDCAF/Mfoundi",
+        "adresse": "Yaoundé",
+        "contact": "674830752/697300035",
+        "email": "meffoirene2008@yahoo.fr"
+      },
+      {
+        "numero": "11",
+        "nom": "MPON Agnès Christelle Epse KEDE",
+        "matricule": "B065",
+        "lieu_service": "SRP-MINDCAF/Centre",
+        "adresse": "Yaoundé",
+        "contact": "651 12 34 01",
+        "email": "agnesmpon@yahoo.com"
+      },
+      {
+        "numero": "12",
+        "nom": "NDAMUKONG MESSIE Cliff",
+        "matricule": "B071",
+        "lieu_service": "SDC-MINDCAF/Mezam",
+        "adresse": "Bamenda",
+        "contact": "679 28 49 36",
+        "email": "ndamukongcliff2@gmail.com"
+      },
+      {
+        "numero": "13",
+        "nom": "MANWOUE Gaspard",
+        "matricule": "B072",
+        "lieu_service": "SDC-MINDCAF/Mifi",
+        "adresse": "Bafoussam",
+        "contact": "679 77 20 36",
+        "email": "gaspard.manwoue@gmail.com"
+      },
+      {
+        "numero": "14",
+        "nom": "MOUYENGA MBWANGUE Pierre",
+        "matricule": "B073",
+        "lieu_service": "SRC-MINDCAF/Est",
+        "adresse": "Bertoua",
+        "contact": "675 86 61 12",
+        "email": "pierremouyenga@yahoo.fr"
+      },
+      {
+        "numero": "15",
+        "nom": "IDJOLOM ONGOLO Cunegonde",
+        "matricule": "B077",
+        "lieu_service": "DD-MINDCAF/Kadey",
+        "adresse": "Batouri",
+        "contact": "699320200",
+        "email": "idjolom@yahoo.fr"
+      },
+      {
+        "numero": "16",
+        "nom": "BOMONO BESSILIKI Luc Roi",
+        "matricule": "B081",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "673715245",
+        "email": "lucbomono@gmail.com"
+      },
+      {
+        "numero": "17",
+        "nom": "NYUYKI Daniel",
+        "matricule": "B082",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "679 63 48 40",
+        "email": "nydal2000@yahoo.co.uk"
+      },
+      {
+        "numero": "18",
+        "nom": "DJONFANBE Joël",
+        "matricule": "B083",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "677677812",
+        "email": "djonfanbe@yahoo.fr"
+      },
+      {
+        "numero": "19",
+        "nom": "NGWEM Maurice Emmanuel",
+        "matricule": "B084",
+        "lieu_service": "DAG/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "674 91 89 64",
+        "email": "ngwemmaurice@gmail.com"
+      },
+      {
+        "numero": "20",
+        "nom": "TSAFACK LAPNET Armel",
+        "matricule": "B085",
+        "lieu_service": "SDC-MINDCAF/Mfoundi",
+        "adresse": "Yaoundé",
+        "contact": "674 73 31 41",
+        "email": "tsafackarmel3@gmail.com"
+      },
+      {
+        "numero": "21",
+        "nom": "WAMEN NDJEUTCHAM Hervé",
+        "matricule": "B086",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "677465812",
+        "email": "wamen98@gmail.com"
+      },
+      {
+        "numero": "22",
+        "nom": "DJOUPE FOKA Marlise",
+        "matricule": "B087",
+        "lieu_service": "SRC-MINDCAF/Centre",
+        "adresse": "Yaoundé",
+        "contact": "676 39 38 31",
+        "email": "dilomarly27@gmail.com"
+      },
+      {
+        "numero": "23",
+        "nom": "DJAPEN NKAMGA Gaëtan",
+        "matricule": "B088",
+        "lieu_service": "SDC-MINDCAF/Lekié",
+        "adresse": "Monatélé",
+        "contact": "674 02 04 10",
+        "email": "gaetandjapen007@yahoo.fr"
+      },
+      {
+        "numero": "24",
+        "nom": "KENMOGNE TINDJOU Monique Krystel Epse TAGUETCHUEN",
+        "matricule": "B089",
+        "lieu_service": "SDC-MINDCAF/Mifi",
+        "adresse": "Bafoussam",
+        "contact": "658888480",
+        "email": "taguetchuenkrystel@gmail.com"
+      },
+      {
+        "numero": "25",
+        "nom": "BISSA Lucienne Margaret",
+        "matricule": "B090",
+        "lieu_service": "SRC MINDCAF/Centre",
+        "adresse": "Yaoundé",
+        "contact": "679 90 24 21",
+        "email": "bissa_lucienne@yahoo.fr"
+      },
+      {
+        "numero": "26",
+        "nom": "TSAFACK MANETSA Dorette",
+        "matricule": "B098",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "677 44 85 32",
+        "email": "tsafackdorette@yahoo.fr"
+      },
+      {
+        "numero": "27",
+        "nom": "MBAZO'O MEVA Steve Arnaud",
+        "matricule": "B095",
+        "lieu_service": "SRC-MINDCAF/Centre",
+        "adresse": "Yaoundé",
+        "contact": "696219628",
+        "email": "mbazoomeva@gmail.com"
+      },
+      {
+        "numero": "28",
+        "nom": "NNANGA Nadine Gabrielle epse TANGUE",
+        "matricule": "B099",
+        "lieu_service": "SDC-MINDCAF/Mefou et Afamba",
+        "adresse": "Mfou",
+        "contact": "675 22 22 75",
+        "email": "gabrielle.nnanga@yahoo.fr"
+      },
+      {
+        "numero": "29",
+        "nom": "ZHELL EPANDO Jerry Josimar",
+        "matricule": "B100",
+        "lieu_service": "PAD",
+        "adresse": "Douala",
+        "contact": "652 63 66 02",
+        "email": "jerryepando@yahoo.fr"
+      },
+      {
+        "numero": "30",
+        "nom": "MAGOUH NAOUSSI Carine Epse DIFFO",
+        "matricule": "B103",
+        "lieu_service": "SDC-MINDCAF/Mefou & Akono",
+        "adresse": "Ngoumou",
+        "contact": "678 08 96 72",
+        "email": "magouh_naoussicarine@yahoo.fr"
+      },
+      {
+        "numero": "31",
+        "nom": "CHE Clement MUMBARI",
+        "matricule": "B105",
+        "lieu_service": "SDC-MINDCAF/Ndian",
+        "adresse": "Mundemba",
+        "contact": "679 75 18 01",
+        "email": "che_cle2004@yahoo.com"
+      },
+      {
+        "numero": "32",
+        "nom": "YEME Julienne Clarisse",
+        "matricule": "B107",
+        "lieu_service": "CUD",
+        "adresse": "Douala",
+        "contact": "691241947",
+        "email": "yemejulienneclarisse1@gmail.com"
+      },
+      {
+        "numero": "33",
+        "nom": "GUEGUENG MONDE Fidéle",
+        "matricule": "B108",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "696680590",
+        "email": "gueguengmonde@yahoo.fr"
+      },
+      {
+        "numero": "34",
+        "nom": "FOTSING NZOGNE Guy Rostand",
+        "matricule": "B109",
+        "lieu_service": "SDC-MINDCAF/Mifi",
+        "adresse": "Bafoussam",
+        "contact": "699253606",
+        "email": "guyfotsing9@yahoo.fr"
+      },
+      {
+        "numero": "35",
+        "nom": "DONGMO KAMDOUM Georges William",
+        "matricule": "B110",
+        "lieu_service": "SDC-MINDCAF/Moungo",
+        "adresse": "Nkongsamba",
+        "contact": "671356527",
+        "email": "georges.dongmo@gmail.com"
+      },
+      {
+        "numero": "36",
+        "nom": "MESSANGA ESSAMA Patrick Ghislain",
+        "matricule": "B114",
+        "lieu_service": "SDC-MINDCAF/Bamboutos",
+        "adresse": "Mbouda",
+        "contact": "691 53 00 78",
+        "email": "patghimess@yahoo.fr"
+      },
+      {
+        "numero": "37",
+        "nom": "DJAGBA Dari",
+        "matricule": "B116",
+        "lieu_service": "SDAF-MINDCAF/Mbere",
+        "adresse": "Meiganga",
+        "contact": "678 73 75 33",
+        "email": "dari.djagba@gmail.com"
+      },
+      {
+        "numero": "38",
+        "nom": "FOFACK TEBON Gaspary Christopher",
+        "matricule": "B117",
+        "lieu_service": "DD-MINDEVEL/Ngoketunjia",
+        "adresse": "Ndop",
+        "contact": "694669559",
+        "email": "ftgchrist@yahoo.fr"
+      },
+      {
+        "numero": "39",
+        "nom": "MBIANDA NGEUMEN A. Epse EKEU",
+        "matricule": "B119",
+        "lieu_service": "SRC-MINDCAF/Centre",
+        "adresse": "Yaoundé",
+        "contact": "677 77 82 50",
+        "email": "ariellembianda872@gmail.com"
+      },
+      {
+        "numero": "40",
+        "nom": "BIYA NYAMYA Christian",
+        "matricule": "B120",
+        "lieu_service": "SRC-MINDCAF/Litorral",
+        "adresse": "Douala",
+        "contact": "672 121 155",
+        "email": "cbiya82@gmail.com"
+      },
+      {
+        "numero": "41",
+        "nom": "MBENMUN NGUSAMA Claude Prospère",
+        "matricule": "B121",
+        "lieu_service": "MAETUR",
+        "adresse": "Yaoundé",
+        "contact": "697031929",
+        "email": "ngusamamcp@gmail.com"
+      },
+      {
+        "numero": "42",
+        "nom": "TOUOFO Gutemberg",
+        "matricule": "B123",
+        "lieu_service": "SDC-MINDCAF/Menoua",
+        "adresse": "Dschang",
+        "contact": "677 83 08 98",
+        "email": "touofo@yahoo.fr"
+      },
+      {
+        "numero": "43",
+        "nom": "POLLA KAMELA Armand Joël",
+        "matricule": "B124",
+        "lieu_service": "DD-MINDCAF/Mefou et Afamba",
+        "adresse": "Mfou",
+        "contact": "677 42 42 30",
+        "email": "pollajoel88@yahoo.fr"
+      },
+      {
+        "numero": "44",
+        "nom": "ABINA David Martial",
+        "matricule": "B125",
+        "lieu_service": "SDC-MINDCAF/Mefou et Akono",
+        "adresse": "Ngoumou",
+        "contact": "694 92 54 20",
+        "email": "abinadaserge@yahoo.fr"
+      },
+      {
+        "numero": "45",
+        "nom": "NKEMCHIA Fritz TENGHOMOH",
+        "matricule": "B128",
+        "lieu_service": "DD-MINDCAF/Mayo-Kani",
+        "adresse": "Kaélé",
+        "contact": "674 26 79 35",
+        "email": "fritz2002n@yahoo.com"
+      },
+      {
+        "numero": "46",
+        "nom": "ANJOH TIBUK KAYOU Romeal Jacques",
+        "matricule": "B130",
+        "lieu_service": "SRD-MINDCAF/Littoral",
+        "adresse": "Douala",
+        "contact": "699 41 69 29",
+        "email": "Anjoh_romuald@gmail.com"
+      },
+      {
+        "numero": "47",
+        "nom": "FAN-NDOUM Fabien",
+        "matricule": "B131",
+        "lieu_service": "SDC-MINDCAF/Mayo Danay",
+        "adresse": "Yagoua",
+        "contact": "696837942",
+        "email": "fanndoumfabine5@gmail.com"
+      },
+      {
+        "numero": "48",
+        "nom": "ALI HASSANA",
+        "matricule": "B132",
+        "lieu_service": "SRC-MINDCAF/Nord",
+        "adresse": "Garoua",
+        "contact": "691275519",
+        "email": "alihassanaali61@gmail.com"
+      },
+      {
+        "numero": "49",
+        "nom": "TCHATAGNE TCHINDA Achille",
+        "matricule": "B134",
+        "lieu_service": "SDC-MINDCAF/Mefou & Akono",
+        "adresse": "Ngoumou",
+        "contact": "674 23 58 20",
+        "email": "achillo_tchat@yahoo.fr"
+      },
+      {
+        "numero": "50",
+        "nom": "AMOUGOU Enrique Griffon",
+        "matricule": "B135",
+        "lieu_service": "DR MINDCAF/Littoral",
+        "adresse": "Douala",
+        "contact": "699628090",
+        "email": ""
+      },
+      {
+        "numero": "51",
+        "nom": "TOUGNINE Philibert Roméo",
+        "matricule": "B136",
+        "lieu_service": "SDC-MINDCAF/Wouri",
+        "adresse": "Douala",
+        "contact": "652 92 84 86",
+        "email": "rtougnine@yahoo.fr"
+      },
+      {
+        "numero": "52",
+        "nom": "NDJEMBA Alain Claude",
+        "matricule": "B137",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "677 46 17 45",
+        "email": "ndjemba2002@yahoo.fr"
+      },
+      {
+        "numero": "53",
+        "nom": "OUSMANOU AMINATOU Epse ALI",
+        "matricule": "B138",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "677 24 21 70",
+        "email": "ousaminatou@yahoo.fr"
+      },
+      {
+        "numero": "54",
+        "nom": "TSANGA Jean Achille",
+        "matricule": "B139",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "677 61 45 50",
+        "email": ""
+      },
+      {
+        "numero": "55",
+        "nom": "TCHITOUO NTENZOU Fanny Stella",
+        "matricule": "B143",
+        "lieu_service": "SGDS International",
+        "adresse": "Evry-Courcouronnes, France",
+        "contact": "+33 6 69 65 66 98",
+        "email": "fanny.tchitouo@yahoo.fr"
+      },
+      {
+        "numero": "56",
+        "nom": "GAHEME ZOUMTEGAI Aminatou Épse KALDAOUSSA",
+        "matricule": "B148",
+        "lieu_service": "MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "675364380",
+        "email": "adelekalda@gmail.com"
+      },
+      {
+        "numero": "57",
+        "nom": "ASANJI Laurence",
+        "matricule": "B150",
+        "lieu_service": "SRC-Litorral/MINDCAF",
+        "adresse": "Douala",
+        "contact": "677155265",
+        "email": "djsanj316k@yahoo.com"
+      },
+      {
+        "numero": "58",
+        "nom": "FRANKLIN NKE FOMELACK",
+        "matricule": "B151",
+        "lieu_service": "SDC-MINDCAF/Fako",
+        "adresse": "Limbe",
+        "contact": "677427089",
+        "email": "frankfomelack@hotmail.com"
+      },
+      {
+        "numero": "59",
+        "nom": "DONFACK TEMATIO Blanchard",
+        "matricule": "B152",
+        "lieu_service": "SDC-MINDCAF/Sanaga Maritime",
+        "adresse": "Edéa",
+        "contact": "676407387",
+        "email": "blantematio@gmail.com"
+      },
+      {
+        "numero": "60",
+        "nom": "NANA Oumarou",
+        "matricule": "B155",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "675499192",
+        "email": "oumarou456@gmail.com"
+      },
+      {
+        "numero": "61",
+        "nom": "PEKWANG Ghislain PUWAKE",
+        "matricule": "B156",
+        "lieu_service": "SDC-MINDCAF/Wouri",
+        "adresse": "Douala",
+        "contact": "670347217",
+        "email": "puwake502@yahoo.fr"
+      },
+      {
+        "numero": "62",
+        "nom": "ABOUDI ESSAMA Salomé",
+        "matricule": "B158",
+        "lieu_service": "SDC-MINDCAF/Mfoundi",
+        "adresse": "Yaoundé",
+        "contact": "679491838",
+        "email": "aboudinadege5@gmail.com"
+      },
+      {
+        "numero": "63",
+        "nom": "BELIBI ATEBA Pétronille Mathilde",
+        "matricule": "B161",
+        "lieu_service": "DETROA/MINTP",
+        "adresse": "Yaoundé",
+        "contact": "674961478",
+        "email": "belibi_pro2017@yahoo.fr"
+      },
+      {
+        "numero": "64",
+        "nom": "WOTCHAP Jean Simplice",
+        "matricule": "B162",
+        "lieu_service": "SDC-MINDCAF/Lekié",
+        "adresse": "Monatélé",
+        "contact": "675004804",
+        "email": "w5plice@gmail.com"
+      },
+      {
+        "numero": "65",
+        "nom": "Emile Magloire NGUIAMBA BOPFOURE",
+        "matricule": "B163",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "696851754",
+        "email": "emile.nguiamba2@gmail.com"
+      },
+      {
+        "numero": "66",
+        "nom": "METOUAM BITOM Jules-César",
+        "matricule": "B168",
+        "lieu_service": "PAD",
+        "adresse": "Douala",
+        "contact": "675226713",
+        "email": "mbjc2017@gmail.com"
+      },
+      {
+        "numero": "67",
+        "nom": "TEMGOUA DONFACK Francois Hermann",
+        "matricule": "B171",
+        "lieu_service": "COGEC Sarl",
+        "adresse": "Yaoundé",
+        "contact": "697708379",
+        "email": "wufranc@gmail.com"
+      },
+      {
+        "numero": "68",
+        "nom": "NSONGAN GABRIEL RODRIGUE",
+        "matricule": "B172",
+        "lieu_service": "DD-MINDCAF/Mifi",
+        "adresse": "Bafoussam",
+        "contact": "672332915",
+        "email": "rodrigue6962@gmail.com"
+      },
+      {
+        "numero": "69",
+        "nom": "TCHIPGANG TIGANG Ghislain",
+        "matricule": "B173",
+        "lieu_service": "",
+        "adresse": "Yaoundé",
+        "contact": "677304467",
+        "email": "ttghislain@gmail.com"
+      },
+      {
+        "numero": "70",
+        "nom": "GOUFAN A DONG Ruth Liliane",
+        "matricule": "B174",
+        "lieu_service": "SDC-MINDCAF/Wouri",
+        "adresse": "Douala",
+        "contact": "690400187",
+        "email": "lilianegoufan81@gmail.com"
+      },
+      {
+        "numero": "71",
+        "nom": "TCHOKOUAHA WONTCHEU Herve Joel",
+        "matricule": "B176",
+        "lieu_service": "Cabinet Ze Ruben",
+        "adresse": "Yaoundé",
+        "contact": "696419494",
+        "email": "tcjoel3@gmail.com"
+      },
+      {
+        "numero": "72",
+        "nom": "BIDIAS ANOK Ange Parfait",
+        "matricule": "B177",
+        "lieu_service": "DAG/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "677242764",
+        "email": "bidiasangeparfait@gmail.com"
+      },
+      {
+        "numero": "73",
+        "nom": "GUIDO MBELLA David",
+        "matricule": "B178",
+        "lieu_service": "CUD",
+        "adresse": "Douala",
+        "contact": "696303208",
+        "email": "davidguidiombella@gmail.com"
+      },
+      {
+        "numero": "74",
+        "nom": "MEJIOKEU ALEX Raphael",
+        "matricule": "B179",
+        "lieu_service": "Lycee Technique Bilingue de Kribi",
+        "adresse": "Kribi",
+        "contact": "694745097",
+        "email": "mejiokeuraphael@yahoo.fr"
+      },
+      {
+        "numero": "75",
+        "nom": "NGUESSI POKAM Aubin",
+        "matricule": "B180",
+        "lieu_service": "SDC-MINDCAF/Mefou & Afamba",
+        "adresse": "Mfou",
+        "contact": "698 290 355",
+        "email": "aubinpokaam@ymail.com"
+      },
+      {
+        "numero": "76",
+        "nom": "LAKDJOLBE Benjamin",
+        "matricule": "B184",
+        "lieu_service": "SDC-MINDCAF/Lekie",
+        "adresse": "Monatéle",
+        "contact": "694 281 266",
+        "email": "blakdjolbe@yahoo.fr"
+      },
+      {
+        "numero": "77",
+        "nom": "NZESSEU TCHOUNANG Bruno Wilfried",
+        "matricule": "B185",
+        "lieu_service": "Geoprocess",
+        "adresse": "Yaoundé",
+        "contact": "697798629",
+        "email": "nzesseubruno@gmail.com"
+      },
+      {
+        "numero": "78",
+        "nom": "NKAMGA NKAMGA JOEL",
+        "matricule": "B186",
+        "lieu_service": "",
+        "adresse": "Yaounde",
+        "contact": "672588025",
+        "email": "joelnkamga@gmail.com"
+      },
+      {
+        "numero": "79",
+        "nom": "DOUNGMO WAKEM YANNICK ARTHUR",
+        "matricule": "B187",
+        "lieu_service": "Organisation Mondiale de la Santé",
+        "adresse": "Brazzaville, Congo",
+        "contact": "242055967071",
+        "email": "yannickdoungmo@gmail.com"
+      },
+      {
+        "numero": "80",
+        "nom": "CHEFOR YMELE DEMEVENG Derrick",
+        "matricule": "B188",
+        "lieu_service": "UNFPA",
+        "adresse": "Nairobi, Kenya",
+        "contact": "695900764",
+        "email": "demeveng@gmail.com"
+      },
+      {
+        "numero": "81",
+        "nom": "FOTSO CHATUE DEYRIS Blaise",
+        "matricule": "B189",
+        "lieu_service": "SDC-MINDCAF/Mfoundi",
+        "adresse": "Yaoundé",
+        "contact": "671 244 507",
+        "email": "blaisefotso21@gmail.com"
+      },
+      {
+        "numero": "82",
+        "nom": "ATANGANA Jacques Landry",
+        "matricule": "B190",
+        "lieu_service": "SIC",
+        "adresse": "Yaoundé",
+        "contact": "694 250 196",
+        "email": "atangana1991@gmail.com"
+      },
+      {
+        "numero": "83",
+        "nom": "ATANGA AYANGMA Eric Bertrand",
+        "matricule": "B191",
+        "lieu_service": "ESTIA SYNERGIE",
+        "adresse": "Douala",
+        "contact": "698 062 866",
+        "email": "eatanga237@gmail.com"
+      },
+      {
+        "numero": "84",
+        "nom": "SAMOUBEU KOUAKAM ALAIN",
+        "matricule": "B192",
+        "lieu_service": "PROS Engineering",
+        "adresse": "Yaounde",
+        "contact": "696 231 156",
+        "email": "alainsamoubeu@yahoo.fr"
+      },
+      {
+        "numero": "85",
+        "nom": "MAFFOUO Ulrich TCHOUANWO",
+        "matricule": "B194",
+        "lieu_service": "Le Rois des Chantiers (LRC)",
+        "adresse": "Libreville, Gabon",
+        "contact": "693 177 693",
+        "email": "ulrichnakamura@gmail.com"
+      },
+      {
+        "numero": "86",
+        "nom": "KENNE NZOYIM Martinien",
+        "matricule": "B196",
+        "lieu_service": "NdF Contractors",
+        "adresse": "Dibamba",
+        "contact": "670 308 388",
+        "email": "knzoyim@outlook.com"
+      },
+      {
+        "numero": "87",
+        "nom": "NDAME MONGO Emile Cedric",
+        "matricule": "B198",
+        "lieu_service": "GEOTOP",
+        "adresse": "Cotonou, Benin",
+        "contact": "694987987/674114880",
+        "email": "mongoemile@gmail.com"
+      },
+      {
+        "numero": "88",
+        "nom": "ETAME EKOBE Charles Martial",
+        "matricule": "B197",
+        "lieu_service": "INGEO PROJECT",
+        "adresse": "Yaoundé",
+        "contact": "697 202 928",
+        "email": "martial.etame32@yahoo.fr"
+      },
+      {
+        "numero": "89",
+        "nom": "TCHOUNDJA BANGYA Suzanne Jaurelle",
+        "matricule": "B199",
+        "lieu_service": "GLOBAL MAP LUMIA",
+        "adresse": "Yaoundé",
+        "contact": "691 160 610",
+        "email": "jaurelle.bangya@gml-co.com"
+      },
+      {
+        "numero": "90",
+        "nom": "MBOH MANYO Samuel OBEN",
+        "matricule": "B200",
+        "lieu_service": "SRC-MINDCAF/Centre",
+        "adresse": "Yaoundé",
+        "contact": "698 689 113",
+        "email": "mbohsamuel@yahoo.com"
+      },
+      {
+        "numero": "91",
+        "nom": "ESSELEM NGANGUE Maximillien",
+        "matricule": "B203",
+        "lieu_service": "Alpha Engineering",
+        "adresse": "Yaounde",
+        "contact": "694 879 365",
+        "email": "esselemngangue@yahoo.fr"
+      },
+      {
+        "numero": "92",
+        "nom": "NJIKE NGASSAM Francis",
+        "matricule": "B204",
+        "lieu_service": "SRC-MINDCAF/Ouest",
+        "adresse": "Bafoussam",
+        "contact": "675 179 326",
+        "email": "frangassam2014@gmail.com"
+      },
+      {
+        "numero": "93",
+        "nom": "SUHAZEMO PROMBO Mical Epse PENKA",
+        "matricule": "B206",
+        "lieu_service": "CEGELEC Cameroun",
+        "adresse": "Bertoua",
+        "contact": "678 317 942",
+        "email": "michalprombo@gmail.com"
+      },
+      {
+        "numero": "94",
+        "nom": "AYAMBA TAKU Raoul",
+        "matricule": "B207",
+        "lieu_service": "DDMI/MINDEF",
+        "adresse": "Yaoundé",
+        "contact": "677 961 164",
+        "email": "ayambatakuraoul@yahoo.com"
+      },
+      {
+        "numero": "95",
+        "nom": "DONGMO WAMSA Paul Kevin",
+        "matricule": "B208",
+        "lieu_service": "KWL",
+        "adresse": "Yaoundé",
+        "contact": "656553397",
+        "email": "Kevin.paul43@yahoo.fr"
+      },
+      {
+        "numero": "96",
+        "nom": "MEYO MOVIRAGNO Payrick",
+        "matricule": "B210",
+        "lieu_service": "SDC-MINDCAF/Mfoundi",
+        "adresse": "Yaoundé",
+        "contact": "697570054",
+        "email": "pmovi@yahoo.com"
+      },
+      {
+        "numero": "97",
+        "nom": "DOUANLA Fadel",
+        "matricule": "B211",
+        "lieu_service": "SDC-MINDCAF/Mefou et Afamba",
+        "adresse": "Mfou",
+        "contact": "690020653",
+        "email": "fadeldouanla@gmail.com"
+      },
+      {
+        "numero": "98",
+        "nom": "BELINGA Pie-Roger",
+        "matricule": "B212",
+        "lieu_service": "SDC-MINDCAF/Mfoundi",
+        "adresse": "Yaoundé",
+        "contact": "693462762",
+        "email": "pie88paolo@yahoo.fr"
+      },
+      {
+        "numero": "99",
+        "nom": "MEZAAGUE Patrick Boris",
+        "matricule": "B215",
+        "lieu_service": "Cetic d'Ekali/MINSEC",
+        "adresse": "Mfou",
+        "contact": "694151794",
+        "email": "patrickmezaague@yahoo.com"
+      },
+      {
+        "numero": "100",
+        "nom": "PAMEN DAMTSE Aristide Fabrice",
+        "matricule": "B216",
+        "lieu_service": "SDC-MINDCAF/Lekie",
+        "adresse": "Monatele",
+        "contact": "690020653",
+        "email": "arispamen@gmail.com"
+      },
+      {
+        "numero": "101",
+        "nom": "MOFOR Oliver NGU",
+        "matricule": "B218",
+        "lieu_service": "GML",
+        "adresse": "Nkolafamba",
+        "contact": "674567669 (whatsapp)",
+        "email": "mofor_oliver.n@yahoo.com"
+      },
+      {
+        "numero": "102",
+        "nom": "AYISSI Issemou Myriam Jasmine",
+        "matricule": "B217",
+        "lieu_service": "Pizarroti",
+        "adresse": "Yaoundé",
+        "contact": "655927892",
+        "email": "jasmine.ayissi@yahoo.fr"
+      },
+      {
+        "numero": "103",
+        "nom": "KOUAKA KOUAKA Hermandes Junior",
+        "matricule": "B219",
+        "lieu_service": "SDC-MINDCAF/Ocean",
+        "adresse": "Kribi",
+        "contact": "696684789",
+        "email": "hermandeskouaka@gmail.com"
+      },
+      {
+        "numero": "104",
+        "nom": "DONGMO KALEFACK Patrick",
+        "matricule": "B220",
+        "lieu_service": "SDC-MINDCAF/Moungo",
+        "adresse": "Nkongsamba",
+        "contact": "655913165",
+        "email": "patrickdogmok@yahoo.com"
+      },
+      {
+        "numero": "105",
+        "nom": "MOUNGUE Prince BAHFOKUM",
+        "matricule": "B221",
+        "lieu_service": "CABINET PROS ENGINEERING",
+        "adresse": "Yaoundé",
+        "contact": "677375909/690039133 (MTN WhatsApp)",
+        "email": "magicprince346@gmail.com"
+      },
+      {
+        "numero": "106",
+        "nom": "NJAHAN BIANDA Rolande Tatiana",
+        "matricule": "B222",
+        "lieu_service": "TRETO'O ENGINEERING Sarl",
+        "adresse": "Yaoundé",
+        "contact": "696091358",
+        "email": "tatianabianda@gmail.com"
+      },
+      {
+        "numero": "107",
+        "nom": "MOUDIO MPONO Danielle Laure",
+        "matricule": "B223",
+        "lieu_service": "SRC-MINDCAF/Centre",
+        "adresse": "Yaoundé",
+        "contact": "693815679",
+        "email": "mdaniellelaure@yahoo.fr"
+      },
+      {
+        "numero": "108",
+        "nom": "KAMGANG Roger",
+        "matricule": "B224",
+        "lieu_service": "CFHEC",
+        "adresse": "Yaoundé",
+        "contact": "699685416",
+        "email": "rogerkamgang@yahoo.fr"
+      },
+      {
+        "numero": "109",
+        "nom": "TEMGOUA KENFACK Roussel",
+        "matricule": "B225",
+        "lieu_service": "Lycee de Lobo/MINSEC",
+        "adresse": "Lobo",
+        "contact": "676012141",
+        "email": "temgouaroussel@gmail.com"
+      },
+      {
+        "numero": "110",
+        "nom": "EMOLE MAMBO Kassandra",
+        "matricule": "B226",
+        "lieu_service": "MINFOPRA",
+        "adresse": "Yaoundé",
+        "contact": "699201686",
+        "email": "kassandraemole01@gmail.com"
+      },
+      {
+        "numero": "111",
+        "nom": "NGOUANDJE Arnaud",
+        "matricule": "B227",
+        "lieu_service": "Pros Engineering",
+        "adresse": "Yaoundé",
+        "contact": "674129247",
+        "email": "ngouandje@gmail.com"
+      },
+      {
+        "numero": "112",
+        "nom": "NGAMENI DJIMENI Pierre Jordan",
+        "matricule": "B228",
+        "lieu_service": "Land Management and Computing Services (LM&CS)",
+        "adresse": "Yaoundé",
+        "contact": "696885736",
+        "email": "ngamenipierremoi@gmail.com"
+      },
+      {
+        "numero": "113",
+        "nom": "BELIBI Benoit Roger",
+        "matricule": "B229",
+        "lieu_service": "PROS ENGINEERING",
+        "adresse": "Yaoundé",
+        "contact": "695654721",
+        "email": "benoitrogerb@gmail.com"
+      },
+      {
+        "numero": "114",
+        "nom": "TENGUIA TENGUIA Vigny Jordan",
+        "matricule": "B230",
+        "lieu_service": "NGOMEZ",
+        "adresse": "Yaoundé",
+        "contact": "673918955",
+        "email": "vignyjordan130@gmail.com"
+      },
+      {
+        "numero": "115",
+        "nom": "TCHOTCHA FAH Yrving Rommel",
+        "matricule": "B231",
+        "lieu_service": "",
+        "adresse": "Yaoundé",
+        "contact": "696255169",
+        "email": "rommelfah@gmail.com"
+      },
+      {
+        "numero": "116",
+        "nom": "BALIABA ASSALA Eddy Patrick",
+        "matricule": "B232",
+        "lieu_service": "Cabinet NIS",
+        "adresse": "Yaoundé",
+        "contact": "(+237)699951247/654983239",
+        "email": "baliabaeddy1002@gmail.com"
+      },
+      {
+        "numero": "117",
+        "nom": "NDZE SUILABAYU Francis",
+        "matricule": "B233",
+        "lieu_service": "SATEC ENGINEERING SARL",
+        "adresse": "Douala",
+        "contact": "677485951",
+        "email": "francisndze31@gmail.com"
+      },
+      {
+        "numero": "118",
+        "nom": "TALLA Steve Rudich",
+        "matricule": "B234",
+        "lieu_service": "SGIC",
+        "adresse": "Yaoundé",
+        "contact": "678263238",
+        "email": "tallarudich@yahoo.fr"
+      },
+      {
+        "numero": "119",
+        "nom": "MBARGA MBARGA Tobie Camille",
+        "matricule": "B236",
+        "lieu_service": "Université d'Ebolowa/Enset",
+        "adresse": "Ebolowa",
+        "contact": "677526406/691175425",
+        "email": "mbarga2005@yahoo.fr"
+      },
+      {
+        "numero": "120",
+        "nom": "NTUEH MFETIE Salihou",
+        "matricule": "B237",
+        "lieu_service": "SCP GLONAS Ltd",
+        "adresse": "Douala",
+        "contact": "694308243",
+        "email": "salifntueh@yahoo.fr"
+      },
+      {
+        "numero": "121",
+        "nom": "JANVIER BOUOTO Gaëtan Frank",
+        "matricule": "B238",
+        "lieu_service": "HEVECAM",
+        "adresse": "Niété",
+        "contact": "697613451",
+        "email": "bouotojanvier@gmail.com"
+      },
+      {
+        "numero": "122",
+        "nom": "ATINE Vincent TABI",
+        "matricule": "B239",
+        "lieu_service": "DR/MINMAP Sud",
+        "adresse": "Ebolowa",
+        "contact": "69178480",
+        "email": "atometabivincent@gmail.com"
+      },
+      {
+        "numero": "123",
+        "nom": "TIBAM Jonas Hamadou",
+        "matricule": "B240",
+        "lieu_service": "Khayroual Group S.A",
+        "adresse": "Yaoundé",
+        "contact": "696811344",
+        "email": "jonastibam97@gmail.com"
+      },
+      {
+        "numero": "124",
+        "nom": "NGOUMOUN MACHE Franck Borel",
+        "matricule": "B241",
+        "lieu_service": "CETIC de Nkolbiyen/MINSEC",
+        "adresse": "Mbankomo",
+        "contact": "694208419",
+        "email": "franck2blcr@gmail.com"
+      },
+      {
+        "numero": "125",
+        "nom": "FOPA KENNE Derick Martial",
+        "matricule": "B242",
+        "lieu_service": "Pros-Ingeneering",
+        "adresse": "Yaoundé",
+        "contact": "696826069",
+        "email": "fkderick@gmail.com"
+      },
+      {
+        "numero": "126",
+        "nom": "JIMDJIO NGANTCHU Gyslain",
+        "matricule": "B243",
+        "lieu_service": "DLT arpenteurs géomètres",
+        "adresse": "Quebec, Canada",
+        "contact": "6937788/+1 418 254 9354",
+        "email": "njimgys29@gmail.com"
+      },
+      {
+        "numero": "127",
+        "nom": "MOUNGA Jacques Michel",
+        "matricule": "B244",
+        "lieu_service": "SATEC ENGINEERING SARL",
+        "adresse": "Yaoundé",
+        "contact": "699955562",
+        "email": "mounga.jacquemichel@yahoo.fr"
+      },
+      {
+        "numero": "128",
+        "nom": "ANAKEU NGUETSE Jacky F Epse DONGMO",
+        "matricule": "B245",
+        "lieu_service": "PAC International",
+        "adresse": "Yaoundé",
+        "contact": "696123255",
+        "email": "jackyfrance8@gmail.com"
+      },
+      {
+        "numero": "129",
+        "nom": "TEDAYEM Gabi Franck Junior",
+        "matricule": "B246",
+        "lieu_service": "TDR Consulting",
+        "adresse": "Yaoundé",
+        "contact": "696143901",
+        "email": "tedayemfranck@gmail.com"
+      },
+      {
+        "numero": "130",
+        "nom": "VACHALA Abdoul Hamid",
+        "matricule": "B247",
+        "lieu_service": "Cerbat",
+        "adresse": "Maroua",
+        "contact": "693398647",
+        "email": "varfa45@gmail.com"
+      },
+      {
+        "numero": "131",
+        "nom": "DOMCHE Hugus Merleau",
+        "matricule": "B248",
+        "lieu_service": "DAET/MINTP",
+        "adresse": "Yaoundé",
+        "contact": "674616595",
+        "email": "merleau2007@yahoo.fr"
+      },
+      {
+        "numero": "132",
+        "nom": "LIDOU MBOUTNGAM Abdou Wassiou",
+        "matricule": "B249",
+        "lieu_service": "",
+        "adresse": "Yaoundé",
+        "contact": "695576466",
+        "email": "abdoulidou03@gmail.com"
+      },
+      {
+        "numero": "133",
+        "nom": "MBAGNA Yves Chancel",
+        "matricule": "B250",
+        "lieu_service": "",
+        "adresse": "Yaoundé",
+        "contact": "690966296",
+        "email": "yvesmbagna10@gmail.com"
+      },
+      {
+        "numero": "134",
+        "nom": "TCHEBEBIA NYABA Karl Henri",
+        "matricule": "B251",
+        "lieu_service": "GEOSPACE AFRICA",
+        "adresse": "Douala",
+        "contact": "697942861",
+        "email": "karltchebs8@gmail.com"
+      },
+      {
+        "numero": "135",
+        "nom": "KOFANE NTSACKO Sylvain",
+        "matricule": "B252",
+        "lieu_service": "Uni Sherbroucke",
+        "adresse": "Longueuil, Canada",
+        "contact": "655337647",
+        "email": "skofanentsacko@yahoo.com"
+      },
+      {
+        "numero": "136",
+        "nom": "NANFACK TSIGUIA Franck",
+        "matricule": "B253",
+        "lieu_service": "OLAT GROUP BTP",
+        "adresse": "Limbe",
+        "contact": "691524443",
+        "email": "franctsiguia@gmail.com"
+      }
+    ],
+    "geometres_topographes": [
+      {
+        "numero": "1",
+        "nom": "NGOA MINDZE Barnabé",
+        "matricule": "C150",
+        "lieu_service": "LIMA SURVEY",
+        "adresse": "Ndanko Ndelele",
+        "contact": "698147806/674933287",
+        "email": "tebatem7@gmail.com"
+      },
+      {
+        "numero": "2",
+        "nom": "PAGOUO FADANGKA Edmond",
+        "matricule": "C158",
+        "lieu_service": "DR/MINMAP Nord",
+        "adresse": "Garoua",
+        "contact": "694053607",
+        "email": "edmondpagouofadangka@gmail.com"
+      },
+      {
+        "numero": "3",
+        "nom": "KEMAJOU MBAKOP Arnauld Poupon",
+        "matricule": "C170",
+        "lieu_service": "",
+        "adresse": "Yaounde",
+        "contact": "691863800",
+        "email": "arnauldkemajou19@gmail.com"
+      },
+      {
+        "numero": "4",
+        "nom": "MOUAFO TAMBOU Patrick Judicael",
+        "matricule": "C181",
+        "lieu_service": "DGM/MINDEF",
+        "adresse": "Yaoundé",
+        "contact": "656 978 201",
+        "email": "patjudicael2011@gmail.com"
+      },
+      {
+        "numero": "5",
+        "nom": "NGUIMDO TSAGUE Hermann",
+        "matricule": "C213",
+        "lieu_service": "DAG/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "672350897",
+        "email": "hermannnguimdotsague@gmail.com"
+      },
+      {
+        "numero": "6",
+        "nom": "FOUEJEU TIOGO Gabin",
+        "matricule": "C214",
+        "lieu_service": "ACE/ALPHA-CONSULT/GE",
+        "adresse": "Kaele",
+        "contact": "656896976",
+        "email": "gabintiogo@gmail.com"
+      },
+      {
+        "numero": "7",
+        "nom": "TIOMELA AWOUMKENG Vanessa",
+        "matricule": "C217",
+        "lieu_service": "SATEC ENGINEERING Sarl",
+        "adresse": "Mbankomo",
+        "contact": "658942599",
+        "email": "tawoukeng@gmail.com"
+      },
+      {
+        "numero": "8",
+        "nom": "MBIA MBIA Jean Paul",
+        "matricule": "C222",
+        "lieu_service": "SDAF-MINDCAF/Boumba et Ngoko",
+        "adresse": "Yokadouma",
+        "contact": "695941482",
+        "email": "p8mbia@gmail.com"
+      },
+      {
+        "numero": "9",
+        "nom": "TAMENA FOPAMENE Marie Audrey Epse DONGMO",
+        "matricule": "C230",
+        "lieu_service": "GEO ADVANTAGE SARL",
+        "adresse": "Brazzaville, Congo",
+        "contact": "690270926",
+        "email": "marietams95@gmail.com"
+      },
+      {
+        "numero": "10",
+        "nom": "FEUDJO VOUTSA Guillaume Appolinaire",
+        "matricule": "C234",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": ""
+      },
+      {
+        "numero": "11",
+        "nom": "SANKENG Roger Emmanuel Charly",
+        "matricule": "C235",
+        "lieu_service": "SDAF-MINDCAF/Mifi",
+        "adresse": "Bafoussam",
+        "contact": "697086537",
+        "email": "sankenroger11@gmail.com"
+      },
+      {
+        "numero": "12",
+        "nom": "TAZO KENFACK Jordan Bonbaye",
+        "matricule": "C236",
+        "lieu_service": "LEICA GEOSYSTEMS LTD",
+        "adresse": "Hampstead, Canada",
+        "contact": "695967011",
+        "email": "jordantazo@gmail.com"
+      },
+      {
+        "numero": "13",
+        "nom": "TOUKAP DJANBOU Laurie",
+        "matricule": "C245",
+        "lieu_service": "Fugro UK",
+        "adresse": "Plymouth, England",
+        "contact": "+44 75 54 37 72 86",
+        "email": "toukapd.laurie@gmail.com"
+      },
+      {
+        "numero": "14",
+        "nom": "YOMA BEGNI Hyancithe Magui",
+        "matricule": "C247",
+        "lieu_service": "Peev",
+        "adresse": "Kribi",
+        "contact": "691 218 780",
+        "email": "hyacinthebegni01@gmail.com"
+      },
+      {
+        "numero": "15",
+        "nom": "KAMENI TEGANG Zacharie",
+        "matricule": "C251",
+        "lieu_service": "IZNA Group",
+        "adresse": "Nkolafamba",
+        "contact": "695813396",
+        "email": "tegangzackarie@yahoo.com"
+      },
+      {
+        "numero": "16",
+        "nom": "OUMAROU Sahabo",
+        "matricule": "C253",
+        "lieu_service": "Aeroports du Cameroun",
+        "adresse": "Yaoundé",
+        "contact": "690224854",
+        "email": "sahaboumar97@gmail.com"
+      },
+      {
+        "numero": "17",
+        "nom": "HIAG Francis Vincent",
+        "matricule": "C255",
+        "lieu_service": "",
+        "adresse": "Yaoundé",
+        "contact": "696777146",
+        "email": "francisvincenthiag@gmail.com"
+      },
+      {
+        "numero": "18",
+        "nom": "ONDOBO Marie Claude",
+        "matricule": "C257",
+        "lieu_service": "",
+        "adresse": "Yaoundé",
+        "contact": "659179324",
+        "email": "marieclaudeondobo@gmail.com"
+      },
+      {
+        "numero": "19",
+        "nom": "NOUBISSSI WADJO Franck Derrick",
+        "matricule": "C258",
+        "lieu_service": "",
+        "adresse": "Yaoundé",
+        "contact": "690558009",
+        "email": "lewadjass.fw@gmail.com"
+      },
+      {
+        "numero": "20",
+        "nom": "TEJANI FONDI Karim",
+        "matricule": "C259",
+        "lieu_service": "INTEGC/GE",
+        "adresse": "Yaoundé",
+        "contact": "698476855",
+        "email": "tejanikarim50@gmail.com"
+      },
+      {
+        "numero": "21",
+        "nom": "TEUMMAH FOGANG Jospin Marcial",
+        "matricule": "C260",
+        "lieu_service": "OTEIS Conseil et Ingénierie",
+        "adresse": "Montpellier, France",
+        "contact": "698899964/+33 753 78 86 65",
+        "email": "marcial.teummah@gmail.com"
+      },
+      {
+        "numero": "22",
+        "nom": "AMOUGOU OWONA Martine Audrey",
+        "matricule": "C261",
+        "lieu_service": "Shee System Sarl",
+        "adresse": "Yaoundé",
+        "contact": "655072284",
+        "email": "audrey_divine@yahoo.com"
+      },
+      {
+        "numero": "23",
+        "nom": "WOWE DAMOU Jonathan Donald",
+        "matricule": "C262",
+        "lieu_service": "SIC",
+        "adresse": "Yaoundé",
+        "contact": "656922532",
+        "email": "jonathandamou@gmail.com"
+      },
+      {
+        "numero": "24",
+        "nom": "NGONO NKOLO Joséphine Christiane Trésore",
+        "matricule": "C263",
+        "lieu_service": "",
+        "adresse": "Yaoundé",
+        "contact": "693450516",
+        "email": "christianengononkolo@gmail.com"
+      },
+      {
+        "numero": "25",
+        "nom": "MASSIA ESSAGA Fabiola Epse TCHIDA",
+        "matricule": "C265",
+        "lieu_service": "NIS SARL",
+        "adresse": "Yaoundé",
+        "contact": "696409854",
+        "email": "essagalucrece@gmail.com"
+      },
+      {
+        "numero": "26",
+        "nom": "KUICHOUO SIGNE Régis Carlos",
+        "matricule": "C267",
+        "lieu_service": "DD/MINDCAF Mefou et Akono",
+        "adresse": "Ngoumou",
+        "contact": "677611697",
+        "email": "regiscarloskuichouosigne@gmail.com"
+      },
+      {
+        "numero": "27",
+        "nom": "DOUANLA TCHINDA Boris Noel",
+        "matricule": "C269",
+        "lieu_service": "",
+        "adresse": "Douala",
+        "contact": "682927188",
+        "email": "tchindaboris07@gmail.com"
+      },
+      {
+        "numero": "28",
+        "nom": "MADIBA ENYOUMA Yann Wanel",
+        "matricule": "C270",
+        "lieu_service": "Centre de l'Environnement pour le Développement (CED)",
+        "adresse": "Yaoundé",
+        "contact": "651248703",
+        "email": "madibayann@gmail.com"
+      },
+      {
+        "numero": "29",
+        "nom": "FOSSING Frank Marc",
+        "matricule": "C272",
+        "lieu_service": "JIUJIANG CAMEROUN SARL",
+        "adresse": "Kribi",
+        "contact": "651107312",
+        "email": "fossingfrank@gmail.com"
+      },
+      {
+        "numero": "30",
+        "nom": "YAKAN Fabrice Joel",
+        "matricule": "C273",
+        "lieu_service": "SDC-MINDCAF/Mefou et Afamba",
+        "adresse": "Mfou",
+        "contact": "695534461",
+        "email": "forzamilanac1889@gmail.com"
+      },
+      {
+        "numero": "31",
+        "nom": "TOUA AWONO Armel Placide",
+        "matricule": "C274",
+        "lieu_service": "SDC-MINDCAF/Mbam et Inoubou",
+        "adresse": "Bafia",
+        "contact": "694121958",
+        "email": "touaawonoarmelplacide@gmail.com"
+      },
+      {
+        "numero": "32",
+        "nom": "TSOPBENG POKAM Joel Fortunat",
+        "matricule": "C275",
+        "lieu_service": "Geotop",
+        "adresse": "Freetown, Sierra Leone",
+        "contact": "698728906/+232 99484562",
+        "email": "pokam.joel@gmail.com"
+      },
+      {
+        "numero": "33",
+        "nom": "HOYA Regis Pierrick Melvin",
+        "matricule": "C276",
+        "lieu_service": "NIS SARL",
+        "adresse": "Yaoundé",
+        "contact": "693701361",
+        "email": "melvinhoya@gmail.com"
+      },
+      {
+        "numero": "34",
+        "nom": "YAKUM Paul NUIPING",
+        "matricule": "C278",
+        "lieu_service": "DD-MINDCAF/Sanaga Maritime",
+        "adresse": "Edea",
+        "contact": "676396439",
+        "email": "minuiping@yahoo.com"
+      },
+      {
+        "numero": "35",
+        "nom": "NGO KALDJOB Marie Tatiana Epse NLEND",
+        "matricule": "C280",
+        "lieu_service": "Tracocam",
+        "adresse": "Yaoundé",
+        "contact": "674845151",
+        "email": "ngomary32@gmail.com"
+      },
+      {
+        "numero": "36",
+        "nom": "FOPA KOUCHELE Fridiane Lyndaes",
+        "matricule": "C281",
+        "lieu_service": "Ets ANUTEMEH Johnson Fru",
+        "adresse": "Yaoundé",
+        "contact": "694140964",
+        "email": "fridianefopa@gmail.com"
+      },
+      {
+        "numero": "37",
+        "nom": "NGAH ONANA Bernadin Fabrice",
+        "matricule": "C282",
+        "lieu_service": "SCP Glonass",
+        "adresse": "Douala",
+        "contact": "656181940",
+        "email": "tanyirolland29@gmail.com"
+      },
+      {
+        "numero": "38",
+        "nom": "TANYI Roland TANYI",
+        "matricule": "C283",
+        "lieu_service": "",
+        "adresse": "Yaoundé",
+        "contact": "673520195",
+        "email": "tanyirolland29@gmail.com"
+      },
+      {
+        "numero": "39",
+        "nom": "ESSAMA BOMBA Michel",
+        "matricule": "C284",
+        "lieu_service": "NIS SARL",
+        "adresse": "Yaoundé",
+        "contact": "697529801",
+        "email": "essamabombamichel@gmail.com"
+      },
+      {
+        "numero": "40",
+        "nom": "EYOUM NDENGUE Michelle Paule",
+        "matricule": "C286",
+        "lieu_service": "SIC",
+        "adresse": "Yaoundé",
+        "contact": "679536354",
+        "email": "eyoummichelle80@gmail.com"
+      },
+      {
+        "numero": "41",
+        "nom": "DJOU NGUELA Donald",
+        "matricule": "C289",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "696279032",
+        "email": "djounguela@gmail.com"
+      },
+      {
+        "numero": "42",
+        "nom": "ATANGANA MANI Charles",
+        "matricule": "C292",
+        "lieu_service": "DCAD/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "699189880",
+        "email": "atanganamani712@gmail.com"
+      },
+      {
+        "numero": "43",
+        "nom": "NYETAM Sylvain",
+        "matricule": "C293",
+        "lieu_service": "DGPAT/DATZF-MINEPAT",
+        "adresse": "Yaoundé",
+        "contact": "674090665",
+        "email": "nyetamsylvain@gmail.com"
+      },
+      {
+        "numero": "44",
+        "nom": "BILLONG Francois-Xavier Marie",
+        "matricule": "C294",
+        "lieu_service": "Pizzaroti",
+        "adresse": "Yaoundé",
+        "contact": "698290933",
+        "email": "billongfranois@yahoo.fr"
+      },
+      {
+        "numero": "45",
+        "nom": "TERI Martin",
+        "matricule": "C295",
+        "lieu_service": "MINFOPRA",
+        "adresse": "Yaoundé",
+        "contact": "694432280",
+        "email": "terimartin1999@gmail.com"
+      },
+      {
+        "numero": "46",
+        "nom": "DJOUMEJEU TSOPZE Dorah",
+        "matricule": "C296",
+        "lieu_service": "Global Group Service",
+        "adresse": "Yaoundé",
+        "contact": "696733347",
+        "email": "tsopzedorah@gmail.com"
+      },
+      {
+        "numero": "47",
+        "nom": "TIMO TAGUIMDJEU Peguy Wilson",
+        "matricule": "C297",
+        "lieu_service": "l'entreprise Solutions Durables",
+        "adresse": "Yaoundé",
+        "contact": "691964961",
+        "email": "wilsontimo141@gmail.com"
+      },
+      {
+        "numero": "48",
+        "nom": "MBOU FOBASSO Jessica",
+        "matricule": "C298",
+        "lieu_service": "SHEE Systm",
+        "adresse": "Yaoundé",
+        "contact": "696269713",
+        "email": "jessicambou2001@gmail.com"
+      },
+      {
+        "numero": "49",
+        "nom": "ANDEGUE ENAMA Roland Hervé",
+        "matricule": "C299",
+        "lieu_service": "CETP",
+        "adresse": "Yaoundé",
+        "contact": "693348924",
+        "email": "andegueenamarolandherve@gmail.com"
+      },
+      {
+        "numero": "50",
+        "nom": "YAMGOUE TCHALEU Junior",
+        "matricule": "C300",
+        "lieu_service": "CFHEC",
+        "adresse": "Yaoundé",
+        "contact": "652600171/690682097",
+        "email": "yamgouejunior@gmail.com"
+      },
+      {
+        "numero": "51",
+        "nom": "MANTO SOB Carole",
+        "matricule": "C301",
+        "lieu_service": "BUNS",
+        "adresse": "Bamenda",
+        "contact": "650709437",
+        "email": "carolesob3@gmail.com"
+      },
+      {
+        "numero": "52",
+        "nom": "NGONO AKOUA Yves",
+        "matricule": "C302",
+        "lieu_service": "EGIS",
+        "adresse": "Yaounde",
+        "contact": "699633886",
+        "email": "ngonoakouayves@gmail.com"
+      },
+      {
+        "numero": "53",
+        "nom": "FONKENG Cyril NKENFACK",
+        "matricule": "C303",
+        "lieu_service": "",
+        "adresse": "Yaoundé",
+        "contact": "673159466",
+        "email": "nkenkafackcyril@gmail.com"
+      },
+      {
+        "numero": "54",
+        "nom": "MBEZELE ONDOA Gisele Emilienne",
+        "matricule": "C304",
+        "lieu_service": "SBET",
+        "adresse": "Yaoundé",
+        "contact": "697182005",
+        "email": "gmbezeleondoa@gmail.com"
+      },
+      {
+        "numero": "55",
+        "nom": "MBENOUN Jean Marc Ludovic",
+        "matricule": "C305",
+        "lieu_service": "Goldineng Sarl",
+        "adresse": "Douala",
+        "contact": "691331683",
+        "email": "mbenounjmludovic@gmail.com"
+      },
+      {
+        "numero": "56",
+        "nom": "BIBOUE Francis Renaud",
+        "matricule": "C306",
+        "lieu_service": "",
+        "adresse": "Douala",
+        "contact": "695693143",
+        "email": "fbiboue@gmail.com"
+      },
+      {
+        "numero": "57",
+        "nom": "FONGUE TSOPMEZA Brenda Charline",
+        "matricule": "C307",
+        "lieu_service": "",
+        "adresse": "Yaoundé",
+        "contact": "656857803",
+        "email": "brendafongue@gmail.com"
+      },
+      {
+        "numero": "58",
+        "nom": "ZANGUE Eric Magloire",
+        "matricule": "C308",
+        "lieu_service": "ENSTP",
+        "adresse": "Yaoundé",
+        "contact": "697253393",
+        "email": "zangue.magloire@enstp.cm"
+      },
+      {
+        "numero": "59",
+        "nom": "JIRIM Emmanuel KARI",
+        "matricule": "C309",
+        "lieu_service": "DAG/MINDCAF",
+        "adresse": "Yaoundé",
+        "contact": "677560858",
+        "email": "emmaka2006@yahoo.fr"
+      },
+      {
+        "numero": "60",
+        "nom": "FOH MUNAKWA Byan",
+        "matricule": "C310",
+        "lieu_service": "Geomaticable Africa",
+        "adresse": "Kribi",
+        "contact": "683081834",
+        "email": "munakwabryan@gmail.com"
+      },
+      {
+        "numero": "61",
+        "nom": "FOFOU SONKOUE Severin",
+        "matricule": "C311",
+        "lieu_service": "DD-MINDCAF/Mefou et Afamba",
+        "adresse": "Mfou",
+        "contact": "694155737",
+        "email": "fsseverin86@gmail.com"
+      }
+    ]
+  },
+  "totaux": {
+    "geometres_autorises": 40,
+    "geometres_experts_honoraires": 5,
+    "geometres_experts": 136,
+    "geometres_topographes": 61,
+    "total": 242
+  }
+}
