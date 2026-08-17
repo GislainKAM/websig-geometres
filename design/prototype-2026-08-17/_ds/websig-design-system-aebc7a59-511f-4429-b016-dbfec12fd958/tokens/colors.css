@@ -1,0 +1,14 @@
+:root{
+--brand-indigo-900:#221a4d;--brand-indigo-800:#2a2060;--brand-indigo-700:#372a7d;--brand-indigo-600:#46349e;--brand-indigo-500:#5a46bd;--brand-indigo-400:#7d6cd0;--brand-indigo-300:#a396e0;--brand-indigo-200:#c9c1ef;--brand-indigo-100:#e4dff7;--brand-indigo-50:#f2effb;
+--ink-900:#14121f;--ink-800:#221f30;--ink-700:#3a3648;--ink-600:#56516a;--ink-500:#7a748c;--ink-400:#a29cb0;--ink-300:#c9c4d3;--ink-200:#e3e0e9;--ink-100:#f0eef4;--ink-50:#f8f7fa;--white:#ffffff;
+--hydro-700:#0a5f68;--hydro-600:#0e7c86;--hydro-500:#199aa5;--hydro-100:#d6f0f2;
+--terrain-700:#335c2c;--terrain-600:#46753c;--terrain-500:#5d9350;--terrain-100:#e0efdb;
+--relief-700:#8c5a17;--relief-600:#b5772a;--relief-500:#d0913f;--relief-100:#f8ecd9;
+--alert-700:#8c1d18;--alert-600:#b3261e;--alert-500:#d4453c;--alert-100:#fbe4e2;
+
+--text-strong:var(--ink-900);--text-body:var(--ink-700);--text-muted:var(--ink-500);--text-faint:var(--ink-400);--text-invert:var(--white);--text-brand:var(--brand-indigo-600);--text-link:var(--brand-indigo-600);--text-link-hover:var(--brand-indigo-800);
+--surface-page:var(--ink-50);--surface-card:var(--white);--surface-sunken:var(--ink-100);--surface-inverse:var(--ink-900);--surface-brand:var(--brand-indigo-600);--surface-brand-soft:var(--brand-indigo-50);--surface-map-chrome:rgba(255,255,255,.92);
+--border-subtle:var(--ink-200);--border-default:var(--ink-300);--border-strong:var(--ink-400);--border-brand:var(--brand-indigo-600);--border-focus:var(--brand-indigo-500);
+--layer-point:var(--brand-indigo-600);--layer-line:var(--hydro-600);--layer-polygon:var(--terrain-600);--layer-raster:var(--relief-600);--layer-selected:var(--alert-600)}
+
+[data-theme="dark"]{--text-strong:var(--white);--text-body:var(--ink-200);--text-muted:var(--ink-400);--text-faint:var(--ink-500);--text-invert:var(--ink-900);--text-brand:var(--brand-indigo-300);--text-link:var(--brand-indigo-300);--text-link-hover:var(--brand-indigo-200);--surface-page:var(--ink-900);--surface-card:var(--ink-800);--surface-sunken:#1a1727;--surface-inverse:var(--white);--surface-brand-soft:#241d47;--surface-map-chrome:rgba(34,31,48,.92);--border-subtle:#312d42;--border-default:#413c55;--border-strong:var(--ink-600)}

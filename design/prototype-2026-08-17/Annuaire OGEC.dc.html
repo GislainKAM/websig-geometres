@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/websig-design-system-aebc7a59-511f-4429-b016-dbfec12fd958/tokens/colors.css">
+<link rel="stylesheet" href="_ds/websig-design-system-aebc7a59-511f-4429-b016-dbfec12fd958/tokens/typography.css">
+<link rel="stylesheet" href="_ds/websig-design-system-aebc7a59-511f-4429-b016-dbfec12fd958/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/websig-design-system-aebc7a59-511f-4429-b016-dbfec12fd958/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/websig-design-system-aebc7a59-511f-4429-b016-dbfec12fd958/tokens/motion.css">
+<link rel="stylesheet" href="_ds/websig-design-system-aebc7a59-511f-4429-b016-dbfec12fd958/tokens/base.css">
+<link rel="stylesheet" href="_ds/websig-design-system-aebc7a59-511f-4429-b016-dbfec12fd958/styles.css">
+<script src="_ds/websig-design-system-aebc7a59-511f-4429-b016-dbfec12fd958/_ds_bundle.js"></script>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:var(--surface-page)}
+x-dc,[data-dc-root]{display:block;height:100%}
+a{color:var(--text-brand);text-decoration:none}
+a:hover{color:var(--brand-indigo-700)}
+.ogec-scroll{overflow-y:auto;scrollbar-width:thin}
+.ogec-hscroll{overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.ogec-hscroll::-webkit-scrollbar{height:0;display:none}
+</style>
+</helmet>
+
+<sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+  <div style="height:100%;min-height:100%;display:flex;flex-direction:column;overflow:hidden;font-family:var(--font-body);color:var(--text-body)">
+  <header style="flex:0 0 auto;display:flex;flex-direction:column;z-index:20">
+    <div style="height:64px;flex:0 0 64px;display:flex;align-items:center;gap:var(--space-6);padding:0 var(--space-6);background:var(--ink-900)">
+      <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Logo" size="{{ 26 }}" color="var(--white)" word-color="var(--white)" hint-size="116px,28px"></x-import>
+      <div style="width:1px;height:28px;background:rgba(255,255,255,.16)"></div>
+      <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 auto;overflow:hidden">
+        <span style="font-family:var(--font-display);font-weight:700;font-size:var(--text-md);line-height:1.1;color:var(--white);letter-spacing:-0.015em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ L.appTitle }}</span>
+        <span style="font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ L.eyebrow }}</span>
+      </div>
+      <span style="font-family:var(--font-data);font-size:var(--text-2xs);letter-spacing:0.06em;color:var(--ink-400);border:1px solid rgba(255,255,255,.18);border-radius:var(--radius-pill);padding:3px 10px;white-space:nowrap">EPSG:4326</span>
+      <button onClick="{{ toggleLang }}" style="border:1px solid rgba(255,255,255,.18);background:none;cursor:pointer;font-family:var(--font-data);font-size:var(--text-2xs);color:var(--white);letter-spacing:0.06em;padding:5px 10px;border-radius:var(--radius-pill);white-space:nowrap">{{ langLabel }}</button>
+      <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" size="sm" hint-size="180px,32px">{{ L.download }}</x-import>
+    </div>
+    <div style="height:56px;flex:0 0 56px;display:flex;align-items:stretch;justify-content:space-between;gap:var(--space-6);padding:0 var(--space-6);background:var(--surface-card);border-bottom:1px solid var(--border-subtle)">
+      <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Tabs" items="{{ modeItems }}" value="{{ mode }}" onChange="{{ setMode }}" dc-props="{{ tabsProps }}" hint-size="440px,56px"></x-import>
+      <div style="display:flex;align-items:center;gap:10px;white-space:nowrap">
+        <span style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--text-strong);letter-spacing:-0.02em;line-height:1">{{ countNum }}</span>
+        <span style="font-family:var(--font-data);font-size:var(--text-xs);color:var(--text-faint)">/ {{ countTotal }}</span>
+        <span style="font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);font-weight:600;max-width:96px;white-space:normal;line-height:1.2">{{ countLabel }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div style="flex:1;display:flex;min-height:0">
+
+    <aside class="ogec-scroll" style="flex:0 1 320px;width:320px;min-width:248px;border-right:1px solid var(--border-subtle);background:var(--surface-card);display:flex;flex-direction:column">
+
+      <sc-if value="{{ isSearch }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:var(--space-5) var(--space-5) var(--space-4);display:flex;flex-direction:column;gap:var(--space-4);border-bottom:1px solid var(--border-subtle);background:var(--ink-50)">
+          <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Input" value="{{ query }}" onChange="{{ onQuery }}" placeholder="{{ L.searchPh }}" hint-size="100%,38px"></x-import>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+            <sc-for list="{{ catTags }}" as="c" hint-placeholder-count="4">
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Tag" active="{{ c.active }}" onClick="{{ c.onClick }}" hint-size="auto,26px"><span style="white-space:nowrap">{{ c.label }}</span></x-import>
+            </sc-for>
+          </div>
+        </div>
+        <div style="flex:1;min-height:0">
+          <sc-for list="{{ listRows }}" as="r" hint-placeholder-count="6">
+            <div style="{{ r.style }}" onClick="{{ r.onClick }}">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span style="{{ r.dot }}"></span>
+                <span style="flex:1;min-width:0;font-size:var(--text-base);font-weight:600;color:var(--text-strong);letter-spacing:-0.01em;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.name }}</span>
+                <span style="font-family:var(--font-data);font-size:10.5px;font-weight:500;color:var(--text-body);background:var(--ink-100);border-radius:var(--radius-sm);padding:3px 6px">{{ r.matricule }}</span>
+              </div>
+              <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-top:6px;padding-left:18px">
+                <span style="font-size:var(--text-xs);color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.cabinet }}</span>
+                <span style="margin-left:auto;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--text-faint);white-space:nowrap">{{ r.city }}</span>
+              </div>
+            </div>
+          </sc-for>
+          <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.EmptyState" icon="search-x" title="{{ L.emptyT }}" description="{{ L.emptyD }}" hint-size="100%,200px"></x-import>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isCities }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:var(--space-5) var(--space-5) var(--space-3)">
+          <span style="font-size:var(--text-2xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);font-weight:600">{{ L.regions }}</span>
+        </div>
+        <div style="padding:0 var(--space-4) var(--space-6);display:flex;flex-direction:column;gap:var(--space-4)">
+          <sc-for list="{{ regionGroups }}" as="g" hint-placeholder-count="5">
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <div style="display:flex;align-items:baseline;gap:var(--space-2);padding:0 var(--space-2) 4px">
+                <span style="font-family:var(--font-display);font-size:var(--text-xs);font-weight:600;color:var(--text-strong)">{{ g.label }}</span>
+                <span style="margin-left:auto;font-family:var(--font-data);font-size:var(--text-2xs);color:var(--text-faint)">{{ g.count }}</span>
+              </div>
+              <sc-for list="{{ g.cities }}" as="c" hint-placeholder-count="2">
+                <div style="{{ c.style }}" onClick="{{ c.onClick }}">
+                  <span style="font-size:var(--text-sm)">{{ c.label }}</span>
+                  <span style="margin-left:auto;font-family:var(--font-data);font-size:var(--text-xs);color:var(--text-muted)">{{ c.count }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isVerify }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:var(--space-6) var(--space-5);display:flex;flex-direction:column;gap:var(--space-4);background:var(--ink-50);border-bottom:1px solid var(--border-subtle)">
+          <h2 style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:600;color:var(--text-strong);margin:0;line-height:1.2;letter-spacing:-0.015em">{{ L.verifyH }}</h2>
+          <p style="margin:0;font-size:var(--text-sm);color:var(--text-muted);line-height:1.6">{{ L.verifyP }}</p>
+          <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Input" value="{{ verifyQuery }}" onChange="{{ onVerifyQuery }}" onKeyDown="{{ onVerifyKey }}" placeholder="{{ L.verifyPh }}" style="font-family:var(--font-data)" hint-size="100%,38px"></x-import>
+          <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" block="{{ true }}" onClick="{{ runVerify }}" hint-size="100%,38px">{{ L.verifyBtn }}</x-import>
+        </div>
+        <div style="padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4)">
+          <span style="font-size:var(--text-2xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);font-weight:600">{{ L.catsTitle }}</span>
+          <sc-for list="{{ catStats }}" as="c" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;gap:var(--space-3)">
+              <span style="{{ c.swatch }}"></span>
+              <span style="flex:1;font-size:var(--text-sm)">{{ c.label }}</span>
+              <span style="font-family:var(--font-data);font-size:var(--text-sm);color:var(--text-strong)">{{ c.count }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isAnalyse }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-6)">
+          <div style="display:flex;align-items:baseline">
+            <span style="font-size:var(--text-2xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);font-weight:600">{{ L.filters }}</span>
+            <span style="margin-left:auto"><x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" variant="ghost" size="sm" onClick="{{ resetFilters }}" hint-size="100px,30px">{{ L.reset }}</x-import></span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+            <span style="font-size:var(--text-2xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--text-faint);font-weight:600">{{ L.catsTitle }}</span>
+            <sc-for list="{{ catChecks }}" as="c" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:var(--space-3)">
+                <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Checkbox" label="{{ c.label }}" swatch="{{ c.color }}" checked="{{ c.checked }}" onChange="{{ c.onChange }}" hint-size="100%,20px" style="flex:1"></x-import>
+                <span style="font-family:var(--font-data);font-size:var(--text-xs);color:var(--text-muted)">{{ c.count }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Select" label="{{ L.cityF }}" options="{{ cityOptions }}" value="{{ cityFilter }}" onChange="{{ onCityFilter }}" hint-size="100%,60px"></x-import>
+          <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+            <span style="font-size:var(--text-2xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--text-faint);font-weight:600">{{ L.seriesF }}</span>
+            <div style="display:flex;gap:var(--space-2)">
+              <sc-for list="{{ seriesTags }}" as="s" hint-placeholder-count="4">
+                <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Tag" active="{{ s.active }}" onClick="{{ s.onClick }}" hint-size="44px,26px">{{ s.label }}</x-import>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex;gap:var(--space-6);padding-top:var(--space-2);border-top:1px solid var(--border-subtle)">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.StatBlock" value="{{ filteredCount }}" label="{{ L.statShown }}" hint-size="90px,46px"></x-import>
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.StatBlock" value="{{ shownCities }}" label="{{ L.statCities }}" hint-size="90px,46px"></x-import>
+          </div>
+        </div>
+      </sc-if>
+
+    </aside>
+
+    <main style="flex:1;display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--ink-100)">
+
+      <sc-if value="{{ isVerify }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:0 0 auto;background:var(--surface-card);border-bottom:1px solid var(--border-subtle);padding:var(--space-5) var(--space-6)">
+          <sc-if value="{{ verifyFound }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+              <div style="display:flex;align-items:center;gap:var(--space-3)">
+                <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Badge" tone="terrain" dot="{{ true }}" hint-size="180px,22px">{{ L.inscribed }}</x-import>
+                <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Badge" mono="{{ true }}" hint-size="90px,22px">{{ verifiedMatricule }}</x-import>
+                <div style="margin-left:auto;display:flex;gap:var(--space-3)">
+                  <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" variant="secondary" size="sm" hint-size="110px,30px">{{ L.share }}</x-import>
+                  <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" size="sm" hint-size="110px,30px">{{ L.call }}</x-import>
+                </div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:600;color:var(--text-strong);letter-spacing:-0.015em;line-height:1.1">{{ verifiedName }}</div>
+                <div style="font-size:var(--text-sm);color:var(--text-muted);margin-top:4px">{{ verifiedSub }}</div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--border-subtle)">
+                <sc-for list="{{ verifiedFields }}" as="f" hint-placeholder-count="4">
+                  <div>
+                    <div style="font-size:var(--text-2xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);font-weight:600">{{ f.label }}</div>
+                    <div style="{{ f.valueStyle }}">{{ f.value }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ verifyMissing }}" hint-placeholder-val="{{ false }}">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.EmptyState" icon="shield-alert" title="{{ L.notFoundT }}" description="{{ L.notFoundD }}" hint-size="100%,180px" style="padding:var(--space-6)"></x-import>
+          </sc-if>
+          <sc-if value="{{ verifyIdle }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;align-items:center;gap:var(--space-4);color:var(--text-muted);font-size:var(--text-sm);padding:var(--space-2) 0">
+              <span style="font-family:var(--font-data);font-size:var(--text-xs);color:var(--text-faint)">A012 · B031 · C214 · H002</span>
+              <span>{{ L.verifyHint }}</span>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <div style="flex:1;min-height:0;position:relative">
+        <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.MapFrame" center="{{ center }}" zoom="{{ zoom }}" basemap="{{ basemap }}" height="100%" radius="0" hint-size="100%,100%" style="border:0">
+
+          <sc-for list="{{ markers }}" as="m" hint-placeholder-count="0">
+            <div style="{{ m.style }}" onClick="{{ m.onClick }}" title="{{ m.title }}"></div>
+          </sc-for>
+
+          <sc-for list="{{ bubbles }}" as="b" hint-placeholder-count="0">
+            <div style="{{ b.style }}" onClick="{{ b.onClick }}" title="{{ b.title }}">{{ b.count }}</div>
+          </sc-for>
+
+          <sc-if value="{{ showPopup }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,calc(-100% - 18px));z-index:8">
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.FeaturePopup" title="{{ selectedName }}" subtitle="{{ selectedSub }}" rows="{{ popupRows }}" onClose="{{ clearSelection }}" hint-size="268px,180px"></x-import>
+            </div>
+          </sc-if>
+
+          <div style="position:absolute;top:var(--space-4);right:var(--space-4);display:flex;flex-direction:column;gap:var(--space-4);align-items:flex-end;z-index:6">
+            <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.IconButton" variant="chrome" label="Zoom +" onClick="{{ zoomIn }}" hint-size="34px,34px">
+                <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Icon" name="plus" size="{{ 16 }}" hint-size="16px,16px"></x-import>
+              </x-import>
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.IconButton" variant="chrome" label="Zoom −" onClick="{{ zoomOut }}" hint-size="34px,34px">
+                <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Icon" name="minus" size="{{ 16 }}" hint-size="16px,16px"></x-import>
+              </x-import>
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.IconButton" variant="chrome" label="{{ L.fitAll }}" onClick="{{ fitAll }}" hint-size="34px,34px">
+                <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Icon" name="maximize-2" size="{{ 16 }}" hint-size="16px,16px"></x-import>
+              </x-import>
+            </div>
+            <sc-if value="{{ isAnalyse }}" hint-placeholder-val="{{ false }}">
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.LayerPanel" title="{{ L.layers }}" layers="{{ layers }}" onToggle="{{ toggleLayer }}" hint-size="264px,140px"></x-import>
+            </sc-if>
+            <sc-if value="{{ isCities }}" hint-placeholder-val="{{ false }}">
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Legend" title="{{ L.legendT }}" items="{{ legendItems }}" hint-size="180px,120px"></x-import>
+            </sc-if>
+          </div>
+
+          <div style="position:absolute;left:var(--space-4);bottom:var(--space-5);display:flex;align-items:flex-end;gap:var(--space-3);z-index:6">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.ScaleBar" label="{{ scaleLabel }}" hint-size="110px,32px"></x-import>
+            <span style="font-family:var(--font-data);font-size:var(--text-2xs);color:var(--ink-700);background:var(--surface-map-chrome);padding:4px 8px;border-radius:var(--radius-sm);box-shadow:var(--shadow-chrome)">{{ coordLabel }}</span>
+          </div>
+        </x-import>
+
+        <sc-if value="{{ tabletDetail }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;right:var(--space-4);bottom:var(--space-4);width:308px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4);z-index:10">
+            <div style="display:flex;align-items:flex-start;gap:var(--space-3)">
+              <div style="flex:1;min-width:0">
+                <div style="font-family:var(--font-display);font-size:var(--text-md);font-weight:700;color:var(--text-strong);letter-spacing:-0.015em;line-height:1.15">{{ selectedName }}</div>
+                <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:4px">{{ selectedSub }}</div>
+              </div>
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.IconButton" variant="ghost" size="sm" label="{{ L.close }}" onClick="{{ clearSelection }}" hint-size="28px,28px"><x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Icon" name="x" size="{{ 15 }}" hint-size="15px,15px"></x-import></x-import>
+            </div>
+            <div style="display:flex;flex-direction:column;border-top:1px solid var(--border-subtle)">
+              <sc-for list="{{ selectedFields }}" as="f" hint-placeholder-count="4">
+                <div style="display:flex;justify-content:space-between;gap:var(--space-4);padding:8px 0;border-bottom:1px solid var(--ink-100)">
+                  <span style="font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;color:var(--text-muted)">{{ f.label }}</span>
+                  <span style="{{ f.valueStyle }}">{{ f.value }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" block="{{ true }}" size="sm" hint-size="100%,36px">{{ L.call }}</x-import>
+          </div>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ isAnalyse }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:0 0 236px;height:236px;background:var(--surface-card);border-top:1px solid var(--border-subtle);display:flex;flex-direction:column;min-height:0">
+          <div style="flex:0 0 auto;display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3) var(--space-5)">
+            <span style="font-size:var(--text-2xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);font-weight:600">{{ L.tableTitle }}</span>
+            <span style="font-family:var(--font-data);font-size:var(--text-xs);color:var(--text-faint)">{{ filteredCount }}</span>
+          </div>
+          <div class="ogec-scroll" style="flex:1;min-height:0">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.DataTable" columns="{{ tableCols }}" rows="{{ tableRows }}" onRowClick="{{ onTableRow }}" selectedIndex="{{ tableSelected }}" hint-size="100%,200px" style="border:0;border-radius:0"></x-import>
+          </div>
+        </div>
+      </sc-if>
+
+    </main>
+
+    <sc-if value="{{ showAside }}" hint-placeholder-val="{{ false }}">
+      <aside class="ogec-scroll" style="flex:0 0 340px;width:340px;border-left:1px solid var(--border-subtle);background:var(--surface-card);padding:var(--space-5)">
+        <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+          <div style="display:flex;align-items:center;gap:var(--space-2)">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Badge" tone="terrain" dot="{{ true }}" hint-size="170px,22px">{{ L.inscribed }}</x-import>
+            <span style="margin-left:auto"><x-import component-from-global-scope="WebsigDesignSystem_aebc7a.IconButton" variant="ghost" size="sm" label="{{ L.close }}" onClick="{{ clearSelection }}" hint-size="28px,28px"><x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Icon" name="x" size="{{ 15 }}" hint-size="15px,15px"></x-import></x-import></span>
+          </div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:600;color:var(--text-strong);letter-spacing:-0.015em;line-height:1.2">{{ selectedName }}</div>
+            <div style="font-size:var(--text-sm);color:var(--text-muted);margin-top:4px">{{ selectedSub }}</div>
+          </div>
+          <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Badge" mono="{{ true }}" tone="brand" hint-size="80px,22px">{{ selectedMatricule }}</x-import>
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Badge" hint-size="90px,22px">{{ selectedCity }}</x-import>
+          </div>
+          <div style="display:flex;flex-direction:column;border-top:1px solid var(--border-subtle)">
+            <sc-for list="{{ selectedFields }}" as="f" hint-placeholder-count="6">
+              <div style="display:flex;justify-content:space-between;gap:var(--space-4);padding:9px 0;border-bottom:1px solid var(--ink-100)">
+                <span style="font-size:var(--text-xs);color:var(--text-muted)">{{ f.label }}</span>
+                <span style="{{ f.valueStyle }}">{{ f.value }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;gap:var(--space-3)">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" block="{{ true }}" hint-size="100%,38px">{{ L.call }}</x-import>
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" variant="secondary" block="{{ true }}" hint-size="100%,38px">{{ L.route }}</x-import>
+          </div>
+          <p style="margin:0;font-size:var(--text-xs);color:var(--text-faint);line-height:1.6">{{ L.disclaimer }}</p>
+        </div>
+      </aside>
+    </sc-if>
+
+  </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+  <div style="{{ mobileShellStyle }}">
+
+    <div style="flex:0 0 56px;height:56px;display:flex;align-items:center;gap:var(--space-4);padding:0 var(--space-4);background:var(--ink-900);z-index:20">
+      <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Logo" variant="mark" size="{{ 22 }}" color="var(--white)" hint-size="22px,22px"></x-import>
+      <div style="display:flex;flex-direction:column;gap:2px;min-width:0;flex:1 1 auto;overflow:hidden">
+        <span style="font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);line-height:1.1;color:var(--white);letter-spacing:-0.015em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ L.appTitleShort }}</span>
+        <span style="font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-400);font-weight:600;white-space:nowrap">{{ L.eyebrowShort }}</span>
+      </div>
+      <button onClick="{{ toggleLang }}" style="border:1px solid rgba(255,255,255,.18);background:none;cursor:pointer;font-family:var(--font-data);font-size:10.5px;color:var(--white);letter-spacing:0.06em;padding:8px 10px;border-radius:var(--radius-pill);min-height:36px;white-space:nowrap">{{ langLabel }}</button>
+    </div>
+
+    <div class="ogec-hscroll" style="flex:0 0 auto;display:flex;gap:6px;padding:var(--space-3) var(--space-4);background:var(--surface-card);border-bottom:1px solid var(--border-subtle);z-index:14">
+      <sc-for list="{{ modePills }}" as="p" hint-placeholder-count="4">
+        <button style="{{ p.style }}" onClick="{{ p.onClick }}">{{ p.label }}</button>
+      </sc-for>
+    </div>
+
+    <div style="flex:1;min-height:0;position:relative;background:var(--ink-100)">
+      <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.MapFrame" center="{{ center }}" zoom="{{ zoom }}" basemap="{{ basemap }}" height="100%" radius="0" hint-size="100%,100%" style="border:0">
+        <sc-for list="{{ markers }}" as="m" hint-placeholder-count="0">
+          <div style="{{ m.style }}" onClick="{{ m.onClick }}" title="{{ m.title }}"></div>
+        </sc-for>
+        <sc-for list="{{ bubbles }}" as="b" hint-placeholder-count="0">
+          <div style="{{ b.style }}" onClick="{{ b.onClick }}" title="{{ b.title }}">{{ b.count }}</div>
+        </sc-for>
+        <div style="position:absolute;top:var(--space-4);right:var(--space-4);display:flex;flex-direction:column;gap:var(--space-2);z-index:6">
+          <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.IconButton" variant="chrome" label="Zoom +" onClick="{{ zoomIn }}" hint-size="44px,44px" dc-props="{{ touch44 }}">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Icon" name="plus" size="{{ 18 }}" hint-size="18px,18px"></x-import>
+          </x-import>
+          <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.IconButton" variant="chrome" label="Zoom −" onClick="{{ zoomOut }}" hint-size="44px,44px" dc-props="{{ touch44 }}">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Icon" name="minus" size="{{ 18 }}" hint-size="18px,18px"></x-import>
+          </x-import>
+          <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.IconButton" variant="chrome" label="{{ L.fitAll }}" onClick="{{ fitAll }}" hint-size="44px,44px" dc-props="{{ touch44 }}">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Icon" name="locate-fixed" size="{{ 18 }}" hint-size="18px,18px"></x-import>
+          </x-import>
+        </div>
+      </x-import>
+    </div>
+
+    <div style="{{ sheetStyle }}">
+      <button onClick="{{ cycleSheet }}" aria-label="{{ sheetHint }}" style="flex:0 0 auto;border:0;background:none;cursor:pointer;padding:10px var(--space-5) var(--space-3);display:flex;flex-direction:column;align-items:center;gap:8px;min-height:48px">
+        <span style="width:44px;height:4px;border-radius:2px;background:var(--ink-300)"></span>
+        <span style="display:flex;align-items:baseline;gap:8px;width:100%">
+          <span style="font-family:var(--font-display);font-size:var(--text-md);font-weight:700;color:var(--text-strong);letter-spacing:-0.015em;line-height:1">{{ sheetTitle }}</span>
+          <span style="font-family:var(--font-data);font-size:var(--text-xs);color:var(--text-faint)">{{ sheetCount }}</span>
+          <span style="margin-left:auto;font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;color:var(--text-brand)">{{ sheetHint }}</span>
+        </span>
+      </button>
+
+      <div style="flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:0 var(--space-5) 8px;font-family:var(--font-data);font-size:9.5px;color:var(--text-faint);letter-spacing:0.02em;white-space:nowrap;overflow:hidden">
+        <span>{{ scaleLabel }}</span>
+        <span style="color:var(--ink-300)">·</span>
+        <span>{{ coordLabel }}</span>
+        <span style="margin-left:auto">© OpenStreetMap · © CARTO</span>
+      </div>
+
+      <div class="ogec-scroll" style="flex:1;min-height:0;border-top:1px solid var(--border-subtle)">
+
+        <sc-if value="{{ mobileDetail }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4);border-bottom:1px solid var(--border-subtle);background:var(--ink-50)">
+            <div style="display:flex;align-items:flex-start;gap:var(--space-3)">
+              <div style="flex:1;min-width:0">
+                <div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--text-strong);letter-spacing:-0.02em;line-height:1.15">{{ selectedName }}</div>
+                <div style="font-size:var(--text-sm);color:var(--text-muted);margin-top:6px">{{ selectedSub }}</div>
+              </div>
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.IconButton" variant="ghost" label="{{ L.close }}" onClick="{{ clearSelection }}" hint-size="44px,44px" dc-props="{{ touch44 }}"><x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Icon" name="x" size="{{ 18 }}" hint-size="18px,18px"></x-import></x-import>
+            </div>
+            <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Badge" mono="{{ true }}" tone="brand" hint-size="80px,22px">{{ selectedMatricule }}</x-import>
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Badge" tone="terrain" dot="{{ true }}" hint-size="170px,22px">{{ L.inscribed }}</x-import>
+            </div>
+            <div style="display:flex;flex-direction:column">
+              <sc-for list="{{ selectedFields }}" as="f" hint-placeholder-count="6">
+                <div style="display:flex;justify-content:space-between;gap:var(--space-4);padding:11px 0;border-bottom:1px solid var(--ink-200)">
+                  <span style="font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;color:var(--text-muted)">{{ f.label }}</span>
+                  <span style="{{ f.valueStyle }}">{{ f.value }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:var(--space-3)">
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" block="{{ true }}" hint-size="100%,44px" dc-props="{{ touch44h }}">{{ L.call }}</x-import>
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" variant="secondary" block="{{ true }}" hint-size="100%,44px" dc-props="{{ touch44h }}">{{ L.route }}</x-import>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isSearch }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:var(--space-4) var(--space-5);display:flex;flex-direction:column;gap:var(--space-3);border-bottom:1px solid var(--border-subtle)">
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Input" value="{{ query }}" onChange="{{ onQuery }}" placeholder="{{ L.searchPh }}" hint-size="100%,44px" dc-props="{{ touch44h }}"></x-import>
+            <div style="display:flex;gap:var(--space-2)" class="ogec-hscroll">
+              <sc-for list="{{ catTags }}" as="c" hint-placeholder-count="4">
+                <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Tag" active="{{ c.active }}" onClick="{{ c.onClick }}" hint-size="auto,32px" dc-props="{{ tagTouch }}"><span style="white-space:nowrap">{{ c.label }}</span></x-import>
+              </sc-for>
+            </div>
+          </div>
+          <sc-for list="{{ listRows }}" as="r" hint-placeholder-count="6">
+            <div style="{{ r.style }}" onClick="{{ r.onClick }}">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span style="{{ r.dot }}"></span>
+                <span style="flex:1;min-width:0;font-size:var(--text-base);font-weight:600;color:var(--text-strong);line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.name }}</span>
+                <span style="font-family:var(--font-data);font-size:10.5px;font-weight:500;color:var(--text-body);background:var(--ink-100);border-radius:var(--radius-sm);padding:3px 6px">{{ r.matricule }}</span>
+              </div>
+              <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-top:6px;padding-left:18px">
+                <span style="font-size:var(--text-xs);color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.cabinet }}</span>
+                <span style="margin-left:auto;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--text-faint)">{{ r.city }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </sc-if>
+
+        <sc-if value="{{ isCities }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:var(--space-4) var(--space-4) var(--space-6);display:flex;flex-direction:column;gap:var(--space-5)">
+            <sc-for list="{{ regionGroups }}" as="g" hint-placeholder-count="5">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <div style="display:flex;align-items:baseline;gap:var(--space-2);padding:0 var(--space-2) 6px">
+                  <span style="font-family:var(--font-display);font-size:var(--text-sm);font-weight:700;color:var(--text-strong)">{{ g.label }}</span>
+                  <span style="margin-left:auto;font-family:var(--font-data);font-size:var(--text-xs);color:var(--text-faint)">{{ g.count }}</span>
+                </div>
+                <sc-for list="{{ g.cities }}" as="c" hint-placeholder-count="2">
+                  <div style="{{ c.mobileStyle }}" onClick="{{ c.onClick }}">
+                    <span style="font-size:var(--text-base)">{{ c.label }}</span>
+                    <span style="margin-left:auto;font-family:var(--font-data);font-size:var(--text-sm);color:var(--text-muted)">{{ c.count }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isVerify }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4)">
+            <p style="margin:0;font-size:var(--text-sm);color:var(--text-muted);line-height:1.6">{{ L.verifyP }}</p>
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Input" value="{{ verifyQuery }}" onChange="{{ onVerifyQuery }}" onKeyDown="{{ onVerifyKey }}" placeholder="{{ L.verifyPh }}" hint-size="100%,44px" dc-props="{{ monoInput44 }}"></x-import>
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" block="{{ true }}" onClick="{{ runVerify }}" hint-size="100%,44px" dc-props="{{ touch44h }}">{{ L.verifyBtn }}</x-import>
+            <sc-if value="{{ verifyMissing }}" hint-placeholder-val="{{ false }}">
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.EmptyState" icon="shield-alert" title="{{ L.notFoundT }}" description="{{ L.notFoundD }}" hint-size="100%,160px"></x-import>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isAnalyse }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-5)">
+            <div style="display:flex;gap:var(--space-6)">
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.StatBlock" value="{{ filteredCount }}" label="{{ L.statShown }}" hint-size="90px,46px"></x-import>
+              <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.StatBlock" value="{{ shownCities }}" label="{{ L.statCities }}" hint-size="90px,46px"></x-import>
+              <span style="margin-left:auto;align-self:center"><x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Button" variant="ghost" size="sm" onClick="{{ resetFilters }}" hint-size="100px,36px" dc-props="{{ touch36 }}">{{ L.reset }}</x-import></span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+              <span style="font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);font-weight:600">{{ L.catsTitle }}</span>
+              <sc-for list="{{ catChecks }}" as="c" hint-placeholder-count="4">
+                <div style="display:flex;align-items:center;gap:var(--space-3);min-height:44px">
+                  <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Checkbox" label="{{ c.label }}" swatch="{{ c.color }}" checked="{{ c.checked }}" onChange="{{ c.onChange }}" hint-size="100%,24px" style="flex:1"></x-import>
+                  <span style="font-family:var(--font-data);font-size:var(--text-sm);color:var(--text-body)">{{ c.count }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <x-import component-from-global-scope="WebsigDesignSystem_aebc7a.Select" label="{{ L.cityF }}" options="{{ cityOptions }}" value="{{ cityFilter }}" onChange="{{ onCityFilter }}" hint-size="100%,66px"></x-import>
+          </div>
+        </sc-if>
+
+      </div>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900},&quot;viewport&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;mobile&quot;,&quot;tablet&quot;,&quot;desktop&quot;],&quot;default&quot;:&quot;auto&quot;,&quot;tsType&quot;:&quot;'auto' | 'mobile' | 'tablet' | 'desktop'&quot;,&quot;section&quot;:&quot;Webmap&quot;},&quot;basemap&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;osm&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'osm' | 'dark'&quot;,&quot;section&quot;:&quot;Carte&quot;},&quot;startMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;chercher&quot;,&quot;villes&quot;,&quot;verifier&quot;,&quot;analyser&quot;],&quot;default&quot;:&quot;chercher&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Webmap&quot;},&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;FR&quot;,&quot;EN&quot;],&quot;default&quot;:&quot;FR&quot;,&quot;tsType&quot;:&quot;'FR' | 'EN'&quot;,&quot;section&quot;:&quot;Webmap&quot;}}">
+const CATS = [
+  { id: 'privee', fr: 'Clientèle privée', en: 'Private practice', n: 40, prefix: 'A', start: 11, color: 'var(--layer-point)', hex: '#46349e' },
+  { id: 'experts', fr: 'Experts assermentés', en: 'Sworn experts', n: 135, prefix: 'B', start: 17, color: 'var(--layer-line)', hex: '#0e7c86' },
+  { id: 'topo', fr: 'Topographes', en: 'Surveyors', n: 61, prefix: 'C', start: 201, color: 'var(--layer-polygon)', hex: '#46753c' },
+  { id: 'honoraires', fr: 'Honoraires', en: 'Honorary', n: 5, prefix: 'H', start: 1, color: 'var(--layer-raster)', hex: '#b5772a' }
+];
+
+const CITY_DEF = [
+  { city: 'Yaoundé', region: 'Centre', lat: 3.8480, lon: 11.5021, n: 128 },
+  { city: 'Douala', region: 'Littoral', lat: 4.0511, lon: 9.7679, n: 44 },
+  { city: 'Bafoussam', region: 'Ouest', lat: 5.4781, lon: 10.4176, n: 12 },
+  { city: 'Bamenda', region: 'Nord-Ouest', lat: 5.9631, lon: 10.1591, n: 7 },
+  { city: 'Garoua', region: 'Nord', lat: 9.3017, lon: 13.3921, n: 5 },
+  { city: 'Maroua', region: 'Extrême-Nord', lat: 10.5910, lon: 14.3159, n: 4 },
+  { city: 'Ngaoundéré', region: 'Adamaoua', lat: 7.3167, lon: 13.5833, n: 4 },
+  { city: 'Buea', region: 'Sud-Ouest', lat: 4.1527, lon: 9.2410, n: 4 },
+  { city: 'Kribi', region: 'Sud', lat: 2.9400, lon: 9.9100, n: 3 },
+  { city: 'Ebolowa', region: 'Sud', lat: 2.9000, lon: 11.1500, n: 3 },
+  { city: 'Bertoua', region: 'Est', lat: 4.5772, lon: 13.6846, n: 3 },
+  { city: 'Kumba', region: 'Sud-Ouest', lat: 4.6363, lon: 9.4469, n: 3 },
+  { city: 'Edéa', region: 'Littoral', lat: 3.8000, lon: 10.1333, n: 3 },
+  { city: 'Dschang', region: 'Ouest', lat: 5.4500, lon: 10.0500, n: 3 },
+  { city: 'Nkongsamba', region: 'Littoral', lat: 4.9547, lon: 9.9404, n: 2 },
+  { city: 'Limbe', region: 'Sud-Ouest', lat: 4.0217, lon: 9.1950, n: 2 },
+  { city: 'Mfou', region: 'Centre', lat: 3.7167, lon: 11.6333, n: 1 },
+  { city: 'Sangmélima', region: 'Sud', lat: 2.9333, lon: 11.9833, n: 1 },
+  { city: 'Paris', region: 'Hors Cameroun', lat: 48.8566, lon: 2.3522, n: 4 },
+  { city: 'Bruxelles', region: 'Hors Cameroun', lat: 50.8503, lon: 4.3517, n: 3 },
+  { city: 'Libreville', region: 'Hors Cameroun', lat: 0.4162, lon: 9.4673, n: 2 }
+];
+
+const SURNAMES = ['Mballa', 'Ngando', 'Tchoumi', 'Essomba', 'Bikoï', 'Manga', 'Njoya', 'Fotso', 'Atangana', 'Ndongo', 'Mvondo', 'Nkoulou', 'Tabi', 'Owona', 'Kamdem', 'Sadjo', 'Belinga', 'Djoumessi', 'Etoundi', 'Ngo Bassong', 'Abena', 'Foning', 'Nana', 'Onana', 'Moukouri', 'Bello', 'Aboubakar', 'Tiofack'];
+const FIRSTNAMES = ['Jean-Paul', 'Estelle', 'Serge', 'Marthe', 'Blaise', 'Aïcha', 'Léonard', 'Clarisse', 'Emmanuel', 'Sylvie', 'Pascal', 'Nadège', 'Bertrand', 'Rose', 'Hervé', 'Adèle', 'Théodore', 'Chantal', 'Alphonse', 'Bienvenu'];
+const CABINET_WORDS = ['Géomètre-expert', 'Topo Conseil', 'Cadastre & Foncier', 'Géodésie', 'Plan & Mesure', 'Arpentage', 'Géomatique', 'Bornage'];
+
+const T = {
+  FR: {
+    appTitle: 'Annuaire des géomètres agréés', eyebrow: 'Ordre national des géomètres du Cameroun · Tableau 2026',
+    appTitleShort: 'Géomètres agréés', eyebrowShort: 'Tableau 2026 · Cameroun',
+    download: 'Télécharger le GeoJSON', modes: ['Chercher', 'Par ville', 'Vérifier', 'Analyser'],
+    searchPh: "Nom, ville ou n° d'agrément", emptyT: 'Aucun membre ne correspond', emptyD: 'Élargis les filtres ou change de région.',
+    regions: 'Régions & villes', verifyH: 'Vérifier un agrément',
+    verifyP: '241 géomètres inscrits au tableau 2026, en quatre catégories. La carte sert de preuve, pas de vitrine.',
+    verifyPh: "N° d'agrément, matricule ou nom", verifyBtn: 'Vérifier', verifyHint: 'Saisis un numéro pour lancer la vérification.',
+    inscribed: 'Inscrit au tableau 2026', notFoundT: 'Aucun membre sous ce numéro',
+    notFoundD: "Vérifie le numéro d'agrément, ou cherche par nom dans le mode Chercher.",
+    catsTitle: 'Catégories', filters: 'Filtres', cityF: 'Ville', seriesF: 'Série de matricule', reset: 'Réinitialiser',
+    layers: 'Couches', legendT: 'Membres par ville', tableTitle: 'Table attributaire',
+    fCat: 'Catégorie', fCabinet: 'Cabinet', fCity: 'Ville', fRegion: 'Région', fPhone: 'Téléphone', fSince: 'Agréé depuis', fMat: 'Matricule', fName: 'Nom',
+    call: 'Appeler', route: 'Itinéraire', share: 'Partager', close: 'Fermer', fitAll: 'Vue nationale',
+    statShown: 'Affichés', statCities: 'Villes', allCities: 'Toutes les villes',
+    noSelT: 'Aucune sélection', noSelD: 'Choisis un géomètre sur la carte ou dans la liste pour voir sa fiche.',
+    disclaimer: "Données d'exemple dérivées du tableau annuel. Position au chef-lieu déclaré, pas à l'adresse exacte."
+  },
+  EN: {
+    appTitle: 'Directory of licensed land surveyors', eyebrow: 'National Order of Surveyors of Cameroon · 2026 roll',
+    appTitleShort: 'Licensed surveyors', eyebrowShort: '2026 roll · Cameroon',
+    download: 'Download GeoJSON', modes: ['Search', 'By city', 'Verify', 'Analyse'],
+    searchPh: 'Name, city or licence no.', emptyT: 'No member matches', emptyD: 'Widen the filters or change region.',
+    regions: 'Regions & cities', verifyH: 'Verify a licence',
+    verifyP: '241 surveyors on the 2026 roll, in four categories. The map is evidence, not decoration.',
+    verifyPh: 'Licence no., roll no. or name', verifyBtn: 'Verify', verifyHint: 'Enter a number to run the check.',
+    inscribed: 'On the 2026 roll', notFoundT: 'No member under this number',
+    notFoundD: 'Check the licence number, or search by name in Search mode.',
+    catsTitle: 'Categories', filters: 'Filters', cityF: 'City', seriesF: 'Roll series', reset: 'Reset',
+    layers: 'Layers', legendT: 'Members per city', tableTitle: 'Attribute table',
+    fCat: 'Category', fCabinet: 'Practice', fCity: 'City', fRegion: 'Region', fPhone: 'Phone', fSince: 'Licensed since', fMat: 'Roll no.', fName: 'Name',
+    call: 'Call', route: 'Directions', share: 'Share', close: 'Close', fitAll: 'National view',
+    statShown: 'Shown', statCities: 'Cities', allCities: 'All cities',
+    noSelT: 'Nothing selected', noSelD: 'Pick a surveyor on the map or in the list to open their record.',
+    disclaimer: 'Sample data derived from the annual roll. Positioned at the declared city, not the exact address.'
+  }
+};
+
+function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function tileX(lon, z) { return (lon + 180) / 360 * Math.pow(2, z); }
+function tileY(lat, z) { const r = lat * Math.PI / 180; return (1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * Math.pow(2, z); }
+function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u202f'); }
+
+function buildMembers() {
+  const r = rng(20260811);
+  const slots = [];
+  CATS.forEach(c => { for (let i = 0; i < c.n; i++) slots.push(c.id); });
+  for (let i = slots.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); const t = slots[i]; slots[i] = slots[j]; slots[j] = t; }
+  const counters = {}; CATS.forEach(c => counters[c.id] = c.start);
+  const members = []; let k = 0;
+  CITY_DEF.forEach(cd => {
+    for (let i = 0; i < cd.n; i++) {
+      const catId = slots[k]; const cat = CATS.find(c => c.id === catId);
+      const num = counters[catId]++;
+      const last = SURNAMES[Math.floor(r() * SURNAMES.length)];
+      const first = FIRSTNAMES[Math.floor(r() * FIRSTNAMES.length)];
+      const spread = 0.02 + Math.min(cd.n, 60) / 900;
+      members.push({
+        id: 'm' + k, name: first + ' ' + last.toUpperCase(),
+        catId, matricule: cat.prefix + String(num).padStart(3, '0'),
+        cabinet: catId === 'honoraires' ? '—' : 'Cabinet ' + last + ' · ' + CABINET_WORDS[Math.floor(r() * CABINET_WORDS.length)],
+        city: cd.city, region: cd.region,
+        phone: '+237 6' + String(Math.floor(r() * 90) + 10) + ' ' + String(Math.floor(r() * 90) + 10) + ' ' + String(Math.floor(r() * 90) + 10) + ' ' + String(Math.floor(r() * 90) + 10),
+        year: 1996 + Math.floor(r() * 29),
+        lat: cd.lat + (r() - 0.5) * spread * 2, lon: cd.lon + (r() - 0.5) * spread * 2
+      });
+      k++;
+    }
+  });
+  return members;
+}
+
+class Component extends DCLogic {
+  state = {
+    mode: null, lang: null, query: '', verifyQuery: '', verifyResult: null,
+    selectedId: null, selectedCity: 'Yaoundé',
+    cats: { privee: true, experts: true, topo: true, honoraires: true },
+    cityFilter: '__all', series: [],
+    center: [6.2, 12.4], zoom: 6, vw: 1440, sheet: 'half',
+    layers: [
+      { id: 'membres', label: 'Membres', color: 'var(--layer-point)', visible: true },
+      { id: 'chefs', label: 'Chefs-lieux de région', color: 'var(--layer-polygon)', visible: true },
+      { id: 'limites', label: 'Limites régionales', color: 'var(--layer-line)', visible: false }
+    ]
+  };
+
+  componentDidMount() { this.onResize(); window.addEventListener('resize', this.onResize); }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+  onResize = () => { const w = window.innerWidth; if (w !== this.state.vw) this.setState({ vw: w }); };
+  cycleSheet = () => this.setState(s => ({ sheet: s.sheet === 'peek' ? 'half' : s.sheet === 'half' ? 'full' : 'peek' }));
+
+  get members() { if (!this._m) this._m = buildMembers(); return this._m; }
+  get mode() { return this.state.mode || this.props.startMode || 'chercher'; }
+  get lang() { return this.state.lang || this.props.defaultLang || 'FR'; }
+  get L() { return T[this.lang] || T.FR; }
+  catLabel(id) { const c = CATS.find(x => x.id === id); return this.lang === 'EN' ? c.en : c.fr; }
+
+  setMode = (m) => this.setState({ mode: m, verifyResult: m === 'verifier' ? this.state.verifyResult : null });
+  toggleLang = () => this.setState({ lang: this.lang === 'FR' ? 'EN' : 'FR' });
+  onQuery = (e) => this.setState({ query: e.target.value });
+  clearSelection = () => this.setState({ selectedId: null });
+  select = (id) => {
+    const m = this.members.find(x => x.id === id);
+    this.setState(s => ({ selectedId: id, center: [m.lat, m.lon], zoom: 13, sheet: s.sheet === 'peek' ? 'half' : s.sheet }));
+  };
+  pickCity = (city) => {
+    const cd = CITY_DEF.find(c => c.city === city);
+    this.setState({ selectedCity: city, selectedId: null, center: [cd.lat, cd.lon], zoom: 11 });
+  };
+  zoomIn = () => this.setState(s => ({ zoom: Math.min(15, s.zoom + 1) }));
+  zoomOut = () => this.setState(s => ({ zoom: Math.max(4, s.zoom - 1) }));
+  fitAll = () => this.setState({ zoom: 6, center: [6.2, 12.4], selectedId: null });
+  toggleCat = (id) => this.setState(s => ({ cats: { ...s.cats, [id]: !s.cats[id] } }));
+  toggleSeries = (p) => this.setState(s => ({ series: s.series.includes(p) ? s.series.filter(x => x !== p) : s.series.concat(p) }));
+  resetFilters = () => this.setState({ cats: { privee: true, experts: true, topo: true, honoraires: true }, cityFilter: '__all', series: [], query: '' });
+  onCityFilter = (e) => this.setState({ cityFilter: e.target.value });
+  onVerifyQuery = (e) => this.setState({ verifyQuery: e.target.value });
+  onVerifyKey = (e) => { if (e.key === 'Enter') this.runVerify(); };
+  runVerify = () => {
+    const q = (this.state.verifyQuery || '').trim().toLowerCase();
+    if (!q) { this.setState({ verifyResult: null }); return; }
+    const hit = this.members.find(m => m.matricule.toLowerCase() === q) || this.members.find(m => m.name.toLowerCase().includes(q) || m.matricule.toLowerCase().includes(q));
+    if (hit) this.setState({ verifyResult: hit.id, selectedId: hit.id, center: [hit.lat, hit.lon], zoom: 12 });
+    else this.setState({ verifyResult: 'none', selectedId: null });
+  };
+  toggleLayer = (id) => this.setState(s => ({ layers: s.layers.map(l => l.id === id ? { ...l, visible: !l.visible } : l) }));
+
+  filtered() {
+    const { cats, cityFilter, series, query } = this.state;
+    const q = query.trim().toLowerCase();
+    return this.members.filter(m => {
+      if (!cats[m.catId]) return false;
+      if (cityFilter !== '__all' && m.city !== cityFilter) return false;
+      if (series.length && !series.includes(m.matricule[0])) return false;
+      if (q && !(m.name.toLowerCase().includes(q) || m.city.toLowerCase().includes(q) || m.matricule.toLowerCase().includes(q) || m.cabinet.toLowerCase().includes(q))) return false;
+      return true;
+    });
+  }
+
+  renderVals() {
+    const L = this.L, mode = this.mode, st = this.state;
+    const isSearch = mode === 'chercher', isCities = mode === 'villes', isVerify = mode === 'verifier', isAnalyse = mode === 'analyser';
+    const all = this.members;
+    const filtered = this.filtered();
+    const selected = all.find(m => m.id === st.selectedId) || null;
+    const z = st.zoom, cLat = st.center[0], cLon = st.center[1];
+    const px = (lat, lon) => [(tileX(lon, z) - tileX(cLon, z)) * 256, (tileY(lat, z) - tileY(cLat, z)) * 256];
+
+    // markers
+    let markerSet = [];
+    if (isSearch || isAnalyse) markerSet = filtered;
+    else if (isVerify) markerSet = selected ? [selected] : [];
+    else markerSet = [];
+    if (isAnalyse && !st.layers.find(l => l.id === 'membres').visible) markerSet = [];
+    const markers = [];
+    markerSet.forEach(m => {
+      const [dx, dy] = px(m.lat, m.lon);
+      if (Math.abs(dx) > 1400 || Math.abs(dy) > 1100) return;
+      const sel = selected && selected.id === m.id;
+      const s = sel ? 20 : 13;
+      const cat = CATS.find(c => c.id === m.catId);
+      markers.push({
+        id: m.id, title: m.name + ' · ' + m.matricule,
+        style: 'position:absolute;left:50%;top:50%;width:' + s + 'px;height:' + s + 'px;margin:' + (-s / 2) + 'px 0 0 ' + (-s / 2) + 'px;transform:translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px);border-radius:50%;background:' + (sel ? 'var(--alert-600)' : cat.color) + ';border:2px solid #fff;box-shadow:0 1px 4px rgba(20,18,31,.4);cursor:pointer;z-index:' + (sel ? 7 : 3) + ';transition:width var(--dur-fast) var(--ease-out),height var(--dur-fast) var(--ease-out)',
+        onClick: () => this.select(m.id)
+      });
+    });
+
+    // bubbles (mode villes)
+    const bubbles = [];
+    if (isCities) {
+      CITY_DEF.forEach(cd => {
+        const [dx, dy] = px(cd.lat, cd.lon);
+        if (Math.abs(dx) > 1400 || Math.abs(dy) > 1100) return;
+        const d = Math.round(24 + Math.sqrt(cd.n) * 5.2);
+        const act = st.selectedCity === cd.city;
+        bubbles.push({
+          id: cd.city, count: cd.n, title: cd.city + ' · ' + cd.n,
+          style: 'position:absolute;left:50%;top:50%;width:' + d + 'px;height:' + d + 'px;margin:' + (-d / 2) + 'px 0 0 ' + (-d / 2) + 'px;transform:translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px);border-radius:50%;display:grid;place-items:center;background:' + (act ? 'rgba(179,38,30,.24)' : 'rgba(70,52,158,.22)') + ';border:2px solid ' + (act ? 'var(--alert-600)' : 'var(--brand-indigo-600)') + ';color:' + (act ? 'var(--alert-700)' : 'var(--brand-indigo-700)') + ';font-family:var(--font-data);font-size:11px;font-weight:600;cursor:pointer;z-index:' + (act ? 6 : 3),
+          onClick: () => this.pickCity(cd.city)
+        });
+      });
+    }
+
+    // left list
+    let listSource = filtered;
+    if (isCities) listSource = all.filter(m => m.city === st.selectedCity);
+    const listRows = listSource.slice(0, 120).map(m => {
+      const sel = selected && selected.id === m.id;
+      const cat = CATS.find(c => c.id === m.catId);
+      return {
+        id: m.id, name: m.name, matricule: m.matricule, cabinet: m.cabinet, city: m.city,
+        dot: 'width:8px;height:8px;flex:0 0 auto;border-radius:50%;background:' + cat.color,
+        style: 'padding:14px var(--space-5) 14px calc(var(--space-5) - 3px);border-bottom:1px solid var(--ink-100);border-left:3px solid ' + (sel ? 'var(--brand-indigo-600)' : 'transparent') + ';background:' + (sel ? 'var(--surface-brand-soft)' : 'transparent') + ';cursor:pointer;transition:background-color var(--dur-fast) var(--ease-out)',
+        onClick: () => this.select(m.id)
+      };
+    });
+
+    // region groups
+    const regionGroups = [];
+    CITY_DEF.forEach(cd => {
+      let g = regionGroups.find(x => x.key === cd.region);
+      if (!g) { g = { key: cd.region, label: cd.region === 'Hors Cameroun' && this.lang === 'EN' ? 'Outside Cameroon' : cd.region, count: 0, cities: [] }; regionGroups.push(g); }
+      g.count += cd.n;
+      const act = st.selectedCity === cd.city;
+      g.cities.push({
+        label: cd.city, count: cd.n,
+        style: 'display:flex;align-items:center;gap:var(--space-3);padding:7px var(--space-3) 7px calc(var(--space-3) - 3px);border-left:3px solid ' + (act ? 'var(--brand-indigo-600)' : 'transparent') + ';background:' + (act ? 'var(--surface-brand-soft)' : 'transparent') + ';border-radius:var(--radius-sm);cursor:pointer;color:' + (act ? 'var(--text-brand)' : 'var(--text-body)'),
+        mobileStyle: 'display:flex;align-items:center;gap:var(--space-3);min-height:48px;padding:0 var(--space-3) 0 calc(var(--space-3) - 3px);border-left:3px solid ' + (act ? 'var(--brand-indigo-600)' : 'transparent') + ';background:' + (act ? 'var(--surface-brand-soft)' : 'transparent') + ';border-bottom:1px solid var(--ink-100);cursor:pointer;color:' + (act ? 'var(--text-brand)' : 'var(--text-body)'),
+        onClick: () => this.pickCity(cd.city)
+      });
+    });
+    regionGroups.sort((a, b) => b.count - a.count);
+
+    const fieldVal = 'font-family:var(--font-data);font-size:var(--text-xs);color:var(--text-strong);text-align:right';
+    const fieldValL = 'font-size:var(--text-sm);color:var(--text-strong);margin-top:4px;font-family:var(--font-data)';
+    const fieldsFor = (m, valueStyle) => m ? [
+      { label: L.fCat, value: this.catLabel(m.catId), valueStyle: valueStyle.replace('var(--font-data)', 'var(--font-body)') },
+      { label: L.fMat, value: m.matricule, valueStyle },
+      { label: L.fCabinet, value: m.cabinet, valueStyle: valueStyle.replace('var(--font-data)', 'var(--font-body)') },
+      { label: L.fCity, value: m.city + ' · ' + (m.region === 'Hors Cameroun' && this.lang === 'EN' ? 'Outside Cameroon' : m.region), valueStyle: valueStyle.replace('var(--font-data)', 'var(--font-body)') },
+      { label: L.fPhone, value: m.phone, valueStyle },
+      { label: L.fSince, value: String(m.year), valueStyle }
+    ] : [];
+
+    const verified = st.verifyResult && st.verifyResult !== 'none' ? all.find(m => m.id === st.verifyResult) : null;
+
+    const catCounts = {};
+    CATS.forEach(c => catCounts[c.id] = all.filter(m => m.catId === c.id).length);
+
+    const scaleLabels = { 4: '500 km', 5: '250 km', 6: '200 km', 7: '100 km', 8: '50 km', 9: '25 km', 10: '10 km', 11: '5 km', 12: '2 km', 13: '1 km', 14: '500 m', 15: '250 m' };
+
+    const tableRows = filtered.slice(0, 80).map(m => ({ ...m, catLabel: this.catLabel(m.catId) }));
+
+    const vw = st.vw;
+    const vp = this.props.viewport || 'auto';
+    const evw = vp === 'mobile' ? 390 : vp === 'tablet' ? 834 : vp === 'desktop' ? 1440 : vw;
+    const isMobile = evw < 760, isTablet = evw >= 760 && evw < 1140, isWide = !isMobile;
+    const framed = vp !== 'auto' && vp !== 'desktop' && vw > evw + 40;
+    const sheetH = st.sheet === 'peek' ? '112px' : st.sheet === 'half' ? '48%' : '86%';
+    const modeLabels = L.modes;
+
+    return {
+      L, mode, isSearch, isCities, isVerify, isAnalyse,
+      isMobile, isTablet, isWide,
+      mobileShellStyle: 'position:relative;height:100%;min-height:100%;display:flex;flex-direction:column;overflow:hidden;font-family:var(--font-body);color:var(--text-body)' + (framed ? ';width:390px;margin:0 auto' : ''),
+      sheetStyle: 'position:absolute;left:0;right:0;bottom:0;height:' + sheetH + ';display:flex;flex-direction:column;background:var(--surface-card);border-top:1px solid var(--border-subtle);border-radius:20px 20px 0 0;box-shadow:0 -8px 28px rgba(20,18,31,.14);z-index:12;transition:height var(--dur-base) var(--ease-out);overflow:hidden',
+      cycleSheet: this.cycleSheet,
+      tabsProps: { style: { borderBottom: 0, gap: 28, alignItems: 'stretch', whiteSpace: 'nowrap', flex: '0 0 auto' } },
+      touch44: { style: { width: 44, height: 44 } },
+      touch44h: { style: { minHeight: 44 } },
+      touch36: { style: { minHeight: 36 } },
+      monoInput44: { style: { fontFamily: 'var(--font-data)', minHeight: 44 } },
+      tagTouch: { style: { minHeight: 32, padding: '6px 12px', whiteSpace: 'nowrap' } },
+      sheetTitle: selected && isMobile ? (this.lang === 'EN' ? 'Member' : 'Fiche membre') : isCities ? st.selectedCity : isVerify ? L.modes[2] : isAnalyse ? L.filters : (this.lang === 'EN' ? 'Results' : 'R\u00e9sultats'),
+      sheetCount: selected && isMobile ? (selected.matricule || '') : fmt(filtered.length),
+      sheetHint: st.sheet === 'full' ? (this.lang === 'EN' ? 'Collapse' : 'R\u00e9duire') : (this.lang === 'EN' ? 'Expand' : 'Agrandir'),
+      modePills: ['chercher', 'villes', 'verifier', 'analyser'].map((v, i) => ({
+        label: modeLabels[i], onClick: () => this.setMode(v),
+        style: 'flex:0 0 auto;border-radius:var(--radius-pill);padding:9px 13px;min-height:40px;cursor:pointer;font-family:var(--font-body);font-size:13.5px;font-weight:600;white-space:nowrap;transition:all var(--dur-fast) var(--ease-out);border:1px solid ' + (mode === v ? 'var(--brand-indigo-600)' : 'var(--border-subtle)') + ';background:' + (mode === v ? 'var(--brand-indigo-600)' : 'var(--surface-card)') + ';color:' + (mode === v ? 'var(--white)' : 'var(--text-body)')
+      })),
+      langLabel: this.lang === 'FR' ? 'FR / en' : 'fr / EN',
+      toggleLang: this.toggleLang, setMode: this.setMode,
+      modeItems: [
+        { value: 'chercher', label: L.modes[0] },
+        { value: 'villes', label: L.modes[1] },
+        { value: 'verifier', label: L.modes[2] },
+        { value: 'analyser', label: L.modes[3] }
+      ],
+      countNum: fmt(filtered.length), countTotal: fmt(all.length),
+      countLabel: this.lang === 'EN' ? 'members mapped' : 'membres cartographiés',
+      query: st.query, onQuery: this.onQuery,
+      catTags: CATS.map(c => ({ label: this.catLabel(c.id), active: !!st.cats[c.id], onClick: () => this.toggleCat(c.id) })),
+      catChecks: CATS.map(c => ({ label: this.catLabel(c.id), color: c.color, checked: !!st.cats[c.id], count: catCounts[c.id], onChange: () => this.toggleCat(c.id) })),
+      catStats: CATS.map(c => ({ label: this.catLabel(c.id), count: catCounts[c.id], swatch: 'width:10px;height:10px;border-radius:2px;flex:0 0 auto;background:' + c.color })),
+      seriesTags: ['A', 'B', 'C', 'H'].map(p => ({ label: p, active: st.series.includes(p), onClick: () => this.toggleSeries(p) })),
+      cityOptions: [{ value: '__all', label: L.allCities }].concat(CITY_DEF.map(c => ({ value: c.city, label: c.city + ' (' + c.n + ')' }))),
+      cityFilter: st.cityFilter, onCityFilter: this.onCityFilter, resetFilters: this.resetFilters,
+      listRows, noResults: listRows.length === 0,
+      regionGroups,
+      filteredCount: fmt(filtered.length), shownCities: String(new Set(filtered.map(m => m.city)).size),
+      center: st.center, zoom: st.zoom, basemap: this.props.basemap || 'light',
+      markers, bubbles,
+      zoomIn: this.zoomIn, zoomOut: this.zoomOut, fitAll: this.fitAll,
+      scaleLabel: scaleLabels[st.zoom] || '10 km',
+      coordLabel: st.center[0].toFixed(3) + '° N · ' + st.center[1].toFixed(3) + '° E · z' + st.zoom,
+      layers: st.layers, toggleLayer: this.toggleLayer,
+      legendItems: [
+        { label: this.lang === 'EN' ? '1 – 10 members' : '1 à 10 membres', color: 'var(--brand-indigo-300)', shape: 'point' },
+        { label: this.lang === 'EN' ? '11 – 50 members' : '11 à 50 membres', color: 'var(--brand-indigo-500)', shape: 'point' },
+        { label: this.lang === 'EN' ? '50+ members' : 'Plus de 50 membres', color: 'var(--brand-indigo-700)', shape: 'point' }
+      ],
+      showPopup: !!selected && !isCities,
+      selectedName: selected ? selected.name : '', selectedMatricule: selected ? selected.matricule : '',
+      selectedCity: selected ? selected.city : '',
+      selectedSub: selected ? this.catLabel(selected.catId) + ' · ' + selected.city : '',
+      selectedFields: fieldsFor(selected, fieldVal),
+      popupRows: selected ? [
+        { label: L.fMat, value: selected.matricule },
+        { label: L.fCat, value: this.catLabel(selected.catId) },
+        { label: L.fCity, value: selected.city },
+        { label: L.fSince, value: String(selected.year) }
+      ] : [],
+      clearSelection: this.clearSelection,
+      showAside: !!selected && !isVerify && !isAnalyse && isWide && !isTablet,
+      showAsideHint: false,
+      tabletDetail: !!selected && isTablet && !isAnalyse,
+      mobileDetail: !!selected && isMobile,
+      verifyQuery: st.verifyQuery, onVerifyQuery: this.onVerifyQuery, onVerifyKey: this.onVerifyKey, runVerify: this.runVerify,
+      verifyFound: !!verified, verifyMissing: st.verifyResult === 'none', verifyIdle: !st.verifyResult,
+      verifiedName: verified ? verified.name : '', verifiedMatricule: verified ? verified.matricule : '',
+      verifiedSub: verified ? verified.cabinet : '',
+      verifiedFields: verified ? [
+        { label: L.fCat, value: this.catLabel(verified.catId), valueStyle: fieldValL.replace('var(--font-data)', 'var(--font-body)') },
+        { label: L.fCabinet, value: verified.cabinet, valueStyle: fieldValL.replace('var(--font-data)', 'var(--font-body)') },
+        { label: L.fCity, value: verified.city, valueStyle: fieldValL.replace('var(--font-data)', 'var(--font-body)') },
+        { label: L.fSince, value: String(verified.year), valueStyle: fieldValL }
+      ] : [],
+      tableCols: [
+        { key: 'name', label: L.fName, strong: true },
+        { key: 'matricule', label: 'N°', mono: true },
+        { key: 'catLabel', label: L.fCat },
+        { key: 'cabinet', label: L.fCabinet },
+        { key: 'city', label: L.fCity },
+        { key: 'year', label: L.fSince, mono: true, align: 'right' }
+      ],
+      tableRows,
+      tableSelected: selected ? tableRows.findIndex(r => r.id === selected.id) : -1,
+      onTableRow: (r) => this.select(r.id)
+    };
+  }
+}
+</script>
+</body>
+</html>

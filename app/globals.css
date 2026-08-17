@@ -1,0 +1,12 @@
+/* Peu de choses ici à dessein : l'essentiel des styles de base (body, h1-h4,
+   liens, focus) vient déjà de @websig/design/tokens.css (tokens/base.css).
+   Sur une webmap la page ne défile pas : carte et panneau se partagent la
+   hauteur du viewport (voir design/README.md, gabarit webmap-annuaire). */
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}

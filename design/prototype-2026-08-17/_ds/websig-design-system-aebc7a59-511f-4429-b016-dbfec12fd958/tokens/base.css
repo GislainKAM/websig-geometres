@@ -1,0 +1,11 @@
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--font-body);font-size:var(--text-base);line-height:var(--leading-normal);color:var(--text-body);background:var(--surface-page);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--text-strong);font-weight:var(--weight-semibold);line-height:var(--leading-snug);letter-spacing:var(--tracking-tight);margin:0}
+h1{font-size:var(--text-2xl);line-height:var(--leading-tight)}h2{font-size:var(--text-xl)}h3{font-size:var(--text-lg)}h4{font-size:var(--text-md)}
+p{margin:0 0 var(--space-4)}
+a{color:var(--text-link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:color var(--dur-fast) var(--ease-out)}
+a:hover{color:var(--text-link-hover);text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--border-focus);outline-offset:2px}
+code,kbd{font-family:var(--font-data);font-size:.92em}
+.ws-eyebrow{font-family:var(--font-body);font-size:var(--text-2xs);font-weight:var(--weight-semibold);letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--text-muted)}
+.ws-data{font-family:var(--font-data);font-variant-numeric:tabular-nums}
