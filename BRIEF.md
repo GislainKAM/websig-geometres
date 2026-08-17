@@ -11,18 +11,18 @@ C'est une **webmap** au sens de la plateforme websig : elle suit le système de 
 ## Trois exigences qui découlent du caractère officiel
 
 1. **Exactitude**, et date de mise à jour visible en permanence.
-2. **Données personnelles** — nom, spécialité, numéro d'inscription, adresse professionnelle sont publiables ; téléphone personnel, domicile, e-mail privé ne le sont pas. La séparation est appliquée **par une vue SQL de publication**, pas par une case à cocher dans le front.
-3. **Convention avec l'Ordre** — prérequis, pas formalité : elle définit les colonnes publiables, qui les valide, et qui répond d'une erreur affichée.
+2. **Données personnelles** — tranché le 17 août 2026 : le Tableau OGEC est un document officiel déjà public (stampé, signé, diffusé par l'Ordre), donc **toutes ses colonnes sont publiables telles quelles**, contact et email de cabinet compris. Pas de séparation public/privé à faire dans les données.
+3. **Convention avec l'Ordre** — la question « quelles colonnes » est tranchée (toutes, cf. #2). Reste ouvert : qui valide l'exactitude de ce qui est affiché, et qui répond d'une erreur (numéro erroné, personne radiée entre-temps) — d'autant que la source actuelle est une transcription manuelle non celle de l'Ordre. Voir `data/ocr-draft/README.md`.
 
 ## §1 — Décisions en attente
 
 | Sujet | Question |
 |---|---|
-| Données de l'Ordre | Le Tableau OGEC 2026 (`HPSC0177.pdf`, scan reçu le 17 août 2026) est dans le dépôt, avec un brouillon OCR transcrit à la main dans [`data/ocr-draft/`](data/ocr-draft/README.md) (242 entrées, non vérifié, non publiable). Reste à trancher : ce scan fait-il office de fichier source, ou en demande-t-on un directement à l'Ordre ? Bloque toujours la vraie carte tant que la réponse n'est pas actée. |
-| Mise à jour des données | Fichier transmis périodiquement, ou interface d'administration ? La seconde impose une authentification et un backend — bascule le projet en niveau 2. |
+| Données de l'Ordre | Le Tableau OGEC 2026 (`HPSC0177.pdf`, scan reçu le 17 août 2026) sert de source ; toutes ses colonnes sont publiables (décision du 17 août, voir exigence #2 ci-dessus). Reste ouvert : le brouillon OCR dans [`data/ocr-draft/`](data/ocr-draft/README.md) est une **transcription manuelle non vérifiée** (242 entrées) — à corriger avant de la considérer fiable, indépendamment de sa publicabilité. |
+| Mise à jour des données | Reporté (17 août 2026) — fichier transmis périodiquement ou interface d'administration, à trancher plus tard. La seconde impose une authentification et un backend — bascule le projet en niveau 2. |
 | Design | ~~Gislain fournit un design dédié~~ — livré le 17 août 2026, prototype haute fidélité dans [`design/prototype-2026-08-17/`](design/prototype-2026-08-17). Résolu. |
 
-Tant que les données réelles ne sont pas là, tout effectif affiché doit être signalé comme fictif (bandeau visible), jamais silencieux.
+Les données affichées sont réelles (source officielle) mais non vérifiées : la date de transcription et son statut de brouillon doivent rester visibles en permanence tant qu'aucune relecture croisée n'a été faite (exigence #1 ci-dessus).
 
 ## Ce qui existait déjà (référence technique, websig-platform, avant retrait)
 

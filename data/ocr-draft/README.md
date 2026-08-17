@@ -1,6 +1,8 @@
 # Brouillon OCR — Tableau OGEC 2026
 
-**Statut : brouillon non validé, non publiable.** Transcription visuelle manuelle (lecture d'image, pas d'OCR automatique) de [`HPSC0177.pdf`](../../HPSC0177.pdf) — le Tableau OGEC 2026 (Ordre National des Géomètres du Cameroun), scanné et transmis par l'Ordre.
+**Statut : publiable dans son principe, exactitude non vérifiée.** Transcription visuelle manuelle (lecture d'image, pas d'OCR automatique) de [`HPSC0177.pdf`](../../HPSC0177.pdf) — le Tableau OGEC 2026 (Ordre National des Géomètres du Cameroun), scanné et transmis par l'Ordre.
+
+Décision du 17 août 2026 (Gislain) : le tableau est un document officiel déjà public, donc toutes ses colonnes — contact et email de cabinet compris — sont publiables telles quelles. Ça ne dit rien de l'exactitude de la transcription ci-dessous : c'est un axe différent, voir plus bas.
 
 ## Ce que c'est
 
@@ -16,15 +18,13 @@
 
 Généré par [`scripts/build-ocr-draft.py`](../../scripts/build-ocr-draft.py) (juste un export, pas un moteur OCR — le script encode la transcription faite à la main).
 
-## Pourquoi ce n'est pas publiable en l'état
+## Ce qui reste ouvert
 
-Ça répond à la question ouverte du [BRIEF.md §1](../../BRIEF.md) sur l'origine des données, mais **pas** à ses deux autres exigences :
+1. **Exactitude non garantie.** Transcription manuelle de ~250 lignes sur un scan dense avec filigrane — erreurs plausibles sur les caractères ambigus (0/O, 1/l), les chiffres de téléphone, et les emails écrits en petit corps. Aucune relecture croisée n'a été faite. C'est pour ça que l'app affiche ces données avec un statut « brouillon » et une date de transcription visibles, pas comme un fait acquis.
+2. **Qui valide, qui répond d'une erreur.** La publicabilité des colonnes est actée, mais pas le processus de validation avec l'Ordre lui-même — cette transcription n'est pas la leur. Voir BRIEF.md exigence #3.
 
-1. **Exactitude non garantie.** Transcription manuelle de ~250 lignes sur un scan dense avec filigrane — erreurs plausibles sur les caractères ambigus (0/O, 1/l), les chiffres de téléphone, et les emails écrits en petit corps. Aucune relecture croisée n'a été faite.
-2. **Colonnes publiables non tranchées.** Le brief est explicite : la séparation entre ce qui est publiable (nom, spécialité, n° d'inscription, adresse professionnelle) et ce qui ne l'est pas (téléphone/email personnels) doit venir d'une **convention avec l'Ordre**, pas d'une supposition de ce script. Les colonnes `contact` et `email` ci-dessus sont donc à traiter comme non publiables par défaut tant que cette convention n'existe pas.
-
-**Ne pas** utiliser ces fichiers comme source pour la carte publique. Ils servent de brouillon de travail interne — pour se projeter sur le volume et la structure réelle des données, pas pour peupler `websig-geometres`.
+Ces fichiers alimentent désormais l'app (`lib/geometres.js`) — pas seulement un brouillon de travail interne. À remplacer par une transcription vérifiée (ou un fichier source de l'Ordre) dès que possible.
 
 ## Prochaine étape
 
-Faire valider ces fichiers (ou obtenir directement un fichier source) par l'Ordre avant tout usage — et clarifier au même moment quelles colonnes sont publiables. Voir [BRIEF.md §1](../../BRIEF.md).
+Faire relire ces fichiers (ou obtenir un fichier source) par l'Ordre pour lever la réserve d'exactitude. Voir [BRIEF.md §1](../../BRIEF.md).
