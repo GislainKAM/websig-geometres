@@ -1,4 +1,4 @@
-import { getGeometres, getVilles, getNonLocalisesCount, PROFIL_LIST, SOURCE } from '../lib/geometres.js';
+import { getGeometres, getVilles, getNonLocalisesCount, SOURCE } from '../lib/geometres.js';
 import { AnnuaireApp } from '../components/AnnuaireApp.jsx';
 
 // Toutes les colonnes du Tableau OGEC sont publiables (décision du 17 août
@@ -14,7 +14,6 @@ export default function Home() {
     <AnnuaireApp
       geometres={geometres}
       villes={villes}
-      profils={PROFIL_LIST}
       source={SOURCE}
       nonLocalises={nonLocalises}
     />

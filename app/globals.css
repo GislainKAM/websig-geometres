@@ -10,3 +10,9 @@ body {
   margin: 0;
   overflow: hidden;
 }
+
+/* Calqué sur le prototype (.ogec-scroll) — scrollbar fine sur les panneaux
+   internes (liste de résultats, table attributaire), pas sur la page. */
+.ogec-scroll {
+  scrollbar-width: thin;
+}
