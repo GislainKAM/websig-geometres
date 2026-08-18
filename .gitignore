@@ -6,3 +6,10 @@ dist/
 .env
 .env.*
 !.env.example
+
+# Archive du prototype : son contenu extrait est déjà suivi sous
+# design/prototype-2026-08-17/, l'archive ferait doublon.
+/Prototype haute fidélité projet.zip
+
+# Outillage local (configuration de lancement de l'agent).
+.claude/

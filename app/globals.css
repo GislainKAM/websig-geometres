@@ -16,3 +16,65 @@ body {
 .ogec-scroll {
   scrollbar-width: thin;
 }
+
+/* Bulle MapLibre autour de la fiche sélectionnée (MapView, PopupCard) : on
+   enlève la coquille par défaut (fond blanc, ombre, flèche) pour ne garder
+   que l'ancrage au point — PopupCard dessine sa propre carte et son propre
+   bouton fermer. */
+.ogec-popup .maplibregl-popup-content {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+.ogec-popup .maplibregl-popup-tip {
+  display: none;
+}
+
+/* Ligne de résultat. Le survol et la sélection passent par le CSS et non par
+   un état React : la liste va jusqu'à 242 lignes, autant ne pas re-rendre un
+   composant à chaque passage de souris. */
+.ogec-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: 11px var(--space-5) 11px calc(var(--space-5) - 3px);
+  border: 0;
+  border-bottom: 1px solid var(--ink-100);
+  border-left: 3px solid transparent;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out), border-left-color var(--dur-fast) var(--ease-out);
+}
+
+.ogec-row:hover {
+  background: var(--ink-50);
+}
+
+.ogec-row:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: -2px;
+}
+
+.ogec-row[data-selected='true'] {
+  background: var(--surface-brand-soft);
+  border-left-color: var(--brand-indigo-600);
+}
+
+/* Nombre d'entités groupées, posé au centre d'un amas ou d'une bulle de
+   ville (MapView, syncEtiquettes). Transparent aux clics : c'est le cercle
+   dessous qui doit recevoir le clic, pas l'étiquette. */
+.ogec-count {
+  pointer-events: none;
+  user-select: none;
+  font-family: var(--font-data);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
