@@ -3,11 +3,17 @@
 Génère les fichiers CSV/JSON de brouillon à partir de la transcription visuelle
 de HPSC0177.pdf (Tableau OGEC 2026, Ordre National des Géomètres du Cameroun).
 
-STATUT : BROUILLON NON VALIDÉ. Voir data/ocr-draft/README.md.
+STATUT : transcription relue le 2026-08-19. Voir data/ocr-draft/README.md.
 Ce script n'est pas destiné à être ré-exécuté (pas de logique OCR réelle) —
 c'est juste le moyen le plus fiable de committer ~242 lignes sans erreur de
 copier-coller manuel. Les données sont transcrites à la main (lecture visuelle
 image par image), pas produites par un moteur OCR automatique.
+
+La relecture du 2026-08-19 a modifié tableau-ogec-2026.json à la main
+(champs `statut` et `date_verification` — pas les 242 lignes elles-mêmes,
+pas rejouées ici) : voir data/ocr-draft/README.md pour la méthode et la
+portée exactes. Ce fichier reste la trace de la transcription initiale, pas
+un reflet à jour de `statut`.
 """
 import csv
 import json
@@ -297,8 +303,12 @@ paths.append(write_csv("04-geometres-topographes.csv", HEADERS_MATRICULE, liste4
 
 combined = {
     "source": "HPSC0177.pdf — Tableau OGEC 2026, Ordre National des Géomètres du Cameroun",
-    "statut": "BROUILLON NON VALIDÉ — transcription visuelle manuelle, non vérifiée, non publiable. Voir data/ocr-draft/README.md.",
+    # Tenu à jour à la main dans tableau-ogec-2026.json depuis la relecture du
+    # 2026-08-19 — cette chaîne ne l'est plus si le script est relancé un
+    # jour. Voir la note en tête de fichier et data/ocr-draft/README.md.
+    "statut": "transcription relue le 2026-08-19 (échantillon large : 100% des listes 1 et 2, échantillon substantiel des listes 3 et 4, plus contrôle structurel intégral — voir data/ocr-draft/README.md). Certitude au caractère près non garantie sur l'intégralité des numéros de téléphone.",
     "date_transcription": "2026-08-17",
+    "date_verification": "2026-08-19",
     "listes": {
         "geometres_autorises": rows_to_dicts(HEADERS_AGREMENT, liste1),
         "geometres_experts_honoraires": rows_to_dicts(HEADERS_HONORAIRE, liste2),

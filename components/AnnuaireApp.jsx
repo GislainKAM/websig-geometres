@@ -8,7 +8,7 @@ import { SimpleSelect } from './SimpleSelect.jsx';
 import { DetailCard, PopupCard, sousTitre } from './DetailCard.jsx';
 import { getProfil, PROFILS } from '../lib/geometres.js';
 import { T, profilLabel } from '../lib/i18n.js';
-import { formatNumber } from '../lib/tiles.js';
+import { formatNumber } from '../lib/format.js';
 import { normalizeKey } from '../lib/villes.js';
 
 const MOBILE_BP = 760;
@@ -673,7 +673,11 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
             <span style={{ fontSize: 10.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--ink-400)', fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{L.eyebrow}</span>
           </div>
           <span style={{ fontFamily: 'var(--font-data)', fontSize: 'var(--text-2xs)', letterSpacing: '0.06em', color: 'var(--ink-400)', border: '1px solid rgba(255,255,255,.18)', borderRadius: 'var(--radius-pill)', padding: '3px 10px', whiteSpace: 'nowrap' }}>EPSG:4326</span>
-          <Badge tone="alert">{L.draftBadge}</Badge>
+          {source && source.statut === 'verifie' ? (
+            <Badge tone="neutral" title={L.verifiedBadgeTitle(source.dateVerification)}>{L.verifiedBadge}</Badge>
+          ) : (
+            <Badge tone="alert">{L.draftBadge}</Badge>
+          )}
           <button onClick={toggleLang} style={{ border: '1px solid rgba(255,255,255,.18)', background: 'none', cursor: 'pointer', fontFamily: 'var(--font-data)', fontSize: 'var(--text-2xs)', color: 'var(--white)', letterSpacing: '0.06em', padding: '5px 10px', borderRadius: 'var(--radius-pill)', whiteSpace: 'nowrap' }}>{lang === 'FR' ? 'FR / en' : 'fr / EN'}</button>
           <Button size="sm" onClick={downloadGeoJSON}>{L.download}</Button>
         </div>
