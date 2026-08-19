@@ -76,5 +76,15 @@ jobs:
           echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
+      # Diagnostic temporaire — clés publiques de serveur, pas de secret
+      # exposé. cat -A révèle un retour chariot (^M) ou une ligne manquante
+      # que le simple contenu du secret (masqué par GitHub) ne montre pas.
+      # À retirer une fois le déploiement stabilisé.
+      - name: Diagnostic known_hosts
+        run: |
+          echo "--- wc ---"; wc -l ~/.ssh/known_hosts
+          echo "--- cat -A ---"; cat -A ~/.ssh/known_hosts
+          echo "--- hex des 20 derniers octets ---"; tail -c 20 ~/.ssh/known_hosts | xxd
+
       - name: Déployer sur le serveur
         run: ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes deploy@${{ secrets.DEPLOY_HOST }} true
