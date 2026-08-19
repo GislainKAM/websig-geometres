@@ -1,0 +1,80 @@
+name: publish-image
+
+# Construit et publie l'image sur GHCR — jamais sur le serveur (6 vCores/
+# 12 Go partagés entre tous les projets de l'infra ; un build cassé en
+# cours de route laisserait le service indisponible, voir
+# websig-docs/infra/rgnc/README.md). Le serveur ne fait que
+# `docker compose pull`, déclenché par le job deploy ci-dessous via
+# infra/geometres/deploy.sh (versionné dans websig-docs, pas ici — voir
+# ce fichier pour la mise en place du compte de déploiement).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Connexion à GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Métadonnées d'image
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/gislainkam/websig-geometres
+          tags: |
+            type=raw,value=latest
+            type=sha,format=short
+
+      - name: Build et push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      # Déclenche infra/geometres/deploy.sh sur le serveur via une clé SSH
+      # à commande forcée — voir websig-docs/infra/geometres/README.md
+      # « Déploiement continu » pour la mise en place (une seule fois,
+      # côté serveur, hors de la portée de ce dépôt).
+      #
+      # known_hosts pinné explicitement (DEPLOY_KNOWN_HOSTS) plutôt que
+      # StrictHostKeyChecking=no — sans ça, la CI accepterait n'importe
+      # quel serveur se présentant à cette adresse (détournement DNS/BGP).
+      - name: Préparer la clé et l'empreinte du serveur
+        # DEPLOY_SSH_KEY est stocké encodé en base64 (une seule ligne,
+        # plus sûr à coller dans un champ GitHub que le PEM multi-lignes
+        # brut) — généré côté PowerShell avec
+        # [Convert]::ToBase64String(...), décodé ici avant usage.
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" | base64 -d > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Déployer sur le serveur
+        run: ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes deploy@${{ secrets.DEPLOY_HOST }} true
