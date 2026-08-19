@@ -37,9 +37,28 @@ const plexMono = localFont({
   fallback: ['ui-monospace', 'monospace']
 });
 
+const TITRE = 'Annuaire des géomètres · websig';
+const DESCRIPTION = "Les 242 membres inscrits au Tableau de l'Ordre National des Géomètres du Cameroun, cartographiés et filtrables par catégorie, ville et numéro d'agrément.";
+
+// Open Graph : sans ces balises, WhatsApp et LinkedIn n'affichent que le
+// titre et la description, sans image. metadataBase est indispensable,
+// og:image doit être une URL absolue — ces plateformes ne résolvent pas
+// les chemins relatifs. Image en 1200x630 sous les 300 Ko : au-delà,
+// WhatsApp l'ignore silencieusement.
 export const metadata = {
-  title: 'Annuaire des géomètres · websig',
-  description: "Répertoire cartographié des membres de l'Ordre National des Géomètres du Cameroun."
+  metadataBase: new URL('https://geometres.websig.app'),
+  title: TITRE,
+  description: DESCRIPTION,
+  openGraph: {
+    type: 'website',
+    siteName: 'websig',
+    locale: 'fr_FR',
+    url: '/',
+    title: TITRE,
+    description: DESCRIPTION,
+    images: [{ url: '/og/apercu.jpg', width: 1200, height: 630, alt: 'Annuaire cartographié des géomètres du Cameroun' }]
+  },
+  twitter: { card: 'summary_large_image', title: TITRE, description: DESCRIPTION, images: ['/og/apercu.jpg'] }
 };
 
 // `suppressHydrationWarning` sur <html> et lui seul : certaines extensions de
