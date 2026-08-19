@@ -1,0 +1,9 @@
+/* Point d'entrée unique du design system — équivalent de styles.css côté
+   Claude Design. N'importer que ce fichier depuis les apps consommatrices
+   (ex. @websig/design/tokens.css). */
+@import url('./colors.css');
+@import url('./typography.css');
+@import url('./spacing.css');
+@import url('./elevation.css');
+@import url('./motion.css');
+@import url('./base.css');

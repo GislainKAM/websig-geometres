@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Logo, Badge, Button, Input, Tag, Tabs, EmptyState, StatBlock, DataTable, Checkbox, Legend, Icon } from '@websig/design/react';
+import { Logo, Badge, Button, Input, Tag, Tabs, EmptyState, StatBlock, DataTable, Checkbox, Legend, Icon } from './ui/index.js';
 import { MapView } from './MapView.jsx';
 import { MapControls } from './MapControls.jsx';
 import { Avatar } from './Avatar.jsx';

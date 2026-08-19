@@ -10,7 +10,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@websig/design": "file:../websig-platform/packages/design",
     "lucide-react": "^0.460.0",
     "maplibre-gl": "^4.7.1",
     "next": "^15.0.0",

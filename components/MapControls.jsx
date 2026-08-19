@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { IconButton, Icon, Checkbox } from '@websig/design/react';
+import { IconButton, Icon, Checkbox } from './ui/index.js';
 import { FONDS } from './MapView.jsx';
 
 // Chrome flottant sur la carte. Tous les boutons sont des <IconButton

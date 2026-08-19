@@ -1,0 +1,14 @@
+/* Remplace Montserrat/Poppins (jugées trop génériques par Gislain) par
+   Space Grotesk (titres) + Inter (texte courant), auto-hébergées au build
+   par next/font/google (voir apps/site/app/layout.js) via les variables
+   --font-display-src / --font-body-src. Repli sur le nom de famille pour
+   que ce fichier fonctionne même sans next/font (ex. aperçu statique). */
+:root{
+--font-geometric:var(--font-display-src),'Space Grotesk','Helvetica Neue',Helvetica,sans-serif;
+--font-sans:var(--font-body-src),'Inter','Helvetica Neue',Helvetica,sans-serif;
+--font-mono:var(--font-plex-mono),'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+--font-display:var(--font-geometric);--font-body:var(--font-sans);--font-data:var(--font-mono);
+--text-3xl:54px;--text-2xl:40px;--text-xl:30px;--text-lg:23px;--text-md:18px;--text-base:16px;--text-sm:14px;--text-xs:12.5px;--text-2xs:11px;
+--leading-tight:1.1;--leading-snug:1.28;--leading-normal:1.6;--leading-loose:1.75;
+--weight-regular:400;--weight-medium:500;--weight-semibold:600;--weight-bold:700;
+--tracking-tight:-0.015em;--tracking-normal:0;--tracking-wide:0.02em;--tracking-caps:0.09em}

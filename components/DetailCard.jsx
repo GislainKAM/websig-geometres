@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Button, IconButton, Icon } from '@websig/design/react';
+import { Button, IconButton, Icon } from './ui/index.js';
 import { profilLabel } from '../lib/i18n.js';
 import { getProfil } from '../lib/geometres.js';
 import { Avatar } from './Avatar.jsx';

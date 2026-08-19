@@ -1,5 +1,5 @@
 import localFont from 'next/font/local';
-import '@websig/design/tokens.css';
+import '../components/ui/tokens/index.css';
 import './globals.css';
 
 // Polices servies depuis le dépôt et non téléchargées au build.
