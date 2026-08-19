@@ -302,11 +302,11 @@ paths.append(write_csv("03-geometres-experts.csv", HEADERS_MATRICULE, liste3))
 paths.append(write_csv("04-geometres-topographes.csv", HEADERS_MATRICULE, liste4))
 
 combined = {
-    "source": "HPSC0177.pdf — Tableau OGEC 2026, Ordre National des Géomètres du Cameroun",
+    "source": "HPSC0177.pdf · Tableau OGEC 2026, Ordre National des Géomètres du Cameroun",
     # Tenu à jour à la main dans tableau-ogec-2026.json depuis la relecture du
     # 2026-08-19 — cette chaîne ne l'est plus si le script est relancé un
     # jour. Voir la note en tête de fichier et data/ocr-draft/README.md.
-    "statut": "transcription relue le 2026-08-19 (échantillon large : 100% des listes 1 et 2, échantillon substantiel des listes 3 et 4, plus contrôle structurel intégral — voir data/ocr-draft/README.md). Certitude au caractère près non garantie sur l'intégralité des numéros de téléphone.",
+    "statut": "transcription relue le 2026-08-19 (échantillon large : 100% des listes 1 et 2, échantillon substantiel des listes 3 et 4, plus contrôle structurel intégral. Voir data/ocr-draft/README.md). Certitude au caractère près non garantie sur l'intégralité des numéros de téléphone.",
     "date_transcription": "2026-08-17",
     "date_verification": "2026-08-19",
     "listes": {

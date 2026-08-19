@@ -38,7 +38,7 @@ const plexMono = localFont({
 });
 
 export const metadata = {
-  title: 'Annuaire des géomètres — websig',
+  title: 'Annuaire des géomètres · websig',
   description: "Répertoire cartographié des membres de l'Ordre National des Géomètres du Cameroun."
 };
 

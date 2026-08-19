@@ -100,11 +100,11 @@ function ResultRow({ g, selected, onClick, lang }) {
       <Avatar g={g} size={38} lang={lang} />
       <span style={{ minWidth: 0, display: 'flex', flexDirection: 'column', gap: 3 }}>
         <span style={{ ...ELLIPSE, fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-strong)', letterSpacing: '-0.005em', lineHeight: 1.3 }}>{g.nom}</span>
-        <span style={{ ...ELLIPSE, fontSize: 'var(--text-xs)', color: 'var(--text-muted)', lineHeight: 1.3 }}>{g.cabinet || '—'}</span>
+        <span style={{ ...ELLIPSE, fontSize: 'var(--text-xs)', color: 'var(--text-muted)', lineHeight: 1.3 }}>{g.cabinet || '-'}</span>
       </span>
       <span style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 5 }}>
         <span style={{ fontFamily: 'var(--font-data)', fontSize: 10.5, fontWeight: 500, color: 'var(--text-body)', background: 'var(--ink-100)', borderRadius: 'var(--radius-sm)', padding: '3px 6px', lineHeight: 1.2 }}>{g.identifiant}</span>
-        <span style={{ fontSize: 10, letterSpacing: '0.07em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--text-faint)', whiteSpace: 'nowrap' }}>{g.ville || '—'}</span>
+        <span style={{ fontSize: 10, letterSpacing: '0.07em', textTransform: 'uppercase', fontWeight: 600, color: 'var(--text-faint)', whiteSpace: 'nowrap' }}>{g.ville || '-'}</span>
       </span>
     </button>
   );
@@ -720,8 +720,8 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
                     {[
                       { label: L.fStatus, value: L.inscribed },
                       { label: L.fMat, value: verified.identifiant, mono: true },
-                      { label: L.fCabinet, value: verified.cabinet || '—' },
-                      { label: L.fContact, value: verified.contact || '—', mono: true }
+                      { label: L.fCabinet, value: verified.cabinet || '-' },
+                      { label: L.fContact, value: verified.contact || '-', mono: true }
                     ].map(f => (
                       <div key={f.label}>
                         <div style={{ fontSize: 'var(--text-2xs)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>{f.label}</div>

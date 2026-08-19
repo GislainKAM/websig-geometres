@@ -13,7 +13,7 @@ function firstPhone(contact) {
 
 /** Ville, complétée du pays quand le membre n'exerce pas au Cameroun. */
 export function lieu(g) {
-  if (!g.ville) return '—';
+  if (!g.ville) return '-';
   return g.pays && g.pays !== 'Cameroun' ? `${g.ville} · ${g.pays}` : g.ville;
 }
 
@@ -32,7 +32,7 @@ function fieldRows(g, L) {
   const rows = [
     { label: L.fStatus, value: L.inscribed },
     { label: L.fMat, value: g.identifiant, mono: true },
-    { label: L.fCabinet, value: g.cabinet || '—' }
+    { label: L.fCabinet, value: g.cabinet || '-' }
   ];
   if (g.contact) rows.push({ label: L.fContact, value: g.contact, mono: true });
   if (g.email) rows.push({ label: L.fEmail, value: g.email, mono: true });
