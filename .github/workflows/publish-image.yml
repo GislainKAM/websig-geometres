@@ -76,26 +76,5 @@ jobs:
           echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
-      # Diagnostic temporaire — clés publiques de serveur, pas de secret
-      # exposé. cat -A révèle un retour chariot (^M) ou une ligne manquante
-      # que le simple contenu du secret (masqué par GitHub) ne montre pas.
-      # À retirer une fois le déploiement stabilisé.
-      - name: Diagnostic known_hosts
-        run: |
-          echo "--- wc ---"; wc -l ~/.ssh/known_hosts
-          echo "--- cat -A ---"; cat -A ~/.ssh/known_hosts
-          echo "--- hex des 20 derniers octets ---"; tail -c 20 ~/.ssh/known_hosts | xxd
-
-      # Ne jamais afficher deploy_key lui-meme. ssh-keygen -y en derive la
-      # cle PUBLIQUE correspondante -- publique par nature, sure a comparer
-      # ici a ce qui est enregistre dans authorized_keys sur le serveur.
-      - name: Diagnostic deploy_key (clé publique dérivée uniquement)
-        run: |
-          echo "--- taille du fichier decode ---"; wc -c ~/.ssh/deploy_key
-          echo "--- premiere ligne (entete attendue) ---"; head -n 1 ~/.ssh/deploy_key
-          echo "--- derniere ligne (entete attendue) ---"; tail -n 1 ~/.ssh/deploy_key
-          echo "--- cle publique derivee (a comparer a authorized_keys) ---"
-          ssh-keygen -y -f ~/.ssh/deploy_key || echo "ECHEC : ssh-keygen n'arrive pas a parser le fichier"
-
       - name: Déployer sur le serveur
         run: ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes deploy@${{ secrets.DEPLOY_HOST }} true
