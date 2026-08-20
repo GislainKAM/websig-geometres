@@ -7,8 +7,7 @@ Ce n'est pas une carte thématique ordinaire, c'est un **annuaire
 géolocalisé** : le point porté sur la carte est le chef-lieu déclaré au
 tableau, pas l'adresse exacte du cabinet (que la source ne donne pas).
 
-**État : application fonctionnelle, pas encore déployée.** Voir
-[Déploiement](#déploiement) plus bas.
+**État : en production sur [geometres.websig.app](https://geometres.websig.app).**
 
 ## Ce que ça fait
 
