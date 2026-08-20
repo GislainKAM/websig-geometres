@@ -47,6 +47,11 @@ const DESCRIPTION = "Les 242 membres inscrits au Tableau de l'Ordre National des
 // WhatsApp l'ignore silencieusement.
 export const metadata = {
   metadataBase: new URL('https://geometres.websig.app'),
+  // Site d'une seule page : le canonical ne peut désigner qu'elle. Il est
+  // ici et pas seulement implicite parce que l'auto-canonical de Google se
+  // fait sur l'URL crawlée — n'importe quel lien entrant portant un
+  // paramètre de campagne (?utm_source=…) devient alors une URL distincte.
+  alternates: { canonical: '/' },
   title: TITRE,
   description: DESCRIPTION,
   openGraph: {
