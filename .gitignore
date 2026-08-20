@@ -13,3 +13,7 @@ dist/
 
 # Outillage local (configuration de lancement de l'agent).
 .claude/
+
+# Graphe de connaissance graphify — dérivé du code, reconstructible par
+# `python -m graphify update .`, et graph.html pèse lourd.
+graphify-out/

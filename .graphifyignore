@@ -1,0 +1,14 @@
+# Périmètre du graphe de connaissance graphify — syntaxe .gitignore.
+#
+# Le prototype haute fidélité embarque son propre runtime vendorisé
+# (support.js, ~1900 lignes de bundler/React inlinés). Indexé, il
+# monopolise les hubs architecturaux (get, createRuntime, boot) et noie
+# les requêtes sur le vrai code applicatif. Les maquettes restent la
+# référence de design — elles n'ont juste rien à faire dans un graphe de
+# dépendances de code.
+design/prototype-2026-08-17/
+
+# Scan source du Tableau OGEC, 4,7 Mo d'images : rien à en extraire sans
+# passe sémantique LLM, et la transcription relue est déjà indexée via
+# data/ocr-draft/.
+HPSC0177.pdf
