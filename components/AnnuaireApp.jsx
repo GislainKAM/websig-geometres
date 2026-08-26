@@ -110,6 +110,35 @@ function ResultRow({ g, selected, onClick, lang }) {
   );
 }
 
+function ResultList({ items, selectedId, onSelect, lang }) {
+  const groups = new Map();
+  items.forEach(g => {
+    const match = String(g.identifiant || '').match(/^([A-Za-z])(\d+)$/);
+    const category = match ? match[1].toUpperCase() : 'Autres';
+    if (!groups.has(category)) groups.set(category, []);
+    groups.get(category).push(g);
+  });
+
+  const sortedGroups = [...groups.entries()]
+    .sort(([a], [b]) => a.localeCompare(b, 'fr'))
+    .map(([category, members]) => [category, members.sort((a, b) => {
+      const aNumber = Number(String(a.identifiant).slice(1));
+      const bNumber = Number(String(b.identifiant).slice(1));
+      return aNumber - bNumber || a.identifiant.localeCompare(b.identifiant, 'fr');
+    })]);
+
+  return sortedGroups.map(([category, members]) => (
+    <section key={category} style={{ borderBottom: '1px solid var(--border-subtle)' }}>
+      <div style={{ padding: 'var(--space-3) var(--space-5)', background: 'var(--ink-50)', color: 'var(--text-muted)', fontSize: 'var(--text-2xs)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+        {category === 'Autres' ? category : `Catégorie ${category}`}
+      </div>
+      {members.map(g => (
+        <ResultRow key={g.id} g={g} lang={lang} selected={selectedId === g.id} onClick={() => onSelect(g.id)} />
+      ))}
+    </section>
+  ));
+}
+
 export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
   const { width, height } = useViewport();
   const isMobile = width != null && width < MOBILE_BP;
@@ -400,9 +429,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
         <div style={{ flex: 1, minHeight: 0, overflowY: 'auto' }} className="ogec-scroll">
           {listSource.length === 0 ? (
             <EmptyState icon="search" title={L.emptyT} description={L.emptyD} />
-          ) : listSource.map(g => (
-            <ResultRow key={g.id} g={g} lang={lang} selected={selected?.id === g.id} onClick={() => select(g.id)} />
-          ))}
+          ) : <ResultList items={listSource} selectedId={selected?.id} onSelect={select} lang={lang} />}
         </div>
       </>
     );
@@ -646,9 +673,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
                   </div>
                 </div>
                 <FilterChips items={filterChips} L={L} onClearAll={resetFilters} />
-                {listSource.length === 0 ? <EmptyState icon="search" title={L.emptyT} description={L.emptyD} /> : listSource.map(g => (
-                  <ResultRow key={g.id} g={g} lang={lang} selected={selected?.id === g.id} onClick={() => select(g.id)} />
-                ))}
+                {listSource.length === 0 ? <EmptyState icon="search" title={L.emptyT} description={L.emptyD} /> : <ResultList items={listSource} selectedId={selected?.id} onSelect={select} lang={lang} />}
               </>
             ) : null}
             {!selected && isCities ? renderVillesPanel() : null}
