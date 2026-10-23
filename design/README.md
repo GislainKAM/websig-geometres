@@ -25,3 +25,9 @@ Puis ouvrir `http://localhost:8934/Annuaire%20OGEC.dc.html`.
 ### Écarts connus avec `@websig/design` (websig-platform)
 
 Le design system copié dans `_ds/` (readme du 17 août) prescrit Montserrat/Poppins pour la typographie. Le package `@websig/design` réellement codé dans `websig-platform` (`apps/site/app/layout.js`) utilise Space Grotesk/Inter à la place — décision prise après coup, jugée « moins générique ». À vérifier lequel fait foi avant d'implémenter l'app géomètres ; ne pas supposer que `_ds/` est à jour par rapport au package réel.
+
+## Refonte du 23 octobre 2026
+
+Livrée par Gislain sous la forme de `Carte OGEC géomètres.zip` : prototype `Carte OGEC.dc.html` (mobile, tablette, desktop), son compte rendu `Revue OGEC.dc.html` (décisions UX, hypothèses à valider) et le « OGEC Design System » (`_ds/`). **C'est la référence de l'implémentation actuelle** ; le prototype d'août ci-dessus est périmé.
+
+L'implémentation s'écarte du prototype là où il promettait ce que l'app statique ne fait pas — voir BRIEF.md §1 (ligne « Design (refonte du 23 octobre 2026) »). Les fichiers du zip ne sont pas archivés dans le dépôt à la date de cette note.
