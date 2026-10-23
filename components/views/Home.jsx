@@ -7,7 +7,7 @@ import { Aerial } from '../Bits.jsx';
 const RACCOURCIS = ['Yaoundé', 'Douala', 'Bafoussam', 'Kribi', 'Bertoua', 'Bamenda', 'Garoua', 'Maroua'];
 
 export function Home({ A }) {
-  const { t, T, pl, geometres, villes, cityCount, nCities, nRegions, runSearch, go, openReport, showAll } = A;
+  const { t, T, pl, geometres, villes, cityCount, nCities, nRegions, runSearch, go, openReport, showAll, nearMe } = A;
   const cartes = RACCOURCIS.filter(v => cityCount[v]).slice(0, 6)
     .map(v => ({ ville: v, count: cityCount[v], info: villes.find(x => x.ville === v) }));
   const nbMembres = geometres.length;
@@ -33,6 +33,11 @@ export function Home({ A }) {
         ))}
       </div>
 
+      <button type="button" className="ligne-action home__tire home__moi" onClick={nearMe}>
+        <span className="ligne-action__ic"><Icon name="locate" /></span>
+        <span className="ligne-action__t">{t.nearMeLbl}</span>
+        <Icon name="chevR" />
+      </button>
       <button type="button" className="ligne-action home__tire" onClick={() => go('places', { pq: '' })}>
         <span className="ligne-action__ic"><Icon name="pin" /></span>
         <span className="ligne-action__t">{T('Toutes les régions et villes', 'All regions and towns')} · {nRegions} / {nCities}</span>

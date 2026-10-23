@@ -45,7 +45,7 @@ const INITIAL = {
   ...filtresInitiaux(),
   draft: null, moreOpen: false,
   sel: null, geoState: null, me: null,
-  sheet: 'mid', dragH: null,
+  sheet: 'mid', dragH: null, mapOpen: false,
   legendOpen: null, toast: null, rep: null, faqQ: '', faqOpen: 0, pq: '',
   lang: 'FR'
 };
@@ -191,7 +191,10 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
   }, [s.anchor, villes]);
 
   // --- Tiroir mobile ---
-  const sheetPx = s.dragH != null ? s.dragH
+  // Mobile : la carte est masquée tant qu'on n'a pas demandé à la voir (bouton
+  // de bascule) ; le panneau prend alors toute la hauteur.
+  const listeSeule = mobile && !s.mapOpen;
+  const sheetPx = listeSeule ? mapH : s.dragH != null ? s.dragH
     : s.sheet === 'low' ? ARRET_TIROIR.low
     : s.sheet === 'full' ? mapH
     : Math.round(mapH * ARRET_TIROIR.mid);
@@ -339,9 +342,16 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
     patch({ sheet: opts[0][0], dragH: null });
   };
 
+  const basculerCarte = () => {
+    if (s.mapOpen) { patch({ mapOpen: false, dragH: null }); return; }
+    patch({ mapOpen: true, sheet: 'low', dragH: null });
+    if (view === 'home' && mapApi.current) setTimeout(() => mapApi.current.overview(), 50);
+  };
   const legendOpen = s.legendOpen == null ? (width != null && width >= DESKTOP_BP) : s.legendOpen;
   const reportPick = view === 'report' && s.rep && s.rep.step === 2;
-  const panneauLarge = width != null && width >= DESKTOP_BP ? 400 : 360;
+  // Sur ordinateur la carte ne doit pas écraser la liste : le panneau s'élargit
+  // avec l'écran, la carte garde le reste.
+  const panneauLarge = width != null && width >= 1280 ? 520 : width != null && width >= DESKTOP_BP ? 440 : 380;
 
   const fraicheur = source && source.statut === 'verifie'
     ? t.freshRead + dateCourte(source.dateVerification)
@@ -353,7 +363,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
   if (s.screen === 'onb') return <Onboarding A={A} />;
 
   return (
-    <div className="app" style={{ '--pw': panneauLarge + 'px', '--sheet-h': sheetPx + 'px' }}>
+    <div className={`app${listeSeule ? ' app--liste' : ''}`} style={{ '--pw': panneauLarge + 'px', '--sheet-h': sheetPx + 'px' }}>
       <header className="app__head">
         <button type="button" className="head__home" onClick={goHome} aria-label={t.homeAria}>
           <img src={chemin('/brand/logo-ogec-sombre.svg')} alt="OGEC" className="head__logo" />
@@ -453,6 +463,15 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
           <Vue A={A} />
         </div>
       </section>
+
+      {mobile ? (
+        <button
+          type="button" className="vue-bascule" onClick={basculerCarte}
+          style={{ bottom: s.mapOpen && s.sheet !== 'full' ? Math.min(sheetPx, mapH) + 12 : 16 }}
+        >
+          <Icon name={s.mapOpen ? 'list' : 'globe'} />{s.mapOpen ? T('Liste', 'List') : T('Carte', 'Map')}
+        </button>
+      ) : null}
 
       {s.toast ? (
         <div className="toast-zone">
