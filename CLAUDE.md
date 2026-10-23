@@ -82,8 +82,11 @@ lançant l'app (`.claude/launch.json` déclare la cible `websig-dev`).
   service officiel de l'Ordre.
 - **La fraîcheur des données reste visible en permanence** (exigence #1 du
   BRIEF) : bandeau `.fresh` sous la recherche, dérivé de `SOURCE`. Les
-  libellés de catégories (« service public » pour la liste des experts)
-  viennent du prototype et restent à faire valider par l'Ordre.
+  libellés de catégories viennent du courriel d'un membre du Bureau du
+  Conseil (14 octobre 2026) : matricule C Géomètres-Topographes, B
+  Géomètres-Experts, A Géomètres-Experts agréés en clientèle privée, membres
+  honoraires officiellement admis à l'honorariat. Jamais « service public »
+  ni « assermenté ».
 - **Les régions des villes sont posées à la main** (`REGION_PAR_VILLE` dans
   `lib/villes.js`), comme les coordonnées : le tableau ne les donne pas.
   Une ville camerounaise ajoutée à `CITIES` doit l'être aussi là.

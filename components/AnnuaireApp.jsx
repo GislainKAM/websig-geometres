@@ -418,7 +418,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
             {legendOpen ? (
               <ul className="legend__list">
                 {['privee', 'experts', 'topo'].map(k => (
-                  <li key={k}><span className="legend__sym"><Sym profil={k} size={14} /></span>{k === 'experts' ? T('Service public', 'Public service') : k === 'topo' ? T('Topographe', 'Topographer') : C.privee.label}</li>
+                  <li key={k}><span className="legend__sym"><Sym profil={k} size={14} /></span>{C[k].chip}</li>
                 ))}
                 <li><span className="legend__sym"><span className="sym-carre-encre" /></span>{T('Plusieurs dans la ville', 'Several in the town')}</li>
                 <li><button type="button" className="link" onClick={() => go('legend')}>{t.howRead}</button></li>
