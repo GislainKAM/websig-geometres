@@ -29,7 +29,7 @@ export function Detail({ A }) {
         {m.villeResolue ? <Aerial lat={m.centre[0]} lon={m.centre[1]} z={16} demiLargeur={260} demiHauteur={110} /> : null}
         <span className="fiche__voile" aria-hidden="true" />
         <div className="fiche__tete-in">
-          <Avatar nom={m.nom} profil={m.profil} size={64} bordure />
+          <Avatar profil={m.profil} size={64} bordure />
           <div className="fiche__qui">
             <Badge tone={honoraire ? 'neutre' : 'agree'} onDark>{honoraire ? T('Membre honoraire', 'Honorary member') : t.registered}</Badge>
             <h1 className="fiche__nom">{m.nom}</h1>

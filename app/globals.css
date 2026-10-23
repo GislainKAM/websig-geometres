@@ -115,11 +115,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .toast__close { border: 0; background: none; color: var(--encre-2); font-size: 22px; min-width: 32px; min-height: 32px; }
 
 /* ---------- Symboles et disques ---------- */
-.sym { display: block; flex: none; width: var(--s); height: var(--s); }
-.sym--carre-plein { background: var(--bleu); outline: 2px solid #fff; }
-.sym--carre-vide { background: #fff; border: 3px solid var(--bleu-fonce); outline: 1px solid #fff; }
-.sym--losange { width: calc(var(--s) * 0.8); height: calc(var(--s) * 0.8); background: var(--encre); transform: rotate(45deg); outline: 2px solid #fff; }
-.sym--rond { background: #fff; border: 2px solid var(--encre-2); border-radius: 50%; }
+.sym { position: relative; display: block; flex: none; width: var(--s); height: var(--s); }
 .sym-carre-encre { display: block; width: 16px; height: 16px; background: var(--encre); }
 .av {
   flex: none; display: grid; place-items: center; width: var(--s); height: var(--s); border-radius: 50%;

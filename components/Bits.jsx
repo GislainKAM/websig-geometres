@@ -1,22 +1,29 @@
 import React from 'react';
 import { PROFILS } from '../lib/geometres.js';
-import { initiales, lonToPx, latToPx } from '../lib/geo.js';
+import { lonToPx, latToPx } from '../lib/geo.js';
+import { symboleURI, BUSTE } from '../lib/markers.js';
 
 const SYMBOLE = Object.fromEntries(PROFILS.map(p => [p.slug, p.symbole]));
 
-/** Symbole de catégorie en CSS : même forme que sur la carte, à la taille voulue. */
+/**
+ * Symbole de catégorie : le même buste dans son contenant que sur la carte.
+ * `size` est la taille du contenant ; l'image est plus grande (liseré blanc compris).
+ */
 export function Sym({ profil, size = 14 }) {
-  return <span className={`sym sym--${SYMBOLE[profil]}`} style={{ '--s': size + 'px' }} aria-hidden="true" />;
+  const t = Math.round(size * 1.58);
+  return (
+    <span className="sym" style={{ '--s': size + 'px' }} aria-hidden="true">
+      <img src={symboleURI(SYMBOLE[profil])} alt="" width={t} height={t} style={{ margin: -(t - size) / 2, maxWidth: 'none' }} />
+    </span>
+  );
 }
 
-/** Initiales sur disque. Le disque est un avatar (seul usage du cercle, hors rond honoraire). */
-export function Avatar({ nom, profil, size = 44, bordure = false }) {
+/** Personne : silhouette de buste sur disque, teinte selon la catégorie. */
+export function Avatar({ profil, size = 44, bordure = false }) {
   return (
-    <span
-      className={`av av--${profil}${bordure ? ' av--bord' : ''}`}
-      style={{ '--s': size + 'px' }}
-      aria-hidden="true"
-    >{initiales(nom)}</span>
+    <span className={`av av--${profil}${bordure ? ' av--bord' : ''}`} style={{ '--s': size + 'px' }} aria-hidden="true">
+      <svg viewBox="-12 -12 24 24" width={size * 0.64} height={size * 0.64} dangerouslySetInnerHTML={{ __html: BUSTE('currentColor', 1.5) }} />
+    </span>
   );
 }
 
