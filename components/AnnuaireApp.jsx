@@ -17,6 +17,7 @@ import { Menu } from './views/Menu.jsx';
 import { dico, CAT, nomRegion, pluriel, dateCourte } from '../lib/i18n.js';
 import { filtrer, filtresInitiaux, interpreter, centreRegion, TOUTES } from '../lib/recherche.js';
 import { HORS_CAMEROUN } from '../lib/villes.js';
+import { chemin } from '../lib/config.js';
 
 const MOBILE_BP = 768;
 const DESKTOP_BP = 1100;
@@ -346,7 +347,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
     ? t.freshRead + dateCourte(source.dateVerification)
     : t.freshDraft;
   const mentionAjouts = source && source.ajouts.n
-    ? ' · ' + source.ajouts.n + T(' inscriptions récentes non relues', ' recent registrations not reviewed')
+    ? ' · ' + source.ajouts.n + (mobile ? T(' ajouts non relus', ' unreviewed additions') : T(' inscriptions récentes non relues', ' recent registrations not reviewed'))
     : '';
 
   if (s.screen === 'onb') return <Onboarding A={A} />;
@@ -355,7 +356,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
     <div className="app" style={{ '--pw': panneauLarge + 'px', '--sheet-h': sheetPx + 'px' }}>
       <header className="app__head">
         <button type="button" className="head__home" onClick={goHome} aria-label={t.homeAria}>
-          <img src="/brand/logo-ogec-sombre.svg" alt="OGEC" className="head__logo" />
+          <img src={chemin('/brand/logo-ogec-sombre.svg')} alt="OGEC" className="head__logo" />
           <span className="head__titre hide-mobile">
             <span className="head__t1">{t.appTitle}</span>
             <span className="head__t2">{t.appSub}</span>
@@ -363,7 +364,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
         </button>
         <span className="head__fill" />
         <button type="button" className="head__lang" onClick={() => setLang(en ? 'FR' : 'EN')} aria-label={t.switchLang} lang={en ? 'fr' : 'en'}>{en ? 'FR' : 'EN'}</button>
-        <Button variant="ghost" className="head__btn" onClick={() => go('help', { faqQ: '' })}><Icon name="help" />{t.help}</Button>
+        <Button variant="ghost" className="head__btn" onClick={() => go('help', { faqQ: '' })}><Icon name="help" /><span className="hide-mobile">{t.help}</span></Button>
         <Button variant="ghost" className="head__btn" aria-label={t.openMenu} onClick={() => (view === 'menu' ? back() : go('menu'))}>
           <Icon name="menu" /><span className="hide-mobile">Menu</span>
         </Button>
@@ -418,7 +419,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
             {legendOpen ? (
               <ul className="legend__list">
                 {['privee', 'experts', 'topo'].map(k => (
-                  <li key={k}><span className="legend__sym"><Sym profil={k} size={14} /></span>{k === 'experts' ? T('Service public', 'Public service') : k === 'topo' ? T('Topographe', 'Topographer') : C.privee.label}</li>
+                  <li key={k}><span className="legend__sym"><Sym profil={k} size={14} /></span>{C[k].chip}</li>
                 ))}
                 <li><span className="legend__sym"><span className="sym-carre-encre" /></span>{T('Plusieurs dans la ville', 'Several in the town')}</li>
                 <li><button type="button" className="link" onClick={() => go('legend')}>{t.howRead}</button></li>
@@ -427,7 +428,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
           </div>
         </div>
 
-        <div className="map__attr" style={mobile ? { bottom: Math.min(sheetPx, mapH) } : undefined}>{t.attr}</div>
+        <div className="map__attr" style={mobile ? { bottom: Math.min(sheetPx, mapH) } : undefined}>{mobile ? '© OpenStreetMap · OpenFreeMap · geoBoundaries' : t.attr}</div>
       </div>
 
       <section className="app__panel" aria-label={panelTitle}>

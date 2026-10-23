@@ -31,7 +31,7 @@ export function Detail({ A }) {
         <div className="fiche__tete-in">
           <Avatar nom={m.nom} profil={m.profil} size={64} bordure />
           <div className="fiche__qui">
-            <Badge tone={honoraire ? 'neutre' : 'agree'} onDark>{honoraire ? T('Honoraire · n\'exerce plus', 'Honorary · not practising') : t.registered}</Badge>
+            <Badge tone={honoraire ? 'neutre' : 'agree'} onDark>{honoraire ? T('Membre honoraire', 'Honorary member') : t.registered}</Badge>
             <h1 className="fiche__nom">{m.nom}</h1>
             <div className="fiche__type">{C[m.profil].label} · {m.ville || T('Ville non renseignée', 'Town not given')}</div>
           </div>
@@ -63,7 +63,7 @@ export function Detail({ A }) {
         {honoraire ? (
           <div className="fiche__hon">
             <p>{t.honT}</p>
-            {m.ville ? <Button size="lg" full onClick={() => runSearch(m.ville)}>{T('Voir les géomètres en activité à ', 'See practising surveyors in ')}{m.ville}</Button> : null}
+            {m.ville ? <Button size="lg" full onClick={() => runSearch(m.ville)}>{T('Voir les autres géomètres à ', 'See other surveyors in ')}{m.ville}</Button> : null}
           </div>
         ) : null}
 

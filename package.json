@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Annuaire cartographié des membres de l'Ordre National des Géomètres du Cameroun — webmap websig.app.",
+  "description": "Annuaire cartographié des membres de l'Ordre National des Géomètres du Cameroun — webmap websig.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

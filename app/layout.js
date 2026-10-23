@@ -1,6 +1,7 @@
 import localFont from 'next/font/local';
 import './tokens.css';
 import './globals.css';
+import { BASE_PATH } from '../lib/config.js';
 
 // Polices servies depuis le dépôt et non téléchargées au build.
 //
@@ -39,27 +40,39 @@ const DESCRIPTION = "Trouvez et vérifiez un géomètre inscrit au Tableau de l'
 // les chemins relatifs. Image en 1200x630 sous les 300 Ko : au-delà,
 // WhatsApp l'ignore silencieusement.
 export const metadata = {
-  metadataBase: new URL('https://geometres.websig.app'),
+  metadataBase: new URL('https://ogec.cm'),
   // Site d'une seule page : le canonical ne peut désigner qu'elle. Il est
   // ici et pas seulement implicite parce que l'auto-canonical de Google se
   // fait sur l'URL crawlée — n'importe quel lien entrant portant un
   // paramètre de campagne (?utm_source=…) devient alors une URL distincte.
-  alternates: { canonical: '/' },
+  alternates: { canonical: BASE_PATH },
   title: TITRE,
   description: DESCRIPTION,
   openGraph: {
     type: 'website',
-    siteName: 'websig',
+    siteName: 'Carte des géomètres',
     locale: 'fr_FR',
-    url: '/',
+    url: BASE_PATH,
     title: TITRE,
     description: DESCRIPTION,
-    images: [{ url: '/og/apercu.jpg', width: 1200, height: 630, alt: 'Carte des géomètres inscrits au Tableau de l\'Ordre du Cameroun' }]
+    images: [{ url: `${BASE_PATH}/og/apercu.jpg`, width: 1200, height: 630, alt: 'Carte des géomètres inscrits au Tableau de l\'Ordre du Cameroun' }]
   },
-  twitter: { card: 'summary_large_image', title: TITRE, description: DESCRIPTION, images: ['/og/apercu.jpg'] }
+  twitter: { card: 'summary_large_image', title: TITRE, description: DESCRIPTION, images: [`${BASE_PATH}/og/apercu.jpg`] }
 };
 
-export const viewport = { width: 'device-width', initialScale: 1 };
+export const viewport = { width: 'device-width', initialScale: 1, themeColor: '#14181A' };
+
+// Données structurées : de quoi nommer le site et sa langue aux moteurs. Aucune
+// affirmation d'éditeur : la carte n'est pas validée par l'Ordre (BRIEF.md).
+const JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Carte des géomètres',
+  alternateName: 'Annuaire des géomètres du Cameroun',
+  url: `https://ogec.cm${BASE_PATH}`,
+  inLanguage: ['fr', 'en'],
+  description: DESCRIPTION
+};
 
 // `suppressHydrationWarning` sur <html> et lui seul : certaines extensions de
 // navigateur posent un attribut sur la balise racine (crxlauncher, barres
@@ -73,7 +86,10 @@ export const viewport = { width: 'device-width', initialScale: 1 };
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning className={`${spaceGrotesk.variable} ${plexMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
+        {children}
+      </body>
     </html>
   );
 }

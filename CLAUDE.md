@@ -2,7 +2,7 @@
 
 Annuaire cartographié des membres de l'Ordre National des Géomètres du
 Cameroun. Webmap Next.js statique, en production sur
-[geometres.websig.app](https://geometres.websig.app).
+[ogec.cm/annuaire](https://ogec.cm/annuaire) (ancienne adresse : geometres.websig.app, à rediriger en 301 vers ogec.cm/annuaire).
 
 **[README.md](README.md) est la référence technique** (architecture,
 données, déploiement) et **[BRIEF.md](BRIEF.md) le journal des
@@ -37,6 +37,14 @@ lançant l'app (`.claude/launch.json` déclare la cible `websig-dev`).
 
 ## Ce qui casse si on l'oublie
 
+- **L'app est servie sous `/annuaire`** (`basePath` dans `next.config.mjs`,
+  constante `BASE_PATH` dans `lib/config.js`). Next ne préfixe que ses propres
+  liens : tout `<img src>` ou lien écrit à la main passe par `chemin()`. La
+  racine `/` renvoie à l'annuaire par un 307 (temporaire : ogec.cm accueillera
+  plus tard le site de l'Ordre), et `/robots.txt` et `/sitemap.xml` y sont
+  redirigés aussi, les moteurs ne les lisant qu'à la racine. Pour changer de
+  chemin, ne toucher que `BASE_PATH`, l'aperçu `public/og/apercu.jpg` (texte
+  du domaine) et le proxy.
 - **`output: 'standalone'` n'embarque ni `.next/static` ni `public/`.**
   Les deux sont copiés explicitement dans le `Dockerfile`. Sans ça le
   build est vert et la prod renvoie 404 sur les fichiers statiques —
@@ -60,12 +68,13 @@ lançant l'app (`.claude/launch.json` déclare la cible `websig-dev`).
 - **La CI ne construit jamais sur le serveur** (6 vCores partagés entre
   tous les projets de l'infra). GitHub Actions pousse l'image sur GHCR,
   le serveur ne fait que `docker compose pull`.
-- **Les icônes sont vendorisées, comme le design system.**
-  `app/icon.svg`, `app/favicon.ico` et `app/apple-icon.png` sont des
-  copies de `apps/site/app/` dans `websig-platform`, qui porte la marque
-  et le générateur (`npm run favicon`). Elles ne se mettent pas à jour
-  toutes seules : une retouche de la marque se recopie ici à la main.
-  Voir `docs/referencement.md` de `websig-platform`.
+- **Icônes et aperçu de partage aux couleurs de l'OGEC** (plus ceux de
+  websig-platform). `app/icon.svg` (le « O » du sigle sur encre) est la
+  source ; `app/favicon.ico` (16/32/48) et `app/apple-icon.png` (180) en sont
+  dérivés, `public/og/apercu.jpg` (1200×630, < 300 Ko) est composé à part.
+  Tout se régénère à la main (rendu navigateur sans en-tête puis `sharp`) :
+  une retouche du logo impose de refaire les quatre. L'aperçu ne doit jamais
+  montrer une capture de l'interface (elle date vite).
 - **Le point sur la carte est le chef-lieu déclaré au tableau**, pas
   l'adresse du cabinet — la source ne la donne pas. Ne pas laisser
   entendre le contraire dans l'interface. Conséquence : les distances
@@ -82,8 +91,11 @@ lançant l'app (`.claude/launch.json` déclare la cible `websig-dev`).
   service officiel de l'Ordre.
 - **La fraîcheur des données reste visible en permanence** (exigence #1 du
   BRIEF) : bandeau `.fresh` sous la recherche, dérivé de `SOURCE`. Les
-  libellés de catégories (« service public » pour la liste des experts)
-  viennent du prototype et restent à faire valider par l'Ordre.
+  libellés de catégories viennent du courriel d'un membre du Bureau du
+  Conseil (14 octobre 2026) : matricule C Géomètres-Topographes, B
+  Géomètres-Experts, A Géomètres-Experts agréés en clientèle privée, membres
+  honoraires officiellement admis à l'honorariat. Jamais « service public »
+  ni « assermenté ».
 - **Les régions des villes sont posées à la main** (`REGION_PAR_VILLE` dans
   `lib/villes.js`), comme les coordonnées : le tableau ne les donne pas.
   Une ville camerounaise ajoutée à `CITIES` doit l'être aussi là.

@@ -7,7 +7,7 @@ Ce n'est pas une carte thématique ordinaire, c'est un **annuaire
 géolocalisé** : le point porté sur la carte est le chef-lieu déclaré au
 tableau, pas l'adresse exacte du cabinet (que la source ne donne pas).
 
-**État : en production sur [geometres.websig.app](https://geometres.websig.app).**
+**État : en production sur geometres.websig.app ; bascule vers [ogec.cm/annuaire](https://ogec.cm/annuaire) décidée le 23 octobre 2026 (les URL du code pointent déjà dessus ; la racine ogec.cm renvoie à /annuaire).** Côté infra, à faire : DNS et proxy pour ogec.cm (tout le trafic vers le conteneur, y compris `/` qui redirige), redirection 301 de geometres.websig.app vers ogec.cm/annuaire, et décision sur `www.ogec.cm` (rediriger vers l'apex ou garder le site actuel de l'Ordre). Tant que le domaine ne sert pas l'app, canonical, sitemap et aperçu de partage pointent vers une adresse qui ne répond pas encore.
 
 ## Ce que ça fait
 
@@ -133,7 +133,7 @@ documentée pas à pas dans
 (branche `add/infra-geometres`, pas encore fusionnée), à exécuter
 manuellement sur le serveur.
 
-Sous-domaine prévu : `geometres.websig.app`.
+Adresse cible : `ogec.cm/annuaire` (voir l'état ci-dessus).
 
 ## Contexte et décisions
 
