@@ -492,3 +492,56 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .onb__etapes li { padding: 18px 20px; }
   .onb__bas { padding: 20px; }
 }
+
+/* ---------- Mobile, refonte : un en-tête mince, une recherche claire, une carte qui respire ---------- */
+@media (max-width: 767px) {
+  /* En-tête : une seule ligne d'encre, rien d'autre de sombre au-dessus de la carte. */
+  .app { grid-template-rows: 48px auto minmax(0, 1fr); }
+  .head__logo { height: 28px; }
+  .head__btn, .head__lang { min-height: 40px; }
+  .head__btn { min-width: 40px; padding: 0 8px; }
+
+  /* Recherche : sur le papier, champ blanc, bouton plus petit ; la fraîcheur en gris discret. */
+  .app__search { background: var(--papier); border-bottom: 1px solid var(--filet); padding: 10px 12px 8px; gap: 4px; }
+  .app__search .field__box { min-height: 44px; border-color: var(--encre-2); }
+  .app__search .btn { min-height: 44px; padding: 0 16px; font-size: 15px; }
+  .fresh { color: var(--encre-2); opacity: 1; font-size: 11px; }
+  .fresh[data-statut='brouillon-non-verifie'] { color: #fff; }
+  .offline { padding: 6px 6px 6px 10px; }
+
+  /* Carte : moins d'habillage. La légende vit dans le menu (« Comment lire la carte »). */
+  .legend { display: none; }
+  .map__tools > .btn { min-height: 38px; padding: 0 12px; font-size: 13px; background: var(--surface); border-color: var(--filet); }
+  .map__zoom { background: var(--surface); }
+  .map__zoom button { width: 40px; height: 40px; }
+  .ogec-count__lbl { background: transparent; border: 0; padding: 0; top: 26px; font-size: 11px; font-weight: 700; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 4px #fff; }
+  .ogec-count__n { font-size: 13px; }
+
+  /* Tiroir. */
+  .app__panel { border-top: 1px solid var(--filet); }
+  .panel__body { background: var(--papier); }
+
+  /* Accueil : des puces de ville défilantes au lieu de six vignettes sombres. */
+  .home { padding: 8px 0 28px; gap: 22px; }
+  .home > div:first-child, .home__tire, .home__numero, .home__autres { margin-left: 16px; margin-right: 16px; }
+  .home__titre { font-size: 21px; margin-top: 6px; }
+  .home__villes { display: flex; gap: 8px; overflow-x: auto; padding: 0 16px 2px; scrollbar-width: none; }
+  .home__villes::-webkit-scrollbar { display: none; }
+  .ville-carte { flex: none; width: auto; height: 44px; padding: 0 14px; display: flex; align-items: center; background: var(--surface); border: 1px solid var(--filet); }
+  .ville-carte .aerial, .ville-carte__voile { display: none; }
+  .ville-carte__pied { position: static; color: var(--encre); gap: 10px; align-items: center; }
+  .ville-carte__nom { font-size: 15px; font-weight: 500; }
+  .ville-carte__n { background: var(--bleu-pale); color: var(--bleu-fonce); padding: 1px 6px; }
+  .home__tire { margin-top: 0; min-height: 48px; font-size: 14px; }
+  .home__numero { background: var(--surface); color: var(--encre); border: 1px solid var(--filet); padding: 12px 14px; }
+  .home__numero-d { opacity: 1; color: var(--encre-2); font-size: 13px; }
+  .home__numero-t { font-size: 15px; }
+  .home__numero-ex { border-color: var(--filet); color: var(--bleu-fonce); font-size: 17px; }
+  .home__autres { gap: 8px; }
+  .home__autres button { min-height: 76px; padding: 10px; font-size: 12.5px; }
+
+  /* Résultats et fiche. */
+  .res__tete { background: var(--surface); }
+  .rang { min-height: 64px; }
+  .fiche__tete { min-height: 150px; }
+}

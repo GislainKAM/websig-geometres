@@ -137,7 +137,7 @@ export function Results({ A }) {
                   </span>
                   <span className="rang__txt">
                     <span className="rang__nom">{l.m.nom}</span>
-                    <span className="rang__sous">{C[l.m.profil].label}{l.m.cabinet ? ' · ' + l.m.cabinet : ''}</span>
+                    <span className="rang__sous">{C[l.m.profil].chip}{l.m.cabinet ? ' · ' + l.m.cabinet : ''}</span>
                     <span className="rang__lieu">
                       {l.m.ville || T('Ville non renseignée', 'Town not given')}
                       {mesure && l.m.d != null ? T(' · à ', ' · ') + formatKm(l.m.d) : ''}

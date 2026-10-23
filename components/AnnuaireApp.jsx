@@ -428,7 +428,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
           </div>
         </div>
 
-        <div className="map__attr" style={mobile ? { bottom: Math.min(sheetPx, mapH) } : undefined}>{t.attr}</div>
+        <div className="map__attr" style={mobile ? { bottom: Math.min(sheetPx, mapH) } : undefined}>{mobile ? '© OpenStreetMap · OpenFreeMap · geoBoundaries' : t.attr}</div>
       </div>
 
       <section className="app__panel" aria-label={panelTitle}>
