@@ -17,6 +17,7 @@ import { Menu } from './views/Menu.jsx';
 import { dico, CAT, nomRegion, pluriel, dateCourte } from '../lib/i18n.js';
 import { filtrer, filtresInitiaux, interpreter, centreRegion, TOUTES } from '../lib/recherche.js';
 import { HORS_CAMEROUN } from '../lib/villes.js';
+import { chemin } from '../lib/config.js';
 
 const MOBILE_BP = 768;
 const DESKTOP_BP = 1100;
@@ -355,7 +356,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
     <div className="app" style={{ '--pw': panneauLarge + 'px', '--sheet-h': sheetPx + 'px' }}>
       <header className="app__head">
         <button type="button" className="head__home" onClick={goHome} aria-label={t.homeAria}>
-          <img src="/brand/logo-ogec-sombre.svg" alt="OGEC" className="head__logo" />
+          <img src={chemin('/brand/logo-ogec-sombre.svg')} alt="OGEC" className="head__logo" />
           <span className="head__titre hide-mobile">
             <span className="head__t1">{t.appTitle}</span>
             <span className="head__t2">{t.appSub}</span>

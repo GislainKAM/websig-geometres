@@ -7,5 +7,5 @@
 // OGEC. Le jour où la fraîcheur des données doit être exposée, elle l'est
 // déjà par SOURCE.dateVerification dans lib/geometres.js.
 export default function sitemap() {
-  return [{ url: 'https://ogec.cm/' }];
+  return [{ url: 'https://ogec.cm/annuaire' }];
 }

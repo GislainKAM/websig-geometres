@@ -1,6 +1,7 @@
 import localFont from 'next/font/local';
 import './tokens.css';
 import './globals.css';
+import { BASE_PATH } from '../lib/config.js';
 
 // Polices servies depuis le dépôt et non téléchargées au build.
 //
@@ -44,19 +45,19 @@ export const metadata = {
   // ici et pas seulement implicite parce que l'auto-canonical de Google se
   // fait sur l'URL crawlée — n'importe quel lien entrant portant un
   // paramètre de campagne (?utm_source=…) devient alors une URL distincte.
-  alternates: { canonical: '/' },
+  alternates: { canonical: BASE_PATH },
   title: TITRE,
   description: DESCRIPTION,
   openGraph: {
     type: 'website',
     siteName: 'Carte des géomètres',
     locale: 'fr_FR',
-    url: '/',
+    url: BASE_PATH,
     title: TITRE,
     description: DESCRIPTION,
-    images: [{ url: '/og/apercu.jpg', width: 1200, height: 630, alt: 'Carte des géomètres inscrits au Tableau de l\'Ordre du Cameroun' }]
+    images: [{ url: `${BASE_PATH}/og/apercu.jpg`, width: 1200, height: 630, alt: 'Carte des géomètres inscrits au Tableau de l\'Ordre du Cameroun' }]
   },
-  twitter: { card: 'summary_large_image', title: TITRE, description: DESCRIPTION, images: ['/og/apercu.jpg'] }
+  twitter: { card: 'summary_large_image', title: TITRE, description: DESCRIPTION, images: [`${BASE_PATH}/og/apercu.jpg`] }
 };
 
 export const viewport = { width: 'device-width', initialScale: 1, themeColor: '#14181A' };
@@ -68,7 +69,7 @@ const JSON_LD = {
   '@type': 'WebSite',
   name: 'Carte des géomètres',
   alternateName: 'Annuaire des géomètres du Cameroun',
-  url: 'https://ogec.cm/',
+  url: `https://ogec.cm${BASE_PATH}`,
   inLanguage: ['fr', 'en'],
   description: DESCRIPTION
 };

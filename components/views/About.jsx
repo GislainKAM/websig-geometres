@@ -1,5 +1,6 @@
 import React from 'react';
 import { Badge } from '../ui/index.js';
+import { chemin } from '../../lib/config.js';
 import { dateCourte } from '../../lib/i18n.js';
 
 /** Sources, fraîcheur et limites des données. Le statut de relecture est celui de la source, pas un texte figé. */
@@ -32,7 +33,7 @@ export function About({ A }) {
         {t.err3}
       </p>
       <div className="apropos__pied">
-        <img src="/brand/logo-ogec-mark.svg" alt="OGEC" style={{ height: 28, width: 'auto' }} />
+        <img src={chemin('/brand/logo-ogec-mark.svg')} alt="OGEC" style={{ height: 28, width: 'auto' }} />
       </div>
     </div>
   );

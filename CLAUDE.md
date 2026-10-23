@@ -2,7 +2,7 @@
 
 Annuaire cartographié des membres de l'Ordre National des Géomètres du
 Cameroun. Webmap Next.js statique, en production sur
-[ogec.cm](https://ogec.cm) (ancienne adresse : geometres.websig.app, à rediriger en 301 vers ogec.cm).
+[ogec.cm/annuaire](https://ogec.cm/annuaire) (ancienne adresse : geometres.websig.app, à rediriger en 301 vers ogec.cm/annuaire).
 
 **[README.md](README.md) est la référence technique** (architecture,
 données, déploiement) et **[BRIEF.md](BRIEF.md) le journal des
@@ -37,6 +37,14 @@ lançant l'app (`.claude/launch.json` déclare la cible `websig-dev`).
 
 ## Ce qui casse si on l'oublie
 
+- **L'app est servie sous `/annuaire`** (`basePath` dans `next.config.mjs`,
+  constante `BASE_PATH` dans `lib/config.js`). Next ne préfixe que ses propres
+  liens : tout `<img src>` ou lien écrit à la main passe par `chemin()`. La
+  racine `/` renvoie à l'annuaire par un 307 (temporaire : ogec.cm accueillera
+  plus tard le site de l'Ordre), et `/robots.txt` et `/sitemap.xml` y sont
+  redirigés aussi, les moteurs ne les lisant qu'à la racine. Pour changer de
+  chemin, ne toucher que `BASE_PATH`, l'aperçu `public/og/apercu.jpg` (texte
+  du domaine) et le proxy.
 - **`output: 'standalone'` n'embarque ni `.next/static` ni `public/`.**
   Les deux sont copiés explicitement dans le `Dockerfile`. Sans ça le
   build est vert et la prod renvoie 404 sur les fichiers statiques —

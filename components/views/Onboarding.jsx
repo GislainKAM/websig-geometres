@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Badge, Icon } from '../ui/index.js';
 import { Aerial } from '../Bits.jsx';
+import { chemin } from '../../lib/config.js';
 
 /** Présentation du premier passage : trois gestes, une langue, un bouton. */
 export function Onboarding({ A }) {
@@ -16,7 +17,7 @@ export function Onboarding({ A }) {
     <main className="onb" data-screen-label="01 Accueil">
       <div className="onb__feuille">
         <div className="onb__haut">
-          <img src="/brand/logo-ogec.svg" alt="Ordre National des Géomètres du Cameroun (OGEC)" className="onb__logo" />
+          <img src={chemin('/brand/logo-ogec.svg')} alt="Ordre National des Géomètres du Cameroun (OGEC)" className="onb__logo" />
           <Button variant="ghost" onClick={finOnboarding}>{t.skip}</Button>
         </div>
         <div className="onb__photo">
