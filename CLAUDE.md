@@ -60,12 +60,13 @@ lançant l'app (`.claude/launch.json` déclare la cible `websig-dev`).
 - **La CI ne construit jamais sur le serveur** (6 vCores partagés entre
   tous les projets de l'infra). GitHub Actions pousse l'image sur GHCR,
   le serveur ne fait que `docker compose pull`.
-- **Les icônes sont vendorisées, comme le design system.**
-  `app/icon.svg`, `app/favicon.ico` et `app/apple-icon.png` sont des
-  copies de `apps/site/app/` dans `websig-platform`, qui porte la marque
-  et le générateur (`npm run favicon`). Elles ne se mettent pas à jour
-  toutes seules : une retouche de la marque se recopie ici à la main.
-  Voir `docs/referencement.md` de `websig-platform`.
+- **Icônes et aperçu de partage aux couleurs de l'OGEC** (plus ceux de
+  websig-platform). `app/icon.svg` (le « O » du sigle sur encre) est la
+  source ; `app/favicon.ico` (16/32/48) et `app/apple-icon.png` (180) en sont
+  dérivés, `public/og/apercu.jpg` (1200×630, < 300 Ko) est composé à part.
+  Tout se régénère à la main (rendu navigateur sans en-tête puis `sharp`) :
+  une retouche du logo impose de refaire les quatre. L'aperçu ne doit jamais
+  montrer une capture de l'interface (elle date vite).
 - **Le point sur la carte est le chef-lieu déclaré au tableau**, pas
   l'adresse du cabinet — la source ne la donne pas. Ne pas laisser
   entendre le contraire dans l'interface. Conséquence : les distances

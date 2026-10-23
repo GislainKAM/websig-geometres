@@ -49,7 +49,7 @@ export const metadata = {
   description: DESCRIPTION,
   openGraph: {
     type: 'website',
-    siteName: 'websig',
+    siteName: 'Carte des géomètres',
     locale: 'fr_FR',
     url: '/',
     title: TITRE,
@@ -59,7 +59,19 @@ export const metadata = {
   twitter: { card: 'summary_large_image', title: TITRE, description: DESCRIPTION, images: ['/og/apercu.jpg'] }
 };
 
-export const viewport = { width: 'device-width', initialScale: 1 };
+export const viewport = { width: 'device-width', initialScale: 1, themeColor: '#14181A' };
+
+// Données structurées : de quoi nommer le site et sa langue aux moteurs. Aucune
+// affirmation d'éditeur : la carte n'est pas validée par l'Ordre (BRIEF.md).
+const JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Carte des géomètres',
+  alternateName: 'Annuaire des géomètres du Cameroun',
+  url: 'https://geometres.websig.app/',
+  inLanguage: ['fr', 'en'],
+  description: DESCRIPTION
+};
 
 // `suppressHydrationWarning` sur <html> et lui seul : certaines extensions de
 // navigateur posent un attribut sur la balise racine (crxlauncher, barres
@@ -73,7 +85,10 @@ export const viewport = { width: 'device-width', initialScale: 1 };
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning className={`${spaceGrotesk.variable} ${plexMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
+        {children}
+      </body>
     </html>
   );
 }
