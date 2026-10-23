@@ -521,17 +521,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .app__panel { border-top: 1px solid var(--filet); }
   .panel__body { background: var(--papier); }
 
-  /* Accueil : des puces de ville défilantes au lieu de six vignettes sombres. */
+  /* Accueil : vignettes aériennes des villes, plus basses et sur deux colonnes. */
   .home { padding: 8px 0 28px; gap: 22px; }
   .home > div:first-child, .home__tire, .home__numero, .home__autres { margin-left: 16px; margin-right: 16px; }
   .home__titre { font-size: 21px; margin-top: 6px; }
-  .home__villes { display: flex; gap: 8px; overflow-x: auto; padding: 0 16px 2px; scrollbar-width: none; }
-  .home__villes::-webkit-scrollbar { display: none; }
-  .ville-carte { flex: none; width: auto; height: 44px; padding: 0 14px; display: flex; align-items: center; background: var(--surface); border: 1px solid var(--filet); }
-  .ville-carte .aerial, .ville-carte__voile { display: none; }
-  .ville-carte__pied { position: static; color: var(--encre); gap: 10px; align-items: center; }
-  .ville-carte__nom { font-size: 15px; font-weight: 500; }
-  .ville-carte__n { background: var(--bleu-pale); color: var(--bleu-fonce); padding: 1px 6px; }
+  .home__villes { margin: 0 16px; gap: 8px; }
+  .ville-carte { height: 88px; }
+  .ville-carte__nom { font-size: 16px; }
   .home__tire { margin-top: 0; min-height: 48px; font-size: 14px; }
   .home__numero { background: var(--surface); color: var(--encre); border: 1px solid var(--filet); padding: 12px 14px; }
   .home__numero-d { opacity: 1; color: var(--encre-2); font-size: 13px; }
