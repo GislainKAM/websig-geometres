@@ -403,7 +403,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
         ) : null}
         {reportPick && !s.rep.loc ? <div role="status" className="map__hint">{t.tapMap}</div> : null}
 
-        <div className="map__zoom hide-mobile">
+        <div className="map__zoom">
           <button type="button" onClick={() => mapApi.current && mapApi.current.zoomIn()} aria-label={t.zoomIn} title={t.zoomIn}><Icon name="plus" /></button>
           <button type="button" onClick={() => mapApi.current && mapApi.current.zoomOut()} aria-label={t.zoomOut} title={t.zoomOut}><Icon name="minus" /></button>
           <button type="button" onClick={() => mapApi.current && mapApi.current.overview()} aria-label={t.overview} title={t.overview}><Icon name="globe" /></button>

@@ -453,7 +453,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .app__search { padding: 2px 12px 10px; gap: 6px; }
   .app__search .btn { padding: 0 14px; font-size: 15px; }
   .fresh { font-size: 11px; opacity: .7; }
-  .map__tools { top: 10px; left: 10px; gap: 6px; }
+  /* Sur mobile : seul « tout le Cameroun » reste, le pincement suffit pour zoomer. */
+  .map__zoom { top: 10px; right: 10px; }
+  .map__zoom button:not(:last-child) { display: none; }
+  .map__tools { top: 10px; left: 10px; gap: 6px; max-width: calc(100% - 70px); }
   .map__tools > .btn { min-height: 40px; font-size: 14px; padding: 0 12px; }
   .legend__toggle { min-height: 40px; font-size: 13px; }
   .map__attr { font-size: 10px; }
