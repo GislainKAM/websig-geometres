@@ -14,7 +14,6 @@ import { Report } from './views/Report.jsx';
 import { Help } from './views/Help.jsx';
 import { About } from './views/About.jsx';
 import { Menu } from './views/Menu.jsx';
-import { Admission } from './views/Admission.jsx';
 import { dico, CAT, nomRegion, pluriel, dateCourte } from '../lib/i18n.js';
 import { filtrer, filtresInitiaux, interpreter, centreRegion, TOUTES } from '../lib/recherche.js';
 import { HORS_CAMEROUN } from '../lib/villes.js';
@@ -314,11 +313,11 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
     setLang, finOnboarding, offline, mapApi: mapApi.current
   };
 
-  const vues = { places: Places, results: Results, detail: Detail, filters: Filters, legend: Legend, report: Report, help: Help, about: About, menu: Menu, admission: Admission };
+  const vues = { places: Places, results: Results, detail: Detail, filters: Filters, legend: Legend, report: Report, help: Help, about: About, menu: Menu };
   const Vue = view === 'home' ? Home : vues[view];
   const titres = en
-    ? { results: 'Results', detail: 'Surveyor profile', filters: 'Filters', legend: 'How to read the map', report: s.rep && s.rep.type === 'maj' ? 'Update my profile' : 'Report a problem', help: 'Help', about: 'About and sources', menu: 'Menu', places: 'Regions and towns', admission: 'Joining the Order' }
-    : { results: 'Résultats', detail: 'Fiche du géomètre', filters: 'Filtres', legend: 'Comment lire la carte', report: s.rep && s.rep.type === 'maj' ? 'Mettre à jour ma fiche' : 'Signaler un problème', help: 'Aide', about: 'À propos et sources', menu: 'Menu', places: 'Régions et villes', admission: 'Devenir membre' };
+    ? { results: 'Results', detail: 'Surveyor profile', filters: 'Filters', legend: 'How to read the map', report: s.rep && s.rep.type === 'maj' ? 'Update my profile' : 'Report a problem', help: 'Help', about: 'About and sources', menu: 'Menu', places: 'Regions and towns' }
+    : { results: 'Résultats', detail: 'Fiche du géomètre', filters: 'Filtres', legend: 'Comment lire la carte', report: s.rep && s.rep.type === 'maj' ? 'Mettre à jour ma fiche' : 'Signaler un problème', help: 'Aide', about: 'À propos et sources', menu: 'Menu', places: 'Régions et villes' };
   const panelTitle = titres[view] || t.appTitle;
 
   // --- Poignée du tiroir mobile ---

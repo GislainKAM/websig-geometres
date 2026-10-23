@@ -9,7 +9,6 @@ export function Menu({ A }) {
     { ic: 'info', label: t.howRead, onClick: () => go('legend') },
     { ic: 'flag', label: t.reportProblem, onClick: () => openReport(null, null) },
     { ic: 'user', label: t.mMaj, onClick: () => openReport(null, 'maj') },
-    { ic: 'file', label: T('Devenir membre de l\'Ordre', 'Joining the Order'), onClick: () => go('admission') },
     { ic: 'book', label: t.mAbout, onClick: () => go('about') },
     { ic: 'replay', label: t.mReplay, onClick: () => patch({ screen: 'onb', view: 'home', stack: [] }) }
   ];
