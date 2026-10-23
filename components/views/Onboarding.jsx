@@ -20,7 +20,7 @@ export function Onboarding({ A }) {
           <Button variant="ghost" onClick={finOnboarding}>{t.skip}</Button>
         </div>
         <div className="onb__photo">
-          <Aerial lat={3.8835} lon={11.5135} z={17} demiLargeur={320} demiHauteur={200} />
+          <Aerial lat={3.8835} lon={11.5135} z={17} demiLargeur={420} demiHauteur={420} />
           <span className="onb__voile" aria-hidden="true" />
           <div className="onb__texte">
             <div className="onb__eyebrow">{t.onbEyebrow}</div>

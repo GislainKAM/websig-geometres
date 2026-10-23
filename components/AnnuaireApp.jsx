@@ -346,7 +346,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
     ? t.freshRead + dateCourte(source.dateVerification)
     : t.freshDraft;
   const mentionAjouts = source && source.ajouts.n
-    ? ' · ' + source.ajouts.n + T(' inscriptions récentes non relues', ' recent registrations not reviewed')
+    ? ' · ' + source.ajouts.n + (mobile ? T(' ajouts non relus', ' unreviewed additions') : T(' inscriptions récentes non relues', ' recent registrations not reviewed'))
     : '';
 
   if (s.screen === 'onb') return <Onboarding A={A} />;
@@ -363,7 +363,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
         </button>
         <span className="head__fill" />
         <button type="button" className="head__lang" onClick={() => setLang(en ? 'FR' : 'EN')} aria-label={t.switchLang} lang={en ? 'fr' : 'en'}>{en ? 'FR' : 'EN'}</button>
-        <Button variant="ghost" className="head__btn" onClick={() => go('help', { faqQ: '' })}><Icon name="help" />{t.help}</Button>
+        <Button variant="ghost" className="head__btn" onClick={() => go('help', { faqQ: '' })}><Icon name="help" /><span className="hide-mobile">{t.help}</span></Button>
         <Button variant="ghost" className="head__btn" aria-label={t.openMenu} onClick={() => (view === 'menu' ? back() : go('menu'))}>
           <Icon name="menu" /><span className="hide-mobile">Menu</span>
         </Button>
@@ -403,7 +403,7 @@ export function AnnuaireApp({ geometres, villes, nonLocalises, source }) {
         ) : null}
         {reportPick && !s.rep.loc ? <div role="status" className="map__hint">{t.tapMap}</div> : null}
 
-        <div className="map__zoom">
+        <div className="map__zoom hide-mobile">
           <button type="button" onClick={() => mapApi.current && mapApi.current.zoomIn()} aria-label={t.zoomIn} title={t.zoomIn}><Icon name="plus" /></button>
           <button type="button" onClick={() => mapApi.current && mapApi.current.zoomOut()} aria-label={t.zoomOut} title={t.zoomOut}><Icon name="minus" /></button>
           <button type="button" onClick={() => mapApi.current && mapApi.current.overview()} aria-label={t.overview} title={t.overview}><Icon name="globe" /></button>

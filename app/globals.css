@@ -229,8 +229,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .ville-carte__pied { position: absolute; left: 12px; right: 12px; bottom: 10px; display: flex; align-items: baseline; justify-content: space-between; gap: 8px; color: #fff; }
 .ville-carte__nom { font-family: var(--font-display); font-weight: 700; font-size: 17px; }
 .ville-carte__n { font-size: 13px; background: var(--bleu-fonce); padding: 1px 6px; }
-.ligne-action { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 16px; border: 1px solid var(--encre); background: var(--surface); font-family: var(--font-display); font-weight: 700; font-size: 15px; text-align: left; border-radius: 2px; transition: var(--transition); }
-.ligne-action:hover { background: var(--bleu-pale); }
+.ligne-action { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 16px; border: 1px solid var(--filet); background: var(--surface); font-family: var(--font-display); font-weight: 700; font-size: 15px; text-align: left; border-radius: 2px; transition: var(--transition); }
+.ligne-action:hover { background: var(--bleu-pale); border-color: var(--bleu); }
 .ligne-action__ic { color: var(--bleu-fonce); display: flex; }
 .ligne-action__t { flex: 1; }
 .home__tire { margin-top: -16px; }
@@ -424,4 +424,68 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .panel__handle { flex: none; display: grid; place-items: center; width: 100%; height: 28px; border: 0; background: var(--papier); cursor: ns-resize; touch-action: none; }
   .panel__handle span { display: block; width: 40px; height: 4px; background: var(--encre-2); }
   .home__villes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---------- Présentation sur grand écran : deux colonnes, photo à gauche ---------- */
+@media (min-width: 900px) {
+  .onb { display: grid; place-items: center; padding: 32px; }
+  .onb__feuille {
+    max-width: 1080px; width: 100%; min-height: 0; border: 1px solid var(--filet);
+    display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-areas: "photo haut" "photo etapes" "photo bas";
+  }
+  .onb__haut { grid-area: haut; }
+  .onb__photo { grid-area: photo; min-height: 560px; padding: 48px 40px; }
+  .onb__etapes { grid-area: etapes; border-bottom: 0; }
+  .onb__bas { grid-area: bas; margin-top: 0; border-top: 1px solid var(--filet); }
+  .onb__titre { font-size: 40px; }
+}
+
+/* ---------- Mobile : plus d'air, moins de poids ---------- */
+@media (max-width: 767px) {
+  body { font-size: 15px; }
+  .app { grid-template-rows: 52px auto minmax(0, 1fr); }
+  .app__head { gap: 4px; padding: 0 8px 0 12px; }
+  .head__logo { height: 30px; }
+  .head__btn { min-width: var(--touch-min); padding: 0 10px; }
+  .head__lang { min-width: 40px; font-size: 13px; }
+  .app__search { padding: 2px 12px 10px; gap: 6px; }
+  .app__search .btn { padding: 0 14px; font-size: 15px; }
+  .fresh { font-size: 11px; opacity: .7; }
+  .map__tools { top: 10px; left: 10px; gap: 6px; }
+  .map__tools > .btn { min-height: 40px; font-size: 14px; padding: 0 12px; }
+  .legend__toggle { min-height: 40px; font-size: 13px; }
+  .map__attr { font-size: 10px; }
+  .app__panel { border-top: 1px solid var(--filet); }
+  .panel__handle { height: 24px; background: var(--surface); }
+  .panel__handle span { width: 32px; height: 3px; background: var(--filet); }
+  .panel__head { min-height: 48px; background: var(--surface); }
+  .home { padding: 12px 20px 28px; gap: 28px; }
+  .home__titre { font-size: 22px; }
+  .home__villes { gap: 10px; }
+  .ville-carte { height: 84px; }
+  .ville-carte__nom { font-size: 16px; }
+  .home__tire { margin-top: -20px; }
+  .home__numero { padding: 14px 16px; }
+  .home__numero-ex { font-size: 18px; padding: 4px 8px; }
+  .home__autres { gap: 10px; }
+  .home__autres button { min-height: 84px; font-size: 13px; }
+  .res__tete { padding: 12px 20px 14px; gap: 10px; }
+  .res__tete .puces { flex-wrap: nowrap; overflow-x: auto; margin: 0 -20px; padding: 0 20px 2px; scrollbar-width: none; }
+  .res__tete .puces::-webkit-scrollbar { display: none; }
+  .res__serie { padding: 6px 20px; }
+  .rang { padding: 12px 16px 12px 20px; min-height: 68px; }
+  .rang__nom { font-size: 15px; }
+  .rang__sous, .rang__lieu { font-size: 13px; }
+  .fiche__tete { min-height: 168px; padding: 16px 20px; }
+  .fiche__nom { font-size: 21px; }
+  .fiche__corps { padding: 20px; gap: 18px; }
+  .places, .lg, .rapport, .aide, .apropos, .filtres__corps { padding-left: 20px; padding-right: 20px; }
+  .filtres__pied { padding: 10px 20px 14px; }
+  .menu__ligne { padding: 0 20px; min-height: 52px; }
+  .onb__photo { min-height: 280px; padding: 24px 20px; }
+  .onb__titre { font-size: 28px; }
+  .onb__etapes li { padding: 18px 20px; }
+  .onb__bas { padding: 20px; }
 }
