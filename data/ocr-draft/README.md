@@ -13,14 +13,19 @@ transcription : c'est un axe différent, voir plus bas.
 ## Ce que c'est
 
 242 entrées réparties en 4 listes, telles qu'imprimées sur le tableau
-officiel :
+officiel, plus **14 inscriptions ajoutées** au 23 octobre 2026 d'après la
+décision n°017/OGEC/PC/2026 du 28 juillet 2026 (liste 4, matricules C312 à
+C325, champ `decision`). La décision ne donne que le nom et le matricule :
+ville, téléphone et e-mail sont vides, et ces lignes n'ont **pas été relues**
+(scan photographié, lecture à vérifier) — le statut « relue » ci-dessous ne
+les couvre pas :
 
 | Fichier | Liste | Lignes | Colonnes |
 |---|---|---|---|
 | `01-geometres-autorises.csv` | Géomètres autorisés (études topo, expertises, évaluations foncières, clientèle privée) | 40 | numero, nom, numero_agrement, cabinet, adresse, contact, email |
 | `02-geometres-experts-honoraires.csv` | Géomètres experts honoraires | 5 | numero, nom, numero_agrement, adresse, contact, email |
-| `03-geometres-experts.csv` | Géomètres experts inscrits (expertises + études topo) | 136 | numero, nom, matricule, lieu_service, adresse, contact, email |
-| `04-geometres-topographes.csv` | Géomètres topographes | 61 | numero, nom, matricule, lieu_service, adresse, contact, email |
+| `03-geometres-experts.csv` | Géomètres experts inscrits (expertises + études topo) | 137 | numero, nom, matricule, lieu_service, adresse, contact, email |
+| `04-geometres-topographes.csv` | Géomètres topographes | 75 | numero, nom, matricule, lieu_service, adresse, contact, email |
 | `tableau-ogec-2026.json` | Les 4 listes combinées, même contenu que les CSV | — | — |
 
 Généré le 17 août 2026 par

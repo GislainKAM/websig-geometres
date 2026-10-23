@@ -1640,7 +1640,7 @@
         "adresse": "Maroua",
         "contact": "677857913 / 696134090",
         "email": "tafraicheur@yahoo.fr"
-      }      
+      }
     ],
     "geometres_topographes": [
       {
@@ -2191,15 +2191,155 @@
         "adresse": "Mfou",
         "contact": "694155737",
         "email": "fsseverin86@gmail.com"
+      },
+      {
+        "numero": "62",
+        "nom": "ANANGA ANANGA Paul Franck",
+        "matricule": "C312",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "63",
+        "nom": "FOTSO TUEDJO Reine Ingrid",
+        "matricule": "C313",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "64",
+        "nom": "KENGNE NGONDA TASSI Cyntia",
+        "matricule": "C314",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "65",
+        "nom": "MEKANDA YAKAN Eugene Salomon",
+        "matricule": "C315",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "66",
+        "nom": "NKEMEGNE SIKALI Solange",
+        "matricule": "C316",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "67",
+        "nom": "TCHIO TSE Ulrich Vianney",
+        "matricule": "C317",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "68",
+        "nom": "MATANG TCHINDA Benedicte",
+        "matricule": "C318",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "69",
+        "nom": "OLOMO NDJOUKOU Raphaëlle Josée",
+        "matricule": "C319",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "70",
+        "nom": "BOGLA André Roger Junior",
+        "matricule": "C320",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "71",
+        "nom": "MBONG Aicha KANG Saïdou",
+        "matricule": "C321",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "72",
+        "nom": "ALIOUM Amadou",
+        "matricule": "C322",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "73",
+        "nom": "KANMEGNE MBAKAM Julien",
+        "matricule": "C323",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "74",
+        "nom": "KOTE KOTE FOURZEK Jacques Raymond",
+        "matricule": "C324",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
+      },
+      {
+        "numero": "75",
+        "nom": "EPONGO Brice Chancel",
+        "matricule": "C325",
+        "lieu_service": "",
+        "adresse": "",
+        "contact": "",
+        "email": "",
+        "decision": "Décision n°017/OGEC/PC/2026 du 28 juillet 2026"
       }
     ]
   },
   "totaux": {
     "geometres_autorises": 40,
     "geometres_experts_honoraires": 5,
-    "geometres_experts": 136,
-    "geometres_topographes": 61,
-    "total": 242
+    "geometres_experts": 137,
+    "geometres_topographes": 75,
+    "total": 257
   },
   "date_verification": "2026-08-19"
 }
