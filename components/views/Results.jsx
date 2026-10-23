@@ -132,7 +132,7 @@ export function Results({ A }) {
               <li key={l.m.id}>
                 <button type="button" className="rang" onClick={() => openDetail(l.m)}>
                   <span className="rang__av">
-                    <Avatar nom={l.m.nom} profil={l.m.profil} />
+                    <Avatar profil={l.m.profil} />
                     <span className="rang__sym"><Sym profil={l.m.profil} size={10} /></span>
                   </span>
                   <span className="rang__txt">
