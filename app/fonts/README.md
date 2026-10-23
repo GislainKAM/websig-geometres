@@ -7,21 +7,21 @@ caractères accentués du français, `œ`/`Œ` (U+0152-0153) compris.
 | Fichier | Famille | Graisses | Rôle |
 | --- | --- | --- | --- |
 | `space-grotesk-latin-var.woff2` | Space Grotesk (variable) | 500–700 | `--font-display` |
-| `inter-latin-var.woff2` | Inter (variable) | 400–600 | `--font-body` |
-| `ibm-plex-mono-latin-400.woff2` | IBM Plex Mono | 400 | `--font-data` |
-| `ibm-plex-mono-latin-500.woff2` | IBM Plex Mono | 500 | `--font-data` |
+| `ibm-plex-mono-latin-400.woff2` | IBM Plex Mono | 400 | `--font-text` |
+| `ibm-plex-mono-latin-500.woff2` | IBM Plex Mono | 500 | `--font-text` |
 
-Environ 100 Ko au total. Les deux familles variables tiennent en un fichier
-chacune pour toute leur plage de graisses ; IBM Plex Mono n'existant qu'en
-statique, ses deux graisses sont deux fichiers.
+Environ 50 Ko au total. Space Grotesk, variable, tient en un fichier pour
+toute sa plage de graisses ; IBM Plex Mono n'existant qu'en statique, ses
+deux graisses sont deux fichiers. Inter, utilisée avant la refonte du
+23 octobre 2026, a été retirée : le système de design OGEC n'a que ces deux
+familles.
 
 ## Licence
 
-Les trois familles sont sous **SIL Open Font License 1.1**, qui autorise la
+Les deux familles sont sous **SIL Open Font License 1.1**, qui autorise la
 redistribution, y compris intégrée à un projet. Texte de la licence :
 <https://openfontlicense.org>.
 
-- Inter — Rasmus Andersson
 - Space Grotesk — Florian Karsten
 - IBM Plex Mono — IBM
 

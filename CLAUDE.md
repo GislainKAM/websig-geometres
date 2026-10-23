@@ -42,10 +42,14 @@ lançant l'app (`.claude/launch.json` déclare la cible `websig-dev`).
   build est vert et la prod renvoie 404 sur les fichiers statiques —
   constaté le 19 août 2026 sur `/og/apercu.jpg`.
 - **Le design system est vendorisé, pas consommé en dépendance.**
-  `components/ui/` porte une copie des composants et jetons de
-  `@websig/design`. Ne jamais réintroduire de dépendance `file:` vers
-  `websig-platform` : ça marche en local et casse en CI/Docker. Une
-  évolution du design system ne se propage pas ici automatiquement.
+  `components/ui/` et `app/tokens.css` portent une copie du « OGEC Design
+  System » (export du 23 octobre 2026 ; ce n'est plus `@websig/design`).
+  Ne jamais réintroduire de dépendance `file:` vers `websig-platform` :
+  ça marche en local et casse en CI/Docker. Une évolution du design system
+  ne se propage pas ici automatiquement. Règles à ne pas enfreindre : rayon
+  0/2 px, filet 1 px, aucune ombre, une seule transition (120 ms), cible
+  tactile 44 px, `--bleu` réservé aux symboles (le texte et les boutons
+  bleus utilisent `--bleu-fonce`, seul à passer le contraste).
 - **Les données sont bundlées au build.** `lib/geometres.js` importe
   statiquement `data/ocr-draft/tableau-ogec-2026.json`. Pas de backend,
   pas de base de données, page entièrement statique.
@@ -64,7 +68,29 @@ lançant l'app (`.claude/launch.json` déclare la cible `websig-dev`).
   Voir `docs/referencement.md` de `websig-platform`.
 - **Le point sur la carte est le chef-lieu déclaré au tableau**, pas
   l'adresse du cabinet — la source ne la donne pas. Ne pas laisser
-  entendre le contraire dans l'interface.
+  entendre le contraire dans l'interface. Conséquence : les distances
+  (« Autour de moi », rayon) se mesurent au **centre de la ville**
+  (`membre.centre`), jamais au point dispersé `lat/lon`, et s'affichent au
+  kilomètre. Un membre sans ville reconnue reste dans la liste mais n'est
+  pas sur la carte.
+- **Pas de backend : l'interface ne promet rien que l'app ne fait.** Le
+  signalement prépare un message que l'utilisateur envoie lui-même
+  (`mailto:` vers `CONTACT_ORDRE` dans `lib/config.js`, ou copie du
+  message si l'adresse est vide). Pas de délai de traitement, pas de
+  référence de dossier, pas d'« envoyé à l'Ordre ». La carte n'est pas
+  validée par l'Ordre (BRIEF.md §1) : ne pas la présenter comme un
+  service officiel de l'Ordre.
+- **La fraîcheur des données reste visible en permanence** (exigence #1 du
+  BRIEF) : bandeau `.fresh` sous la recherche, dérivé de `SOURCE`. Les
+  libellés de catégories (« service public » pour la liste des experts)
+  viennent du prototype et restent à faire valider par l'Ordre.
+- **Les régions des villes sont posées à la main** (`REGION_PAR_VILLE` dans
+  `lib/villes.js`), comme les coordonnées : le tableau ne les donne pas.
+  Une ville camerounaise ajoutée à `CITIES` doit l'être aussi là.
+- **Les logos sont vendorisés** dans `public/brand/` (copies du design
+  system) ; le verrouillage blanc va sur l'encre, jamais le sigle bleu sur
+  fond bleu. Le logo se montre toujours en couleurs (`logo-ogec-sombre.svg` sur l'en-tête : sigle éclairci + filet tricolore, sans baseline). Les vignettes aériennes viennent d'Esri et le fond de carte d'OpenFreeMap (style Liberty filtré dans `MapView.jsx`, repli Esri) :
+  conditions d'usage à revoir avant une mise en ligne durable.
 
 ## Données personnelles
 

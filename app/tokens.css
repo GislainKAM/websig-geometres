@@ -1,0 +1,34 @@
+/* Jetons du système de design OGEC (export « OGEC Design System » du 23 octobre
+   2026), VENDORISÉS : copie, pas dépendance. Six couleurs de travail, deux fontes
+   d'interface, une échelle d'espace, un seul motif (la trame millimétrée).
+   Une retouche du système de design se recopie ici à la main — voir CLAUDE.md. */
+:root {
+  /* couleurs — six valeurs fermées, relevées sur le logo */
+  --encre: #14181A;
+  --encre-2: #6E6A62;
+  --bleu: #0099FE;          /* symboles de carte (non textuels, 3:1) */
+  --bleu-fonce: #0077CC;    /* texte bleu, bouton primaire (4,7:1) */
+  --bleu-actif: #005C99;
+  --bleu-pale: #E8F4FF;
+  --trame: #E3DFD5;
+  --filet: #DAD6CC;
+  --papier: #F4F2ED;
+  --surface: #FFFFFF;
+  --alerte: #B5411F;
+
+  /* typographie — Space Grotesk pour titres et libellés d'action, IBM Plex Mono
+     pour le corps et toutes les données. Corps porté à 16 px (lisibilité sur
+     mobile), étiquettes à 13 px. */
+  --font-display: var(--font-display-src), 'Space Grotesk', system-ui, sans-serif;
+  --font-text: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  --fs-body: 16px;
+  --fs-label: 13px;
+  --tracking-label: 0.12em;
+
+  /* espace, bordures, mouvement */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px; --sp-6: 32px; --sp-7: 48px;
+  --touch-min: 44px;
+  --radius-sm: 2px;
+  --duration: 120ms;
+  --transition: color var(--duration) ease-out, background-color var(--duration) ease-out, border-color var(--duration) ease-out;
+}
