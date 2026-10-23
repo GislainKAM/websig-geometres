@@ -541,3 +541,19 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .rang { min-height: 64px; }
   .fiche__tete { min-height: 150px; }
 }
+
+/* ---------- Mobile : liste d'abord, carte à la demande (bouton de bascule) ---------- */
+.home__moi { display: none; }
+.vue-bascule {
+  position: fixed; left: 50%; transform: translateX(-50%); z-index: 40;
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px;
+  border: 0; border-radius: 2px; background: var(--encre); color: #fff;
+  font-family: var(--font-display); font-weight: 700; font-size: 15px; transition: var(--transition);
+}
+.vue-bascule:active { background: var(--bleu-fonce); }
+.app--liste .map__tools, .app--liste .map__zoom, .app--liste .map__attr, .app--liste .panel__handle { display: none; }
+@media (max-width: 767px) {
+  .panel__body { padding-bottom: 72px; }
+  .home__moi { display: flex; }
+  .app--liste .app__panel { border-top: 0; }
+}
