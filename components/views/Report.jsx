@@ -33,7 +33,7 @@ function composerMessage(rep, membre, villes) {
   }
   lignes.push('', rep.desc.trim());
   if (rep.phone.trim()) lignes.push('', `Téléphone pour me rappeler : ${rep.phone.trim()}`);
-  lignes.push('', '— Message préparé depuis la Carte des géomètres (geometres.websig.app).');
+  lignes.push('', '— Message préparé depuis la Carte des géomètres (ogec.cm).');
   return lignes.join('\n');
 }
 

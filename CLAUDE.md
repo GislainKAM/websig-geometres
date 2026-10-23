@@ -2,7 +2,7 @@
 
 Annuaire cartographié des membres de l'Ordre National des Géomètres du
 Cameroun. Webmap Next.js statique, en production sur
-[geometres.websig.app](https://geometres.websig.app).
+[ogec.cm](https://ogec.cm) (ancienne adresse : geometres.websig.app, à rediriger en 301 vers ogec.cm).
 
 **[README.md](README.md) est la référence technique** (architecture,
 données, déploiement) et **[BRIEF.md](BRIEF.md) le journal des

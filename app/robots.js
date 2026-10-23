@@ -6,7 +6,7 @@
 export default function robots() {
   return {
     rules: [{ userAgent: '*', allow: '/' }],
-    sitemap: 'https://geometres.websig.app/sitemap.xml',
-    host: 'https://geometres.websig.app'
+    sitemap: 'https://ogec.cm/sitemap.xml',
+    host: 'https://ogec.cm'
   };
 }

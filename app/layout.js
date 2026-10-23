@@ -39,7 +39,7 @@ const DESCRIPTION = "Trouvez et vérifiez un géomètre inscrit au Tableau de l'
 // les chemins relatifs. Image en 1200x630 sous les 300 Ko : au-delà,
 // WhatsApp l'ignore silencieusement.
 export const metadata = {
-  metadataBase: new URL('https://geometres.websig.app'),
+  metadataBase: new URL('https://ogec.cm'),
   // Site d'une seule page : le canonical ne peut désigner qu'elle. Il est
   // ici et pas seulement implicite parce que l'auto-canonical de Google se
   // fait sur l'URL crawlée — n'importe quel lien entrant portant un
@@ -68,7 +68,7 @@ const JSON_LD = {
   '@type': 'WebSite',
   name: 'Carte des géomètres',
   alternateName: 'Annuaire des géomètres du Cameroun',
-  url: 'https://geometres.websig.app/',
+  url: 'https://ogec.cm/',
   inLanguage: ['fr', 'en'],
   description: DESCRIPTION
 };
